@@ -10,6 +10,6 @@ if (mysqli_connect_errno()) {
     die('<script>alert("Failed to connect to MySQL: Please check your SQL connection!");</script>');
 }
 
-echo "<script>alert('Connected successfully');</script>";
+echo "<script>console.log('Connected successfully');</script>";
 
 ?>

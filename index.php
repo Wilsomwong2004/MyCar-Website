@@ -1,3 +1,65 @@
+<?php
+session_start();
+include "conn.php";
+
+$login_error = '';
+$reset_message = '';
+
+
+// Login validation
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['userInput']) && isset($_POST['password'])) {
+    $userInput = $_POST['userInput'];  // This can be either email or username
+    $password = $_POST['password'];
+    
+    // Check if the input is a valid email or username
+    if (filter_var($userInput, FILTER_VALIDATE_EMAIL)) {
+        // User input is an email
+        $sql = "SELECT * FROM user_account_data WHERE user_email = '$userInput'";
+    } else {
+        // User input is a username
+        $sql = "SELECT * FROM user_account_data WHERE user_username = '$userInput'";
+    }
+    
+    $result = mysqli_query($dbConn, $sql);
+    
+    if ($result && mysqli_num_rows($result) == 1) {
+        $user = mysqli_fetch_assoc($result);
+        // Verify password
+        if (password_verify($password, $user['user_password'])) {
+            // If the password is correct, create session and redirect
+            $_SESSION['user_email'] = $user['user_email'];
+            echo 'success';  // This response is captured in JavaScript
+        } else {
+            $login_error = "Invalid username/email or password";
+            echo $login_error;
+        }
+    } else {
+        $login_error = "Invalid username/email or password";
+        echo $login_error;
+    }
+    exit();
+}
+
+// Password reset
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['reset_email']) && isset($_POST['new_password'])) {
+    $email = $_POST['reset_email'];
+    $new_password = $_POST['new_password'];
+    
+    // Hash the new password
+    $hashed_password = password_hash($new_password, PASSWORD_DEFAULT);
+    
+    $sql = "UPDATE user_account_data SET user_password = '$hashed_password' WHERE user_email = '$email'";
+    if (mysqli_query($dbConn, $sql)) {
+        $reset_message = "Password updated successfully";
+        echo $reset_message;
+    } else {
+        $reset_message = "Error updating password: " . mysqli_error($dbConn);
+        echo $reset_message;
+    }
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -19,9 +81,12 @@
                 <img src="assets/css/pic/Unknown_acc-removebg.png" alt="Anonymous Account" class="login-account-image">
                 <h2>Login your account</h2>
                 <p>Enter your username or email to sign in for this app</p>
-                <input type="email" id="email-input" placeholder="Enter your email" required></input>
-                <input type="password" id="password-input" placeholder="Enter your password" style="display: none" required></input>
-                <button id="sign-in-with-email">Sign in with email</button>
+                <form class="sign-in-forms" method="post" action="insert.php">
+                    <input type="text" name='userInput' id="user-input" placeholder="Enter your username or email" required></input>
+                    <input type="password" name='password' id="password-input" placeholder="Enter your password" style="display: none" required></input>
+                    <input type="submit" value="Sign in with email" id="sign-in-with-email">
+                    <!-- <button id="sign-in-with-email">Sign in with email</button> -->
+                </form>
                 <div class="forgot-password">
                     <a href="#" id="forgot-password-link">Forgot password?</a>
                 </div>

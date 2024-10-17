@@ -63,8 +63,8 @@ function areCredentialsCorrect(user, password) {
 
 let isPasswordVisible = false;
 
-// Handle sign in button click
-signInButton.addEventListener('click', (e) => {
+// Handle submitting the login form
+signInButton.addEventListener('submit', function (e) {
     e.preventDefault();
 
     // Always validate user input first

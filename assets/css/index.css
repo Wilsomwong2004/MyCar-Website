@@ -6,6 +6,11 @@ body {
     overflow: hidden;
 }
 
+.sign-in-forms {
+    margin: 0 auto;
+    text-align: center;
+}
+
 .login-container {
     display: flex;
     width: 100%;
@@ -68,7 +73,7 @@ body {
 }
 
 .login-right input {
-    width: 78%;
+    width: 100%;
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #ccc;
@@ -123,6 +128,18 @@ body {
 .login-descriptions p {
     color: #9e9e9e;
     cursor: default;
+}
+
+#sign-in-with-email {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #dcaf48;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
 }
 
 #forgot-password-modal {
