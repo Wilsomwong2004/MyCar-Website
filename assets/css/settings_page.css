@@ -1,0 +1,1137 @@
+:root {
+    --background-color: #ffffff;
+    --card-background: #ffffff;
+    --navbar-background: #fee4a9;
+    --navbar-more-background: #353535;
+    --miniprofile-background: #ffffff;
+    --miniprofile-gmail-text: #666;
+    --settings-change-profile-text: #666;
+    --text-color: #000000;
+    --primary-color: #dcaf48;
+    --secondary-color: #999;
+    --border-color: #c7c7cc;
+    --borderline-color-light: #ddd;
+    --borderline-color-dark: #666666;
+    --box-shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --box-shadow-dark: 0 2px 4px rgba(255, 255, 255, 0.1);
+    --gradient-light: linear-gradient(to bottom,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0.8) 20%,
+            rgba(255, 255, 255, 0.6) 40%,
+            rgba(255, 255, 255, 0.4) 60%,
+            rgba(255, 255, 255, 0.2) 80%,
+            rgba(255, 255, 255, 0) 100%);
+    --gradient-dark: linear-gradient(to bottom,
+            rgba(53, 53, 54, 1) 0%,
+            rgba(53, 53, 54, 0.8) 20%,
+            rgba(53, 53, 54, 0.6) 40%,
+            rgba(53, 53, 54, 0.4) 60%,
+            rgba(53, 53, 54, 0.2) 80%,
+            rgba(53, 53, 54, 0) 100%);
+    --gradient-profile-section-light-before: linear-gradient(to bottom,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0.5) 50%,
+            rgba(255, 255, 255, 0) 100%);
+
+    --gradient-profile-section-light-after: linear-gradient(to top,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0.5) 50%,
+            rgba(255, 255, 255, 0) 100%);
+
+    --gradient-profile-section-dark-before: linear-gradient(to bottom,
+            rgba(44, 44, 46) 0%,
+            rgba(0, 0, 0, 0.5) 50%,
+            rgba(0, 0, 0, 0) 100%);
+    --gradient-profile-section-dark-after: linear-gradient(to top,
+            rgba(44, 44, 46) 0%,
+            rgba(0, 0, 0, 0.5) 50%,
+            rgba(0, 0, 0, 0) 100%);
+
+    --gradient-wallet-section-light: linear-gradient(135deg, #fff8e5 0%, #e5bb21 100%);
+    --gradient-wallet-section-dark: linear-gradient(135deg, #2a2a2a 0%, #6e6a31 100%);
+    --transition-speed: 0.3s;
+}
+
+html.dark-mode {
+    --background-color: #353536;
+    --card-background: #353536;
+    --miniprofile-background: #4e4e4e;
+    --miniprofile-gmail-text: #999;
+    --settings-change-profile-text: #bbbbbb;
+    --text-color: #f2f2f7;
+    --border-color: #38383a;
+}
+
+/* Navigation Bar CSS*/
+body {
+    margin: 0;
+    display: grid;
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color var(--transition-speed);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 8px 20px;
+    background-color: var(--card-background);
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+#logo-image {
+    transition: content 0.3s ease;
+}
+
+html.dark-mode #logo-image {
+    width: auto;
+    height: 35px;
+    margin-left: 6px;
+    margin-bottom: 1px;
+    content: url("pic/mycarlogo_light.png");
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
+
+html.dark-mode .nav-links {
+    margin-left: 8px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #fee4a9;
+    padding: 10px 40px 10px 20px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    border: 1px;
+    background-color: var(--navbar-background);
+    color: #000000;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+.nav-links a:hover {
+    background-color: #dcaf48;
+    color: white;
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+#settings-button {
+    background-color: #dcaf48;
+    color: white;
+    border: none;
+}
+
+.nav-links i {
+    padding-right: 10px;
+    font-size: 16px;
+}
+
+/*mini profile*/
+.profile img {
+    height: 50px;
+    border-radius: 50%;
+}
+
+.profile {
+    position: relative;
+}
+
+#profile-pic {
+    width: 48px;
+    height: 48px;
+    margin-top: 3px;
+}
+
+.profile-dropdown-miniprofile {
+    display: none;
+    position: absolute;
+    top: 100%;
+    margin-top: 8px;
+    right: 0;
+    background-color: var(--miniprofile-background);
+    border: 1px solid var(--borderline-color-light);
+    border-radius: 9px;
+    padding: 15px 20px 20px 20px;
+    box-shadow: var(--box-shadow-light);
+    color: var(--text-color);
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+html.dark-mode .profile-dropdown-miniprofile {
+    box-shadow: var(--box-shadow-dark);
+    border: 1px solid var(--borderline-color-dark);
+}
+
+.profile-dropdown-miniprofile.show {
+    display: block;
+}
+
+.profile-info-miniprofile {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 10px 20px 0;
+    margin: 0px 10px 10px 0;
+}
+
+.profile-info-miniprofile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 16px;
+    margin-left: 6px;
+}
+
+.profile-info-miniprofile h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.profile-info-miniprofile p {
+    margin: 0;
+    font-size: 12px;
+    color: var(--miniprofile-gmail-text)
+}
+
+.profile-dropdown-miniprofile ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.profile-dropdown-miniprofile li {
+    padding: 8px 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.profile-dropdown-miniprofile li i {
+    margin-right: 8px;
+    width: 20px;
+}
+
+.settings-profile-miniprofile {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.logout-profile-miniprofile {
+    color: rgb(250, 70, 70);
+}
+
+.logout-profile-miniprofile :hover {
+    color: rgb(253, 39, 39);
+    transition: color 0.3s ease;
+}
+
+.help-center-profile {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.switch-miniprofile {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    margin-left: auto;
+}
+
+.switch-miniprofile input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider-miniprofile {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider-miniprofile:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked+.slider-miniprofile {
+    background-color: #dcaf48;
+}
+
+input:checked+.slider-miniprofile:before {
+    transform: translateX(20px);
+}
+
+/* Logout Modal Styles */
+.logout-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.logout-modal-content {
+    background-color: var(--card-background);
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 5px;
+    text-align: center;
+    color: var(--text-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+html.dark-mode .logout-modal-content {
+    background-color: var(--card-background);
+    color: var(--text-color);
+}
+
+.logout-modal-content h2 {
+    margin-top: 10px;
+}
+
+.logout-modal-content button {
+    margin: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.logout-modal-content button#confirm-logout {
+    background-color: #dcaf48;
+    color: white;
+}
+
+.logout-modal-content button#confirm-logout:hover {
+    background-color: #c99c3d;
+}
+
+.logout-modal-content button#cancel-logout {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.logout-modal-content button#cancel-logout:hover {
+    background-color: #e0e0e0;
+}
+
+html.dark-mode .logout-modal-content button#cancel-logout {
+    background-color: #4a4a4a;
+    color: #f0f0f0;
+}
+
+html.dark-mode .logout-modal-content button#cancel-logout:hover {
+    background-color: #5a5a5a;
+}
+
+/* Settings Page CSS */
+
+main {
+    position: relative;
+    overflow: hidden;
+    background-color: #fff;
+    border-radius: 10px;
+    background-color: var(--card-background);
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 6px;
+    padding: 18px 20px 0 20px;
+}
+
+.log-out-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #ff4444;
+    color: #fff;
+    padding: 10px 30px 10px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.log-out-button i {
+    padding-left: 6px;
+}
+
+.profile-section {
+    display: flex;
+    background-size: cover;
+    background-position: center;
+    align-items: left;
+    position: relative;
+    padding: 40px 0 40px;
+    background-image: url("pic/profile_background_default.jpg");
+}
+
+.profile-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: var(--gradient-profile-section-light-before);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.profile-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: var(--gradient-profile-section-light-after);
+    pointer-events: none;
+}
+
+html.dark-mode .profile-section {
+    background-image: url("pic/profile_background_default_dark.jpg");
+}
+
+html.dark-mode .profile-section::before {
+    background: var(--gradient-profile-section-dark-before);
+    transition: background-color var(--transition-speed);
+}
+
+html.dark-mode .profile-section::after {
+    background: var(--gradient-profile-section-dark-after);
+    transition: background-color var(--transition-speed);
+}
+
+.profile-pic {
+    margin-left: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.profile-info {
+    align-items: center;
+    margin-left: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.profile-info h2 {
+    margin-top: 36px;
+    margin-bottom: 6px;
+    font-size: 26px;
+    color: var(--text-color);
+}
+
+.profile-info a {
+    font-size: 14px;
+    color: var(--settings-change-profile-text);
+}
+
+.profile-section .profile-pic {
+    width: 125px;
+    height: 125px;
+
+}
+
+.profile-section .profile-pic,
+.profile-section .profile-info {
+    position: relative;
+    z-index: 2;
+}
+
+.change-photo {
+    color: #3c3c3c;
+    text-decoration: none;
+}
+
+.profile-overlay {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background: var(--gradient-light);
+    z-index: 2;
+    pointer-events: none;
+}
+
+html.dark-mode .profile-overlay {
+    background: var(--gradient-dark);
+}
+
+.settings-grid {
+    margin-bottom: 199px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 100px;
+    padding: 0 60px 10px 60px;
+}
+
+.settings-grid h3 {
+    color: #a6a6a6;
+    font-weight: 100;
+}
+
+.settings-column a,
+span {
+    font-size: 16px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    padding: 0 0 10px 0;
+    color: var(--text-color);
+}
+
+.settings-column span.slider {
+    padding: 0px;
+}
+
+.settings-column h3 {
+    margin-top: 0;
+}
+
+.settings-column a {
+    display: block;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.animated-popup {
+    position: fixed;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--primary-color);
+    box-shadow: var(--box-shadow-light);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 12px;
+    z-index: 1000;
+    transition: top 0.3s ease-out, opacity 0.3s ease-out;
+    opacity: 0;
+}
+
+.toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.slider {
+    width: 40px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    background-color: var(--border-color);
+}
+
+.slider:before {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #fff;
+    top: 1px;
+    left: 1px;
+    transition: 0.3s;
+}
+
+input:checked+.slider {
+    background-color: #dcaf48;
+    background-color: var(--primary-color);
+}
+
+input:checked+.slider:before {
+    transform: translateX(20px);
+}
+
+
+.delete-account {
+    color: #ff3b30;
+}
+
+.country-value,
+.more {
+    color: #999;
+    float: right;
+}
+
+.language-value,
+.units-value {
+    color: #999;
+    float: right;
+}
+
+.country-value,
+.more,
+.language-value,
+.units-value {
+    color: var(--secondary-color);
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #999;
+}
+
+/* Updated and new styles for popups and interactive elements */
+
+.popup-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 14px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: var(--card-background);
+    color: var(--text-color);
+}
+
+.popup-content h2 {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    color: var(--text-color);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content input[type="text"],
+.popup-content input[type="password"],
+.popup-content select {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.popup-content button {
+    background-color: #dcaf48;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.popup-content button:hover {
+    background-color: #c69c3f;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.button-group-delete-account {
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
+    margin-bottom: 10px;
+}
+
+.button-group-logout {
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
+    margin-bottom: 10px;
+}
+
+#popup-close {
+    background-color: #ccc;
+    color: #333;
+}
+
+#popup-close:hover {
+    background-color: #999;
+}
+
+/* Style for the slider to make it more interactive */
+.slider {
+    width: 40px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.slider:before {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #fff;
+    top: 1px;
+    left: 1px;
+    transition: 0.3s;
+}
+
+.slider.active {
+    background-color: #dcaf48;
+}
+
+.slider.active:before {
+    transform: translateX(20px);
+}
+
+/* Style for delete account link */
+.delete-account {
+    color: #ff4444;
+    transition: color 0.3s ease;
+}
+
+.delete-account:hover {
+    color: #ff0000;
+}
+
+/* Style for log out button */
+.log-out-button {
+    transition: background-color 0.3s ease;
+}
+
+.log-out-button:hover {
+    background-color: #ff0000;
+}
+
+/* Add some spacing and styling to popup messages */
+.popup-content p {
+    margin-bottom: 20px;
+    padding: 0 20px;
+    font-size: 15px;
+    line-height: 0.5;
+    text-align: center;
+}
+
+.confirm-delete-message {
+    color: red;
+    font-weight: 600;
+}
+
+
+/* Style for cancel buttons in popups */
+.popup-content button#cancel-delete,
+.popup-content button#cancel-logout {
+    background-color: #ccc;
+    color: #333;
+}
+
+.popup-content button#cancel-delete:hover,
+.popup-content button#cancel-logout:hover {
+    background-color: #999;
+}
+
+.drop-area {
+    border: 2px dashed #ccc;
+    border-radius: 20px;
+    width: 91%;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.drop-area p {
+    transition: all 0.3s ease-in-out;
+}
+
+.drop-area.highlight {
+    border-color: #dcaf48;
+}
+
+.preview-area {
+    text-align: center;
+}
+
+.crop-area {
+    text-align: center;
+}
+
+#crop-canvas {
+    max-width: 100%;
+    height: auto;
+}
+
+.crop-controls {
+    margin-top: 10px;
+}
+
+#preview-canvas {
+    border-radius: 50%;
+}
+
+.log-out-bottom {
+    display: none;
+    /* Hide by default */
+
+    text-align: center;
+    margin-top: 20px;
+}
+
+.log-out-bottom button {
+    background-color: #ff4444;
+    color: #fff;
+    padding: 12px 30px 12px 30px;
+    border: none;
+    border-radius: 20px;
+    width: 60%;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.log-out-bottom i {
+    padding-left: 6px;
+}
+
+/* hamburger menu*/
+#hamburger-menu {
+    display: none;
+    /* Hide by default */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-top: 3px;
+}
+
+#hamburger-menu span {
+    display: block;
+    width: 25px;
+    background-color: var(--text-color);
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 1200px) {
+    .settings-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 50px;
+        padding: 0 30px 10px 30px;
+        margin-bottom: 20px;
+        transition: all 0.3s ease-in-out;
+    }
+}
+
+@media screen and (max-width: 935px) {
+    .settings-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 0 20px 10px 20px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .navbar {
+        display: flex;
+        padding: 5px 20px 5px 20px;
+        transition: flex-grow 0.5s ease-in-out;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 10px;
+        flex-grow: 2;
+        transition: flex-grow 0.5s ease-in-out;
+    }
+
+    .nav-links a {
+        padding: 10px 20px;
+        margin-bottom: 10px;
+        transition: flex-grow 0.5s ease-in-out;
+    }
+
+    .profile-section {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+    }
+
+    .profile-pic {
+        margin-left: 0;
+        margin-bottom: 20px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .profile-info {
+        margin-left: 0;
+        text-align: center;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .profile-info h2 {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .profile-info a {
+        font-size: 12px;
+    }
+
+    .profile-overlay {
+        height: 40px;
+    }
+
+    .settings-column a,
+    .settings-column span {
+        font-size: 15px;
+    }
+
+    .settings-column h3 {
+        font-size: 16px;
+    }
+
+    .log-out-button {
+        align-self: flex-end;
+    }
+
+    .popup-content {
+        width: 80%;
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 832px) {
+    .navbar {
+        flex-wrap: wrap;
+        padding: 10px 20px 0 20px;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        order: 3;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease-out;
+        opacity: 0;
+        visibility: hidden;
+        margin-top: 10px;
+    }
+
+    .nav-links.show {
+        max-height: 500px;
+        /* Adjust this value based on your menu's expected maximum height */
+        opacity: 1;
+        visibility: visible;
+        transition: max-height 0.5s ease-out, opacity 0.3s ease-out, visibility 0s;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .nav-links a {
+        padding: 10px;
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+    }
+
+    .nav-links.show a {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: 0.2s;
+    }
+
+    .profile {
+        display: flex;
+    }
+
+    #profile-pic {
+        margin-right: 20px;
+    }
+
+    .profile-info-miniprofile img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+
+    .profile-dropdown-miniprofile {
+        margin-right: -1px;
+    }
+
+    .header-right {
+        display: flex;
+        align-items: center;
+        width: 25px;
+    }
+
+    #hamburger-menu {
+        display: block;
+        margin-top: 3px;
+    }
+
+    #hamburger-menu span {
+        display: block;
+        padding: 0 0 3px 0;
+        background-color: var(--text-color);
+        margin: 5px 0;
+        transition: 0.4s;
+    }
+
+    /* Hamburger menu animation */
+    #hamburger-menu span {
+        transition: all 0.3s ease-in-out;
+    }
+
+    #hamburger-menu.active span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    #hamburger-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    #hamburger-menu.active span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .log-out-bottom {
+        display: block;
+        /* Show on screens 900px and below */
+    }
+
+    .log-out-button {
+        display: none;
+        /* Hide the top logout button on mobile */
+    }
+
+    .drop-area {
+        width: 90%;
+        padding-left: 20px;
+    }
+
+    .drop-area p {
+        font-size: 14px;
+        line-height: 1;
+        transition: all 0.3s ease-in-out;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .nav-links a {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    .profile-section .profile-pic {
+        width: 100px;
+        height: 100px;
+    }
+
+    .profile-info h2 {
+        font-size: 22px;
+    }
+
+    .settings-column a,
+    .settings-column span {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 24px;
+        padding: 15px 15px 0 15px;
+    }
+
+    .drop-area {
+        width: 88%;
+        padding-left: 15px;
+    }
+
+    .popup-content h2 {
+        font-size: 20px;
+    }
+
+    .popup-content input[type="text"],
+    .popup-content input[type="password"],
+    .popup-content select {
+        font-size: 14px;
+    }
+
+    .popup-content button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .drop-area {
+        width: 89%;
+        padding-left: 10px;
+    }
+}

@@ -1,0 +1,277 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.login-container {
+    display: flex;
+    width: 100%;
+}
+
+.login-left {
+    position: relative;
+    width: 50%;
+    background: url('pic/Login\ pic.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    width: 80%;
+    filter: none;
+}
+
+.mycarlogo-image {
+    width: 200px;
+    margin-left: 20px;
+    margin-bottom: 5px;
+}
+
+.overlay p {
+    font-style: italic;
+    margin-top: 10px;
+}
+
+.login-right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.login-account-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.login-right h2 {
+    margin: 0 0 10px 0;
+    font-size: 24px;
+}
+
+.login-right p {
+    margin: 0 0 20px 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.login-right input {
+    width: 78%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.login-right input:focus {
+    outline: none;
+    border: 1px solid #dcaf48;
+}
+
+
+.login-right button {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #dcaf48;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.login-right button:hover {
+    background-color: #c79e3a;
+}
+
+.forgot-password {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.forgot-password a {
+    color: #dcaf48;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.login-descriptions {
+    margin-top: 20px;
+    font-size: 12px;
+    display: flex;
+}
+
+.login-descriptions a {
+    color: #dcaf48;
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+.login-descriptions p {
+    color: #9e9e9e;
+    cursor: default;
+}
+
+#forgot-password-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#forgot-password-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#forgot-password-form input,
+#forgot-password-form button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#forgot-password-form button {
+    background-color: #dcaf48;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#forgot-password-form button:hover {
+    background-color: #c79e3a;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    z-index: 1000;
+}
+
+.modal-content h2 {
+    text-align: center;
+    padding: 20px 80px 10px 80px;
+    margin-bottom: 15px;
+    margin-top: 5px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#forgot-password-modal input,
+#forgot-password-modal button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+#forgot-password-modal input {
+    border: 1px solid #ccc;
+}
+
+#forgot-password-modal input:focus {
+    outline: none;
+    border: 1px solid #dcaf48;
+}
+
+#forgot-password-modal button {
+    background-color: #dcaf48;
+    color: white;
+    border: none;
+}
+
+#verification-button {
+    background-color: #dcaf48;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin: 200px;
+    transition: background-color 0.3s;
+}
+
+#verification-button:hover {
+    background-color: #c79e3a;
+}
+
+input#verification-code-input {
+    margin-bottom: 13px;
+}
+
+#countdown {
+    text-align: center;
+    color: #666;
+    margin-top: 5px;
+    font-size: 13px;
+}
+
+#resend-code {
+    color: #dcaf48;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+@media screen and (max-width: 679px) {
+    .login-left {
+        display: none;
+    }
+
+    .login-right p {
+        width: auto;
+    }
+
+    .login-right {
+        width: 100%;
+    }
+}

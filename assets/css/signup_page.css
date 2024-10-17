@@ -1,0 +1,356 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.create_acc_container {
+    display: flex;
+    width: 100%;
+}
+
+.create_acc_left {
+    position: relative;
+    width: 50%;
+    background: url('pic/Login pic.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.create_acc_left_details {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+.create_acc_left_details img {
+    filter: brightness(100%);
+}
+
+.create_acc_left_details h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.create_acc_left_details p {
+    font-style: italic;
+    margin-top: 10px;
+}
+
+.create_acc_right_details {
+    margin-left: 20%;
+}
+
+.create_acc_right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.create_acc_right h2 {
+    margin: 0 0 10px 0;
+}
+
+.create_acc_right p {
+    margin: 5px 0 20px 0;
+    color: gray;
+}
+
+.create_acc_right input {
+    width: 76%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.create_acc_right input:focus {
+    outline: none;
+    border-color: #dcaf48;
+}
+
+.create_acc_right_name_input {
+    display: flex;
+    width: 80%;
+}
+
+#first_name {
+    margin-right: 10px;
+}
+
+.create_acc_gender {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    width: 80%;
+
+    input[type="radio"] {
+        margin-left: 10px;
+        margin-right: 5px;
+    }
+}
+
+.create_acc_right button {
+    width: 80%;
+    padding: 10px;
+    margin: 6px 0;
+    margin-top: 20px;
+    background-color: #dcaf48;
+    color: white;
+    font-style: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#login_page_btn {
+    width: 80%;
+    padding: 5px;
+    margin: 6px 0;
+    background-color: transparent;
+    font-style: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+#login_page_btn a {
+    font-size: 12px;
+    color: #dcaf48;
+    text-decoration: none;
+}
+
+.create_acc_right button:hover {
+    background-color: #c79e3a;
+}
+
+.create_acc_right a {
+    color: #dcaf48;
+    text-decoration: none;
+}
+
+.create_acc_right a:hover {
+    color: #c79e3a;
+}
+
+.agree_w_tnc_container {
+    display: flex;
+}
+
+input.agree_w_tnc {
+    width: auto;
+}
+
+.agree_w_tnc {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+    color: #9f9f9f;
+}
+
+.agree_w_tnc_container p {
+    margin-top: 20px;
+    margin-left: 15px;
+    font-size: 14px;
+    width: 80%;
+}
+
+.mycarlogo-image {
+    width: 200px;
+    margin-left: 20px;
+    margin-bottom: 5px;
+}
+
+/* NOT SURE IF I NEED THIS */
+.create_acc_descriptions {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+    color: #9f9f9f;
+}
+
+/* NOT SURE IF I NEED THIS */
+.create_acc_image {
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    margin: 0 0 20px 0;
+}
+
+.login-car-image {
+    width: 100%;
+    object-fit: cover;
+    margin: 0 0 20px 0;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-button {
+    background-color: #dcaf48;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal-button:hover {
+    background-color: #c79e3a;
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup.hidden {
+    display: none;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.popup-content h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.popup-content p {
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.popup-content .subtext {
+    font-size: 0.9em;
+    color: #999;
+}
+
+p.subtext {
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.popup-button {
+    padding: 12px 40px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.popup-button.primary {
+    background-color: #dcaf48;
+    color: white;
+}
+
+.popup-button.primary:hover {
+    background-color: #c79e3a;
+}
+
+.popup-button.secondary {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.popup-button.secondary:hover {
+    background-color: #e0e0e0;
+}
+
+@media screen and (max-width: 768px) {
+    .create_acc_right_name_input {
+        display: block;
+        width: 100%;
+    }
+
+    .create_acc_gender {
+        font-size: 12px;
+        width: 20%;
+    }
+
+    .agree_w_tnc_container p {
+        font-size: 12px;
+    }
+
+    #createAccountForm {
+        margin-left: -30px;
+    }
+}
+
+@media screen and (max-width: 679px) {
+    .create_acc_left {
+        display: none;
+    }
+
+    .create_acc_right {
+        width: 100%;
+    }
+}

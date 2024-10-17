@@ -1,0 +1,280 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+}
+
+.add_card_container {
+    display: flex;
+    width: 100%;
+}
+
+.add_card_left {
+    position: relative;
+    width: 50%;
+}
+
+.card_info_container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #dfb34d;
+}
+
+.card_info_container i {
+    font-size: 120px;
+}
+
+.card_info_container p {
+    font-size: 14px;
+    margin-top: 40px;
+    color: rgb(145, 145, 145);
+}
+
+.add_card_right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.add_card_right h2 {
+    margin: 0 0 10px 0;
+}
+
+.add_card_right p {
+    margin: 5px 0 20px 0;
+    color: grey;
+}
+
+.add_card_right input {
+    width: 75%;
+    padding: 10px;
+    margin: 4px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.add_card_right input:focus {
+    outline: none;
+    border-color: #dcaf48;
+}
+
+.add_card_right button {
+    width: 80%;
+    padding: 10px;
+    margin: 6px 0;
+    background-color: #dcaf48;
+    color: white;
+    font-style: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#setupLater {
+    background-color: transparent;
+    color: #dcaf48;
+    margin-top: 2px;
+}
+
+button#add_card_reset {
+    background-color: #ebcd82f3;
+}
+
+button#add_card_reset:hover {
+    background-color: #f1d89ef3;
+}
+
+.add_card_right button:hover {
+    background-color: #c79e3a;
+}
+
+.add_card_right a {
+    color: #dcaf48;
+    text-decoration: none;
+}
+
+.add_card_right a:hover {
+    color: #c79e3a;
+}
+
+.agree_w_tnc_container {
+    display: flex;
+}
+
+input.agree_w_tnc {
+    width: auto;
+}
+
+.agree_w_tnc {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+    color: #9f9f9f;
+}
+
+.agree_w_tnc_container p {
+    margin-top: 20px;
+    margin-left: 5px;
+    font-size: 14px;
+}
+
+.mycarlogo-image {
+    margin: -10px 0 0 20px;
+}
+
+/* NOT SURE IF I NEED THIS */
+.add_card_descriptions {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+    color: #9f9f9f;
+}
+
+/* NOT SURE IF I NEED THIS */
+.add_card_image {
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    margin: 0 0 20px 0;
+}
+
+.login-car-image {
+    width: 100%;
+    object-fit: cover;
+    margin: 0 0 20px 0;
+}
+
+/* New styles for loading overlay and confirmation popup */
+.overlay,
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.hidden {
+    display: none;
+}
+
+.overlay-content,
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.loader {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #dcaf48;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+    margin-bottom: 30px;
+    margin-top: 15px;
+}
+
+.loading-text {
+    font-size: 14px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.popup-content button {
+    border-radius: 8px;
+    border: none;
+    color: white;
+    font-size: 14px;
+    margin: 10px;
+    padding: 10px 30px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#confirmNo {
+    background-color: #d8ba75f5;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#confirmNo:hover {
+    background-color: #f1d89e;
+}
+
+#confirmYes {
+    background-color: #dcaf48;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#confirmYes:hover {
+    background-color: #ecc446;
+}
+
+.popup-text {
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    line-height: 1.8;
+    margin: 10px 25px 10px 25px;
+}
+
+.popup-subtext{
+    font-size: 13px;
+    color: grey;
+    margin-top: 0px;
+}
+
+@media screen and (max-width: 496px) {
+    .add_card_left{
+        display: none;
+    }
+
+    .add_card_right h2, p {
+        text-align: center;
+    }
+
+    .add_card_right {
+        width: 100%;
+        margin-left: 5px;
+    }
+
+    .add_card_right input {
+        width: 90%;
+    }
+
+    .add_card_right button{
+        width: 98%;
+    }
+
+    input.agree_w_tnc {
+        width: auto;
+    }
+
+    .agree_w_tnc_container p {
+        font-size: 12px;
+    }
+}
