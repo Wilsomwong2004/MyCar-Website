@@ -1,62 +1,199 @@
 <?php
 session_start();
-include "conn.php";
 
-$login_error = '';
-$reset_message = '';
+// Enable error logging
+error_reporting(E_ALL);
+ini_set('display_errors', 0);
+ini_set('log_errors', 1);
+ini_set('error_log', 'php_errors.log');
 
-
-// Login validation
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['userInput']) && isset($_POST['password'])) {
-    $userInput = $_POST['userInput'];  // This can be either email or username
-    $password = $_POST['password'];
-    
-    // Check if the input is a valid email or username
-    if (filter_var($userInput, FILTER_VALIDATE_EMAIL)) {
-        // User input is an email
-        $sql = "SELECT * FROM user_account_data WHERE user_email = '$userInput'";
-    } else {
-        // User input is a username
-        $sql = "SELECT * FROM user_account_data WHERE user_username = '$userInput'";
-    }
-    
-    $result = mysqli_query($dbConn, $sql);
-    
-    if ($result && mysqli_num_rows($result) == 1) {
-        $user = mysqli_fetch_assoc($result);
-        // Verify password
-        if (password_verify($password, $user['user_password'])) {
-            // If the password is correct, create session and redirect
-            $_SESSION['user_email'] = $user['user_email'];
-            echo 'success';  // This response is captured in JavaScript
-        } else {
-            $login_error = "Invalid username/email or password";
-            echo $login_error;
-        }
-    } else {
-        $login_error = "Invalid username/email or password";
-        echo $login_error;
-    }
+// Function to safely output JSON
+function outputJSON($data) {
+    header('Content-Type: application/json');
+    echo json_encode($data);
     exit();
 }
 
-// Password reset
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['reset_email']) && isset($_POST['new_password'])) {
-    $email = $_POST['reset_email'];
-    $new_password = $_POST['new_password'];
-    
-    // Hash the new password
-    $hashed_password = password_hash($new_password, PASSWORD_DEFAULT);
-    
-    $sql = "UPDATE user_account_data SET user_password = '$hashed_password' WHERE user_email = '$email'";
-    if (mysqli_query($dbConn, $sql)) {
-        $reset_message = "Password updated successfully";
-        echo $reset_message;
-    } else {
-        $reset_message = "Error updating password: " . mysqli_error($dbConn);
-        echo $reset_message;
+// Wrap the entire script in a try-catch block
+try {
+    // Include database connection
+    require_once __DIR__ . '/conn.php';
+
+    if (!isset($conn)) {
+        throw new Exception("Database connection not established");
     }
-    exit();
+
+    // Check if it's an AJAX request
+    if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
+        // Log received data
+        error_log("Received POST data: " . print_r($_POST, true));
+
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $action = $_POST['action'] ?? '';
+            $userInput = $_POST['userInput'] ?? '';
+
+            if ($action == 'checkUser') {
+                // Check if user exists
+                $sql = "SELECT * FROM user_account_data WHERE user_email = ? OR user_username = ?";
+                $stmt = mysqli_prepare($conn, $sql);
+                if (!$stmt) {
+                    throw new Exception("Prepare failed: " . mysqli_error($conn));
+                }
+                mysqli_stmt_bind_param($stmt, "ss", $userInput, $userInput);
+                mysqli_stmt_execute($stmt);
+                $result = mysqli_stmt_get_result($stmt);
+
+                if (mysqli_num_rows($result) == 1) {
+                    outputJSON(['status' => 'success', 'message' => 'User found']);
+                } else {
+                    outputJSON(['status' => 'error', 'message' => 'User not found']);
+                }
+            } elseif ($action == 'login') {
+                $password = $_POST['password'] ?? '';
+
+                // Perform login
+                $sql = "SELECT * FROM user_account_data WHERE (user_email = ? OR user_username = ?)";
+                $stmt = mysqli_prepare($conn, $sql);
+                mysqli_stmt_bind_param($stmt, "ss", $userInput, $userInput);
+                mysqli_stmt_execute($stmt);
+                $result = mysqli_stmt_get_result($stmt);
+
+                if (mysqli_num_rows($result) == 1) {
+                    $user = mysqli_fetch_assoc($result);
+                    // Verify password
+                    if (password_verify($password, $user['user_password'])) {
+                        // If the password is correct, create session and redirect
+                        $_SESSION['user_email'] = $user['user_email'];
+                        error_log("Login successful for user: $userInput");
+                        outputJSON(['status' => 'success', 'message' => 'Login successful']);
+                        header("Location: main_page.php");
+
+                    } else {
+                        error_log("Login failed: Invalid password for user: $userInput");
+                        outputJSON(['status' => 'error', 'message' => 'Invalid username/email or password']);
+                    }
+                } else {
+                    error_log("Login failed: User not found: $userInput");
+                    outputJSON(['status' => 'error', 'message' => 'Invalid username/email or password']);
+                }
+            } else {
+                outputJSON(['status' => 'error', 'message' => 'Invalid action']);
+            }
+        } else {
+            outputJSON(['status' => 'error', 'message' => 'Invalid request method']);
+        }
+    }
+
+    // Login validation
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['action']) && $_POST['action'] == 'login') {
+        $userInput = $_POST['userInput'] ?? '';
+        $password = $_POST['password'] ?? '';
+        
+        error_log("Attempting login with userInput: $userInput");
+        
+        // Check if the input is a valid email or username
+        if (filter_var($userInput, FILTER_VALIDATE_EMAIL)) {
+            // User input is an email
+            $sql = "SELECT * FROM user_account_data WHERE user_email = ?";
+        } else {
+            // User input is a username
+            $sql = "SELECT * FROM user_account_data WHERE user_username = ?";
+        }
+        
+        $stmt = mysqli_prepare($conn, $sql);
+        mysqli_stmt_bind_param($stmt, "s", $userInput);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+        
+        if ($result && mysqli_num_rows($result) == 1) {
+            $user = mysqli_fetch_assoc($result);
+            // Verify password
+            if (password_verify($password, $user['user_password'])) {
+                // If the password is correct, create session and redirect
+                $_SESSION['user_email'] = $user['user_email'];
+                error_log("Login successful for user: $userInput");
+                echo json_encode(['status' => 'success', 'message' => 'Login successful']);
+            } else {
+                error_log("Login failed: Invalid password for user: $userInput");
+                echo json_encode(['status' => 'error', 'message' => 'Invalid username/email or password']);
+            }
+        } else {
+            error_log("Login failed: User not found: $userInput");
+            echo json_encode(['status' => 'error', 'message' => 'Invalid username/email or password']);
+        }
+        exit();
+    }
+
+    // Forgot password validation
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['forgot-email'])) {
+        $forgot_email = $_POST['forgot-email'];
+        
+        error_log("Attempting to reset password for email: $forgot_email");
+        
+        // Check if the email is valid
+        if (filter_var($forgot_email, FILTER_VALIDATE_EMAIL)) {
+            // Check if the email exists in the database
+            $sql = "SELECT * FROM user_account_data WHERE user_email = '$forgot_email'";
+            $result = mysqli_query($conn, $sql);
+            
+            if ($result && mysqli_num_rows($result) == 1) {
+                $user = mysqli_fetch_assoc($result);
+                // Generate a random verification code
+                $verification_code = bin2hex(random_bytes(16));
+                // Insert the verification code into the database
+                $sql = "UPDATE user_account_data SET user_verification_code = '$verification_code' WHERE user_email = '$forgot_email'";
+                mysqli_query($conn, $sql);
+                // Send the verification code to the user's email
+                $to = $user['user_email'];
+                $subject = "MyCar Password Reset Verification Code";
+                $message = "Your verification code for resetting your password is: $verification_code";
+                $headers = "From: MyCar Support <<EMAIL>>";
+                mail($to, $subject, $message, $headers);
+                // Display the email and verification code to the user
+                $reset_message = "An email has been sent to $forgot_email with a verification code. Please enter the code below to reset your password.";
+                echo json_encode(['status' => 'success', 'message' => $reset_message]);
+            } else {
+                $reset_message = "Invalid email. Please enter a valid email to reset your password.";
+                echo json_encode(['status' => 'error', 'message' => $reset_message]);
+            }
+        } else {
+            $reset_message = "Invalid email. Please enter a valid email to reset your password.";
+            echo json_encode(['status' => 'error', 'message' => $reset_message]);
+        }
+        exit();
+    }
+
+    // Reset password validation
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['verification-code']) && isset($_POST['new-password'])) {
+        $verification_code = $_POST['verification-code'];
+        $new_password = $_POST['new-password'];
+        
+        error_log("Attempting to reset password with verification code: $verification_code");
+        
+        // Check if the verification code is valid
+        $sql = "SELECT * FROM user_account_data WHERE user_verification_code = '$verification_code'";
+        $result = mysqli_query($conn, $sql);
+        
+        if ($result && mysqli_num_rows($result) == 1) {
+            $user = mysqli_fetch_assoc($result);
+            // Update the user's password in the database
+            $hashed_password = password_hash($new_password, PASSWORD_DEFAULT);
+            $sql = "UPDATE user_account_data SET user_password = '$hashed_password', user_verification_code = NULL WHERE user_email = '$user[user_email]'";
+            mysqli_query($conn, $sql);
+            // Display a success message to the user
+            $reset_message = "Your password has been reset. You can now log in with your new password.";
+            echo json_encode(['status' => 'success', 'message' => $reset_message]);
+        } else {
+            $reset_message = "Invalid verification code. Please try again.";
+            echo json_encode(['status' => 'error', 'message' => $reset_message]);
+        }
+        exit();
+    }
+} catch (Exception $e) {
+    error_log("Caught exception: " . $e->getMessage());
+    if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
+        outputJSON(['status' => 'error', 'message' => 'An internal error occurred. Please try again later.']);
+    }
 }
 ?>
 
@@ -81,11 +218,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['reset_email']) && isse
                 <img src="assets/css/pic/Unknown_acc-removebg.png" alt="Anonymous Account" class="login-account-image">
                 <h2>Login your account</h2>
                 <p>Enter your username or email to sign in for this app</p>
-                <form class="sign-in-forms" method="post" action="insert.php">
-                    <input type="text" name='userInput' id="user-input" placeholder="Enter your username or email" required></input>
-                    <input type="password" name='password' id="password-input" placeholder="Enter your password" style="display: none" required></input>
-                    <input type="submit" value="Sign in with email" id="sign-in-with-email">
-                    <!-- <button id="sign-in-with-email">Sign in with email</button> -->
+                <form class="sign-in-forms" id="login-form" method="post">
+                    <input type="text" name="userInput" id="user-input" placeholder="Enter your username or email" required>
+                    <div id="user-error" class="error-message"></div>
+                    <input type="password" name="password" id="password-input" placeholder="Enter your password" style="display: none;">
+                    <div id="password-error" class="error-message"></div>
+                    <button type="submit" id="sign-in-button">Sign in with email</button>
                 </form>
                 <div class="forgot-password">
                     <a href="#" id="forgot-password-link">Forgot password?</a>

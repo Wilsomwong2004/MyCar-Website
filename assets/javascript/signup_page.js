@@ -39,27 +39,24 @@ document.addEventListener('DOMContentLoaded', function () {
                 method: 'POST',
                 body: formData
             })
-                .then(response => response.text())
-                .then(text => {
-                    try {
-                        return JSON.parse(text);
-                    } catch (error) {
-                        console.error('Server response:', text);
-                        throw new Error('Invalid JSON response from server');
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
                     }
+                    return response.json();
                 })
                 .then(data => {
                     if (data.status === 'success') {
                         alert('Account created successfully!');
                         confirmPopup.classList.remove('hidden');
                     } else {
-                        console.error('Server error:', data.message, data.details);
-                        alert('Error: ' + data.message + '\n\nCheck the console for more details.');
+                        console.error('Server error:', data.message);
+                        alert('Error: ' + data.message);
                     }
                 })
                 .catch(error => {
                     console.error('Error:', error);
-                    alert('An error occurred. Please check the console for more details.');
+                    alert('An error occurred. Please check the server logs for more details.');
                 });
         }
     });

@@ -1,15 +1,15 @@
 <?php
 $servername = 'localhost';
-$user = 'root';
+$username = 'root';
 $password = '';
 $dbname = 'userdata';
 
-$dbConn = mysqli_connect($servername, $user, $password, $dbname);
+$conn = mysqli_connect($servername, $username, $password, $dbname);
 
-if (mysqli_connect_errno()) {
-    die('<script>alert("Failed to connect to MySQL: Please check your SQL connection!");</script>');
+if (!$conn) {
+    throw new Exception("Failed to connect to MySQL: " . mysqli_connect_error());
 }
 
-echo "<script>console.log('Connected successfully');</script>";
-
+// Optionally, you can set the connection to use UTF-8
+mysqli_set_charset($conn, 'utf8mb4');
 ?>

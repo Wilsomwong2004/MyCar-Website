@@ -1,0 +1,175 @@
+
+[18-Oct-2024 20:46:27 Europe/Berlin] Caught exception: Database connection not established
+[18-Oct-2024 20:46:35 Europe/Berlin] Caught exception: Database connection not established
+[18-Oct-2024 20:46:36 Europe/Berlin] Caught exception: Database connection not established
+[18-Oct-2024 20:47:51 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => checkUser
+)
+
+[18-Oct-2024 20:54:37 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => checkUser
+)
+
+[18-Oct-2024 20:54:50 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => login
+    [password] => 20040727
+)
+
+[18-Oct-2024 20:54:50 Europe/Berlin] PHP Warning:  Undefined variable $dbConn in C:\xampp\htdocs\MyCar_Website\index.php on line 56
+[18-Oct-2024 20:54:50 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: mysqli_prepare(): Argument #1 ($mysql) must be of type mysqli, null given in C:\xampp\htdocs\MyCar_Website\index.php:56
+Stack trace:
+#0 C:\xampp\htdocs\MyCar_Website\index.php(56): mysqli_prepare(NULL, 'SELECT * FROM u...')
+#1 {main}
+  thrown in C:\xampp\htdocs\MyCar_Website\index.php on line 56
+[18-Oct-2024 20:55:41 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong2
+    [action] => checkUser
+)
+
+[18-Oct-2024 20:55:50 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwon3
+    [action] => checkUser
+)
+
+[18-Oct-2024 20:55:55 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => checkUser
+)
+
+[18-Oct-2024 20:56:03 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => login
+    [password] => nn
+)
+
+[18-Oct-2024 20:56:03 Europe/Berlin] PHP Warning:  Undefined variable $dbConn in C:\xampp\htdocs\MyCar_Website\index.php on line 56
+[18-Oct-2024 20:56:03 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: mysqli_prepare(): Argument #1 ($mysql) must be of type mysqli, null given in C:\xampp\htdocs\MyCar_Website\index.php:56
+Stack trace:
+#0 C:\xampp\htdocs\MyCar_Website\index.php(56): mysqli_prepare(NULL, 'SELECT * FROM u...')
+#1 {main}
+  thrown in C:\xampp\htdocs\MyCar_Website\index.php on line 56
+[18-Oct-2024 20:57:06 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => checkUser
+)
+
+[18-Oct-2024 20:57:13 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => login
+    [password] => 20040727
+)
+
+[18-Oct-2024 20:57:13 Europe/Berlin] Attempting login with userInput: Wilsomwong
+[18-Oct-2024 20:57:13 Europe/Berlin] Login failed: Invalid password for user: Wilsomwong
+[18-Oct-2024 21:01:25 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => wilsomwong2004@gmail.com
+    [action] => checkUser
+)
+
+[18-Oct-2024 21:01:31 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => wilsomwong20004@gmail.com
+    [action] => login
+    [password] => nn
+)
+
+[18-Oct-2024 21:01:31 Europe/Berlin] Attempting login with userInput: wilsomwong20004@gmail.com
+[18-Oct-2024 21:01:31 Europe/Berlin] Login failed: User not found: wilsomwong20004@gmail.com
+[18-Oct-2024 21:01:37 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => wilsomwong204@gmail.com
+    [action] => checkUser
+)
+
+[18-Oct-2024 21:01:40 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => wilsomwong2004@gmail.com
+    [action] => checkUser
+)
+
+[18-Oct-2024 21:02:27 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => checkUser
+)
+
+[18-Oct-2024 21:02:31 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => login
+    [password] => nn
+)
+
+[18-Oct-2024 21:02:31 Europe/Berlin] Attempting login with userInput: Wilsomwong
+[18-Oct-2024 21:02:31 Europe/Berlin] Login failed: Invalid password for user: Wilsomwong
+[18-Oct-2024 21:04:33 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => checkUser
+)
+
+[18-Oct-2024 21:04:57 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => login
+    [password] => 20040727
+)
+
+[18-Oct-2024 21:04:57 Europe/Berlin] Attempting login with userInput: Wilsomwong
+[18-Oct-2024 21:04:57 Europe/Berlin] Login failed: Invalid password for user: Wilsomwong
+[18-Oct-2024 21:09:15 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => checkUser
+)
+
+[18-Oct-2024 21:09:22 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => login
+    [password] => 20040727
+)
+
+[18-Oct-2024 21:10:36 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => checkUser
+)
+
+[18-Oct-2024 21:10:42 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => login
+    [password] => 20040727
+)
+
+[18-Oct-2024 21:10:42 Europe/Berlin] Login failed: Invalid password for user: Wilsomwong
+[18-Oct-2024 21:17:45 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => checkUser
+)
+
+[18-Oct-2024 21:17:56 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => login
+    [password] => 20040727
+)
+
+[18-Oct-2024 21:17:56 Europe/Berlin] PHP Warning:  Undefined variable $sqli in C:\xampp\htdocs\MyCar_Website\index.php on line 56
+[18-Oct-2024 21:17:56 Europe/Berlin] PHP Deprecated:  mysqli_prepare(): Passing null to parameter #2 ($query) of type string is deprecated in C:\xampp\htdocs\MyCar_Website\index.php on line 56
+[18-Oct-2024 21:17:56 Europe/Berlin] Caught exception: Query was empty

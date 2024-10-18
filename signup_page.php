@@ -22,7 +22,7 @@
             <div class="create_acc_right_details">
                 <!-- ADD PHP HERE -->
                 <!-- <form id="createAccountForm" action=".php"> -->
-                <form id="createAccountForm" action="insert.php">
+                <form id="createAccountForm" action="insert.php" method="post">
                     <h2>Create New Account</h2>
                     <p>Enter your details to sign in to the website</p>
                     <div class="create_acc_right_name_input">
@@ -106,7 +106,7 @@
 
     <div id="confirmPopup" class="popup hidden">
         <div class="popup-content">
-            <span class="close">&times;</span>
+            <!-- <span class="close">&times;</span> -->
             <h2>Set Up Payment</h2>
             <p>Do you want to set up your payment now?</p>
             <p class="subtext">You can set it up later in the settings page.</p>
