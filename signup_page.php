@@ -22,18 +22,20 @@
             <div class="create_acc_right_details">
                 <!-- ADD PHP HERE -->
                 <!-- <form id="createAccountForm" action=".php"> -->
-                <form id="createAccountForm">
+                <form id="createAccountForm" action="insert.php">
                     <h2>Create New Account</h2>
                     <p>Enter your details to sign in to the website</p>
                     <div class="create_acc_right_name_input">
                         <input
                             type="text"
+                            name="first_user_name"
                             id="first_name"
                             placeholder="First Name"
                             required
                         />
                         <input
                             type="text"
+                            name="last_user_name"
                             id="last_name"
                             placeholder="Last Name"
                             required
@@ -41,18 +43,21 @@
                     </div>
                     <input
                         type="text"
+                        name="username"
                         id="username"
                         placeholder="Enter New Username"
                         required
                     />
                     <input
                         type="password"
+                        name="password"
                         id="password"
                         placeholder="Enter New Password"
                         required
                     />
                     <input
                         type="email"
+                        name="email"
                         id="email"
                         placeholder="Enter your Email"
                         required
@@ -93,8 +98,7 @@
                     </div>
 
                     <button id="create_new_acc_btn" type="submit">Create New Account</button>
-                    <button id="login_page_btn"><a href="index.php">Return to Login Page</a></button>
-                    <!--ADD HYPERLINK BACK TO THE LOGIN PAGE-->
+                    <button id="login_page_btn" type="button"><a href="index.php">Return to Login Page</a></button>
                 </form>
             </div>
         </div>
@@ -113,9 +117,8 @@
         </div>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="./assets/javascript/signup_page.js"></script>
-
-
 </body>
 </html>
 

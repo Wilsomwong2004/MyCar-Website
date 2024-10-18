@@ -1,4 +1,6 @@
 <?php
+header('Content-Type: application/json');
+
 
 $first_name = $_POST['first_user_name'];
 $last_name = $_POST['last_user_name'];
@@ -14,15 +16,14 @@ include "conn.php";
 $sql = "INSERT INTO user_account_data (user_firstname, user_lastname, user_username, user_password, user_email, user_address, user_birthday, user_gender)
 VALUES ('$first_name', '$last_name', '$username', '$password', '$email', '$address', '$birthday', '$gender')";
 
-// Debug
-// echo $sql;
+$result = mysqli_query($conn, $sql);
 
-mysqli_query($conn, $sql);
-
-if(mysqli_affected_rows($dbConn) <= 0){
-    die("<script>alert('Fail: unable to insert data'); window.history.go(-1);</script>");
+if ($result) {
+    echo json_encode(['status' => 'success', 'message' => 'Account created successfully']);
+} else {
+    echo json_encode(['status' => 'error', 'message' => 'Unable to insert data: ' . mysqli_error($conn)]);
 }
 
-echo "<script>alert('Successfully insert data!')</script>";
+mysqli_close($conn);
 
 ?>

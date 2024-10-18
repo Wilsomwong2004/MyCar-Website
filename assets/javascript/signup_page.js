@@ -33,9 +33,34 @@ document.addEventListener('DOMContentLoaded', function () {
     form.addEventListener('submit', function (event) {
         event.preventDefault();
         if (validateForm()) {
-            confirmPopup.classList.remove('hidden');
-        } else {
-            confirmPopup.classList.add('hidden');
+            const formData = new FormData(form);
+
+            fetch('insert.php', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => response.text())
+                .then(text => {
+                    try {
+                        return JSON.parse(text);
+                    } catch (error) {
+                        console.error('Server response:', text);
+                        throw new Error('Invalid JSON response from server');
+                    }
+                })
+                .then(data => {
+                    if (data.status === 'success') {
+                        alert('Account created successfully!');
+                        confirmPopup.classList.remove('hidden');
+                    } else {
+                        console.error('Server error:', data.message, data.details);
+                        alert('Error: ' + data.message + '\n\nCheck the console for more details.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An error occurred. Please check the console for more details.');
+                });
         }
     });
 
