@@ -1,6 +1,72 @@
+:root {
+    --background-color: #ffffff;
+    --card-background: #ffffff;
+    --navbar-background: #fee4a9;
+    --navbar-more-background: #353535;
+    --miniprofile-background: #ffffff;
+    --miniprofile-gmail-text: #666;
+    --settings-change-profile-text: #666;
+    --text-color: #000000;
+    --primary-color: #dcaf48;
+    --secondary-color: #999;
+    --border-color: #c7c7cc;
+    --borderline-color-light: #ddd;
+    --borderline-color-dark: #666666;
+    --box-shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --box-shadow-dark: 0 2px 4px rgba(255, 255, 255, 0.1);
+    --gradient-light: linear-gradient(to bottom,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0.8) 20%,
+            rgba(255, 255, 255, 0.6) 40%,
+            rgba(255, 255, 255, 0.4) 60%,
+            rgba(255, 255, 255, 0.2) 80%,
+            rgba(255, 255, 255, 0) 100%);
+    --gradient-dark: linear-gradient(to bottom,
+            rgba(53, 53, 54, 1) 0%,
+            rgba(53, 53, 54, 0.8) 20%,
+            rgba(53, 53, 54, 0.6) 40%,
+            rgba(53, 53, 54, 0.4) 60%,
+            rgba(53, 53, 54, 0.2) 80%,
+            rgba(53, 53, 54, 0) 100%);
+    --gradient-profile-section-light-before: linear-gradient(to bottom,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0.5) 50%,
+            rgba(255, 255, 255, 0) 100%);
+
+    --gradient-profile-section-light-after: linear-gradient(to top,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0.5) 50%,
+            rgba(255, 255, 255, 0) 100%);
+
+    --gradient-profile-section-dark-before: linear-gradient(to bottom,
+            rgba(44, 44, 46) 0%,
+            rgba(0, 0, 0, 0.5) 50%,
+            rgba(0, 0, 0, 0) 100%);
+    --gradient-profile-section-dark-after: linear-gradient(to top,
+            rgba(44, 44, 46) 0%,
+            rgba(0, 0, 0, 0.5) 50%,
+            rgba(0, 0, 0, 0) 100%);
+
+    --gradient-wallet-section-light: linear-gradient(135deg, #fff8e5 0%, #e5bb21 100%);
+    --gradient-wallet-section-dark: linear-gradient(135deg, #2a2a2a 0%, #6e6a31 100%);
+    --transition-speed: 0.3s;
+}
+
+html.dark-mode {
+    --background-color: #353536;
+    --card-background: #353536;
+    --miniprofile-background: #4e4e4e;
+    --miniprofile-gmail-text: #999;
+    --settings-change-profile-text: #bbbbbb;
+    --text-color: #f2f2f7;
+    --border-color: #38383a;
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
     display: flex;
     height: 100vh;
 }
@@ -34,6 +100,10 @@ body {
     color: rgb(145, 145, 145);
 }
 
+html.dark-mode .card_info_container p {
+    color: #bab9b9;
+}
+
 .add_card_right {
     width: 50%;
     display: flex;
@@ -52,12 +122,25 @@ body {
     color: grey;
 }
 
+html.dark-mode .add_card_right p {
+    color: #acacac;
+}
+
 .add_card_right input {
     width: 75%;
     padding: 10px;
     margin: 4px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
+}
+
+html.dark-mode .add_card_right input {
+    border-color: #38383a;
+    background-color: #787878;
+}
+
+html.dark-mode .add_card_right input::placeholder {
+    color: rgb(198, 198, 198);
 }
 
 .add_card_right input:focus {
@@ -126,6 +209,10 @@ input.agree_w_tnc {
     font-size: 14px;
 }
 
+html.dark-mode .agree_w_tnc_container p {
+    color: #bab9b9;
+}
+
 .mycarlogo-image {
     margin: -10px 0 0 20px;
 }
@@ -179,6 +266,12 @@ input.agree_w_tnc {
     text-align: center;
 }
 
+html.dark-mode .overlay-content,
+html.dark-mode .popup-content {
+    background-color: #353536;
+    color: #f2f2f7;
+}
+
 .loader {
     border: 5px solid #f3f3f3;
     border-top: 5px solid #dcaf48;
@@ -189,6 +282,10 @@ input.agree_w_tnc {
     margin: 0 auto 20px;
     margin-bottom: 30px;
     margin-top: 15px;
+}
+
+html.dark-mode .loader {
+    border-color: #38383a;
 }
 
 .loading-text {
@@ -242,18 +339,19 @@ input.agree_w_tnc {
     margin: 10px 25px 10px 25px;
 }
 
-.popup-subtext{
+.popup-subtext {
     font-size: 13px;
     color: grey;
     margin-top: 0px;
 }
 
 @media screen and (max-width: 496px) {
-    .add_card_left{
+    .add_card_left {
         display: none;
     }
 
-    .add_card_right h2, p {
+    .add_card_right h2,
+    p {
         text-align: center;
     }
 
@@ -266,7 +364,7 @@ input.agree_w_tnc {
         width: 90%;
     }
 
-    .add_card_right button{
+    .add_card_right button {
         width: 98%;
     }
 

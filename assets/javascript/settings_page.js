@@ -145,23 +145,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Function to show logout confirmation modal
     function showLogoutModal() {
-        showPopup('Log Out?', `
+        const modal = document.createElement('div');
+        modal.className = 'logout-modal';
+        modal.innerHTML = `
+        <div class="logout-modal-content">
+            <h2>Logout?</h2>
             <p>Are you sure you want to log out?</p>
-            <div class="button-group-logout">
-                <button id="confirm-logout" class="logout-btn">Yes, Log Out</button>
-                <button id="cancel-logout" class="cancel-btn">Cancel</button>
-            </div>
-        `);
+            <button id="confirm-logout">Yes, Logout</button>
+            <button id="cancel-logout">Cancel</button>
+        </div>
+        `;
+        document.body.appendChild(modal);
 
         document.getElementById('confirm-logout').addEventListener('click', function () {
-            // Add logout logic here
-            closePopup();
-            // Redirect to login page or perform other logout actions
-            window.location.href = 'index.php';
-            window.history.pushState({}, '', 'index.php');
+            // Redirect to logout.php
+            window.location.href = 'logout.php';
         });
 
-        document.getElementById('cancel-logout').addEventListener('click', closePopup);
+        document.getElementById('cancel-logout').addEventListener('click', function () {
+            document.body.removeChild(modal);
+        });
     }
 
     // Event listener for the main logout button
@@ -856,8 +859,7 @@ document.addEventListener('DOMContentLoaded', function () {
             closePopup();
             //user cant go back by pressing back button after logout forever
             //so we redirect to login page
-            window.location.href = 'index.php';
-            window.history.pushState({}, '', 'index.php');
+            window.location.href = 'logout.php';
         });
         document.getElementById('cancel-logout').addEventListener('click', closePopup);
     });

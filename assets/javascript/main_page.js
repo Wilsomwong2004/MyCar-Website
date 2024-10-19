@@ -214,22 +214,12 @@ document.addEventListener('DOMContentLoaded', function () {
             <button id="confirm-logout">Yes, Logout</button>
             <button id="cancel-logout">Cancel</button>
         </div>
-    `;
+        `;
         document.body.appendChild(modal);
 
         document.getElementById('confirm-logout').addEventListener('click', function () {
-            // Clear session storage or authentication token
-            sessionStorage.clear(); // Or localStorage.clear() if you're using local storage
-
-            // Redirect to login page or perform other logout actions
-            // window.location.href = 'index.php';
-
-            location.replace("index.php");
-            /*
-            window.location.hash = "no-back";
-            window.location.hash = "Again   -No-back-button";
-            window.onhashchange = function () { window.location.hash = "no-back"; }
-            */
+            // Redirect to logout.php
+            window.location.href = 'logout.php';
         });
 
         document.getElementById('cancel-logout').addEventListener('click', function () {

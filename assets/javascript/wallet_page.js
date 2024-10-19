@@ -147,14 +147,12 @@ document.addEventListener('DOMContentLoaded', function () {
             <button id="confirm-logout">Yes, Logout</button>
             <button id="cancel-logout">Cancel</button>
         </div>
-    `;
+        `;
         document.body.appendChild(modal);
 
         document.getElementById('confirm-logout').addEventListener('click', function () {
-            // Perform logout action here
-            console.log('Logging out...');
-            // Redirect to login page or perform other logout actions
-            window.location.href = 'index.php';
+            // Redirect to logout.php
+            window.location.href = 'logout.php';
         });
 
         document.getElementById('cancel-logout').addEventListener('click', function () {
