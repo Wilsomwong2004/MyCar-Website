@@ -164,7 +164,6 @@ body {
 #forgot-password-form button {
     width: 100%;
     padding: 10px;
-    margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
@@ -178,6 +177,11 @@ body {
 
 #forgot-password-form button:hover {
     background-color: #c79e3a;
+}
+
+input#new-password-input {
+    margin-bottom: 30px;
+    margin-top: 10px;
 }
 
 .modal {

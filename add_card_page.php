@@ -104,6 +104,7 @@
     </div>
 
     <script src="./assets/javascript/add_card_page.js"></script>
+    <script src="./assets/javascript/darkmode.js"></script>
 </body>
 </html>
 

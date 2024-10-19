@@ -200,6 +200,7 @@ document.addEventListener('DOMContentLoaded', function () {
         clearInterval(countdownTimer);
         getVerificationCodeButton.style.display = 'block';
         countdownElement.style.display = 'none';
+        verificationContainer.style.display = 'none';
     }
 
     function resetModalState() {
