@@ -174,3 +174,13 @@
 
 [19-Oct-2024 21:34:35 Europe/Berlin] PHP Warning:  Undefined array key "username" in C:\xampp\htdocs\MyCar_Website\index.php on line 65
 [19-Oct-2024 21:34:35 Europe/Berlin] Login successful for user: 
+[19-Oct-2024 22:04:31 Europe/Berlin] Received card data: Array
+(
+    [bank_name] => Maybank
+    [number_on_card] => 1234567891234567
+    [name_on_card] => Wilsomwong
+    [card_expiration_date] => 12/29
+    [card_cvv_number] => 122
+    [user_id] => 1
+)
+

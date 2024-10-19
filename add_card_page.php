@@ -20,69 +20,71 @@
         </div>
     
         <div class="add_card_right">
-            <!-- ADD PHP HERE -->
-            <!-- <form action=".php"> -->
+        <form action="insert_card_details.php" method="post">
             <h2>Add Credit/Debit Card</h2>
             <p>Enter details regarding your Credit/Debit card</p>
-            <input
-                type="text"
-                id="bank_name"
-                placeholder="Bank Name"
-                required
-            />
-            <input
+                <input
+                    type="text"
+                    name="payment_user_bank"
+                    id="bank_name"
+                    placeholder="Bank Name"
+                    required
+                />
+                <input
+                    type="number"
+                    name="payment_user_number"
+                    id="number_on_card"
+                    placeholder="Number on Card"
+                    maxlength="16"
+                    minlength="16"
+                    required
+                />
+                <input
+                    type="text"
+                    name="payment_user_name"
+                    id="name_on_card"
+                    placeholder="Name on Card"
+                    required
+                />
+                <input
+                    type="text"
+                    name="payment_exp_date"
+                    id="card_expiration_date"
+                    placeholder="Card Expiration Date (MM/YY)"
+                    pattern="\d{2}/\d{2}"
+                    required
+                    title="Please enter a date in MM/YY format"
+                />
+                <input
                 type="number"
-                id="number_on_card"
-                placeholder="Number on Card"
-                maxlength="16"
-                minlength="16"
-                required
-            />
-            <input
-                type="text"
-                id="name_on_card"
-                placeholder="Name on Card"
-                required
-            />
-            <input
-                type="text"
-                id="card_expiration_date"
-                placeholder="Card Expiration Date (MM/YY)"
-                pattern="\d{2}/\d{2}"
-                required
-                title="Please enter a date in MM/YY format"
-            />
-            <input
-            type="number"
-            id="card_cvv_number"
-            placeholder="CVV"
-            maxlength="3"
-            required
-            />
-            <input
-                type="password"
-                id="password"
-                placeholder="Enter Password"
-                required
-            />
-
-            <!-- CREATE A TICK BOX FOR TnC AND "i ACKNOWLEDGE THAT MY INFORMATION IS SHARED"-->
-            <!--HYPERLINK THE TnC-->
-            <div class="agree_w_tnc_container">
-                <input class="agree_w_tnc"
-                type="checkbox"
-                name="agree_w_tnc"
-                value="agree_w_tnc"
-                placeholder="I hereby agree with the Terms & Conditions of MyCar"
+                id="card_cvv_number"
+                placeholder="CVV"
+                maxlength="3"
                 required
                 />
-                <p>I hereby agree with the <a href="terms_service.php">Terms & Conditions</a> of MyCar</p>
-            </div>
-            
 
-            <button id="add_card_btn" type="submit"" onclick="addCard()">Add Card</button>
-            <button id="add_card_reset" type="reset" onclick="resetform()">Reset</button>
-            <button id="setupLater">I want to set it up later.</button>
+                <input
+                    type="password"
+                    name="payment_password"
+                    id="password"
+                    placeholder="Enter payment password"
+                    required
+                />
+
+                <div class="agree_w_tnc_container">
+                    <input class="agree_w_tnc"
+                    type="checkbox"
+                    name="agree_w_tnc"
+                    value="agree_w_tnc"
+                    placeholder="I hereby agree with the Terms & Conditions of MyCar"
+                    required
+                    />
+                    <p>I hereby agree with the <a href="terms_service.php">Terms & Conditions</a> of MyCar</p>
+                </div>
+
+                <button id="add_card_btn" type="submit""">Add Card</button>
+                <button id="add_card_reset" type="reset" onclick="resetform()">Reset</button>
+                <button id="setupLater">I want to set it up later.</button>
             </form>
         </div>
     </div>

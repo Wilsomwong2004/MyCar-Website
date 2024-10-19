@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const cardName = document.getElementById('name_on_card');
     const cardExpiry = document.getElementById('card_expiration_date');
     const cardCvv = document.getElementById('card_cvv_number');
+    const cardPassword = document.getElementById('password');
     const confirmPopup = document.getElementById('confirmPopup');
     const confirmYes = document.getElementById('confirmYes');
     const confirmNo = document.getElementById('confirmNo');
@@ -52,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Handle form submission
     cardForm.addEventListener('click', function (e) {
+        e.preventDefault(); // Prevent default form submission
 
         // Validate the form
         if (!validateForm()) {
@@ -61,29 +63,54 @@ document.addEventListener('DOMContentLoaded', function () {
         // Show loading overlay
         loadingOverlay.style.display = 'flex';
 
-        // Change the loading text in sequence
-        setTimeout(() => {
-            loading_text[0].innerHTML = "Adding your card information...";
-        }, 0);
+        // Prepare form data
+        const formData = new FormData();
+        formData.append('bank_name', bankName.value);
+        formData.append('number_on_card', cardNumber.value);
+        formData.append('name_on_card', cardName.value);
+        formData.append('card_expiration_date', cardExpiry.value);
+        formData.append('card_cvv_number', cardCvv.value);
+        formData.append('card_password', cardPassword.value); // Implement password encryption here
+        formData.append('user_id', getUserId()); // Implement getUserId() to get the current user's ID
 
-        setTimeout(() => {
-            loading_text[0].innerHTML = "Saving your card details to our servers...";
-        }, 2000);
+        // Send data to the server
+        fetch('insert_card_details.php', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    // Change the loading text in sequence
+                    setTimeout(() => {
+                        loading_text[0].innerHTML = "Adding your card information...";
+                    }, 0);
+                    setTimeout(() => {
+                        loading_text[0].innerHTML = "Saving your card details to our servers...";
+                    }, 2000);
+                    setTimeout(() => {
+                        loading_text[0].innerHTML = "Almost done... Take a coffee break before we're finished.";
+                    }, 6000);
+                    setTimeout(() => {
+                        loading_text[0].innerHTML = "Done saving. Redirecting to the main page...";
+                    }, 10000);
 
-        setTimeout(() => {
-            loading_text[0].innerHTML = "Almost done... Take a coffee break before we're finished.";
-        }, 6000);
-
-        setTimeout(() => {
-            loading_text[0].innerHTML = "Done saving. Redirecting to the main page...";
-        }, 10000);
-
-        // Hide the loading overlay and redirect after a delay
-        setTimeout(() => {
-            loadingOverlay.style.display = 'none';
-            // Redirect to the main page
-            window.location.href = 'main_page.php';
-        }, 12000); // Delay before redirection
+                    // Hide the loading overlay and redirect after a delay
+                    setTimeout(() => {
+                        loadingOverlay.style.display = 'none';
+                        // Redirect to the main page
+                        window.location.href = 'main_page.php';
+                    }, 12000);
+                } else {
+                    alert('Error: ' + data.message);
+                    loadingOverlay.style.display = 'none';
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred while saving your card details.');
+                loadingOverlay.style.display = 'none';
+            });
     });
 
     // Handle "Setup Later" button click
@@ -103,4 +130,10 @@ document.addEventListener('DOMContentLoaded', function () {
     confirmNo.addEventListener('click', function () {
         confirmPopup.style.display = 'none';
     });
+
+    function getUserId() {
+        // Implement this function to return the current user's ID
+        // This could be stored in a session, localStorage, or retrieved from the server
+        return '1'; // Placeholder, replace with actual implementation
+    }
 });
