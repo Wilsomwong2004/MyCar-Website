@@ -1,0 +1,14 @@
+[19-Oct-2024 20:38:10 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => checkUser
+)
+
+[19-Oct-2024 20:38:14 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => login
+    [password] => 20040727
+)
+
+[19-Oct-2024 20:38:14 Europe/Berlin] Login successful for user: Wilsomwong
