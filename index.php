@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-// Enable error logging
+// For debugging purposes
 error_reporting(E_ALL);
 ini_set('display_errors', 0);
 ini_set('log_errors', 1);
@@ -14,9 +14,7 @@ function outputJSON($data) {
     exit();
 }
 
-// Wrap the entire script in a try-catch block
 try {
-    // Include database connection
     require_once __DIR__ . '/conn.php';
 
     if (!isset($conn)) {
@@ -28,6 +26,7 @@ try {
         // Log received data
         error_log("Received POST data: " . print_r($_POST, true));
 
+        // Login validation
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $action = $_POST['action'] ?? '';
             $userInput = $_POST['userInput'] ?? '';
@@ -52,28 +51,19 @@ try {
                 $password = $_POST['password'] ?? '';
 
                 // Perform login
-                $sql = "SELECT * FROM user_account_data WHERE (user_email = ? OR user_username = ?)";
+                $sql = "SELECT * FROM user_account_data WHERE (user_email = ? OR user_username = ?) AND user_password = ?";
                 $stmt = mysqli_prepare($conn, $sql);
-                mysqli_stmt_bind_param($stmt, "ss", $userInput, $userInput);
+                mysqli_stmt_bind_param($stmt, "sss", $userInput, $userInput, $password);
                 mysqli_stmt_execute($stmt);
                 $result = mysqli_stmt_get_result($stmt);
 
-                if (mysqli_num_rows($result) == 1) {
+                if ($result && mysqli_num_rows($result) == 1) {
                     $user = mysqli_fetch_assoc($result);
-                    // Verify password
-                    if (password_verify($password, $user['user_password'])) {
-                        // If the password is correct, create session and redirect
-                        $_SESSION['user_email'] = $user['user_email'];
-                        error_log("Login successful for user: $userInput");
-                        outputJSON(['status' => 'success', 'message' => 'Login successful']);
-                        header("Location: main_page.php");
-
-                    } else {
-                        error_log("Login failed: Invalid password for user: $userInput");
-                        outputJSON(['status' => 'error', 'message' => 'Invalid username/email or password']);
-                    }
+                    $_SESSION['user_email'] = $user['user_email'];
+                    error_log("Login successful for user: $userInput");
+                    outputJSON(['status' => 'success', 'message' => 'Login successful']);
                 } else {
-                    error_log("Login failed: User not found: $userInput");
+                    error_log("Login failed: Invalid credentials for user: $userInput");
                     outputJSON(['status' => 'error', 'message' => 'Invalid username/email or password']);
                 }
             } else {
@@ -84,45 +74,7 @@ try {
         }
     }
 
-    // Login validation
-    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['action']) && $_POST['action'] == 'login') {
-        $userInput = $_POST['userInput'] ?? '';
-        $password = $_POST['password'] ?? '';
-        
-        error_log("Attempting login with userInput: $userInput");
-        
-        // Check if the input is a valid email or username
-        if (filter_var($userInput, FILTER_VALIDATE_EMAIL)) {
-            // User input is an email
-            $sql = "SELECT * FROM user_account_data WHERE user_email = ?";
-        } else {
-            // User input is a username
-            $sql = "SELECT * FROM user_account_data WHERE user_username = ?";
-        }
-        
-        $stmt = mysqli_prepare($conn, $sql);
-        mysqli_stmt_bind_param($stmt, "s", $userInput);
-        mysqli_stmt_execute($stmt);
-        $result = mysqli_stmt_get_result($stmt);
-        
-        if ($result && mysqli_num_rows($result) == 1) {
-            $user = mysqli_fetch_assoc($result);
-            // Verify password
-            if (password_verify($password, $user['user_password'])) {
-                // If the password is correct, create session and redirect
-                $_SESSION['user_email'] = $user['user_email'];
-                error_log("Login successful for user: $userInput");
-                echo json_encode(['status' => 'success', 'message' => 'Login successful']);
-            } else {
-                error_log("Login failed: Invalid password for user: $userInput");
-                echo json_encode(['status' => 'error', 'message' => 'Invalid username/email or password']);
-            }
-        } else {
-            error_log("Login failed: User not found: $userInput");
-            echo json_encode(['status' => 'error', 'message' => 'Invalid username/email or password']);
-        }
-        exit();
-    }
+    
 
     // Forgot password validation
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['forgot-email'])) {
@@ -189,6 +141,7 @@ try {
         }
         exit();
     }
+
 } catch (Exception $e) {
     error_log("Caught exception: " . $e->getMessage());
     if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {

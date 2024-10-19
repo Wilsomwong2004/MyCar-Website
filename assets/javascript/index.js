@@ -92,8 +92,10 @@ document.addEventListener('DOMContentLoaded', function () {
         formData.append('userInput', userValue);
 
         if (!isPasswordVisible) {
+            // First step: Check if user exists
             formData.append('action', 'checkUser');
         } else {
+            // Second step: Attempt login with password
             if (!passwordValue) {
                 passwordError.textContent = 'Please enter your password.';
                 return;
@@ -102,8 +104,6 @@ document.addEventListener('DOMContentLoaded', function () {
             formData.append('password', passwordValue);
         }
 
-        console.log('Sending data:', Object.fromEntries(formData));
-
         fetch('index.php', {
             method: 'POST',
             body: formData,
@@ -111,32 +111,20 @@ document.addEventListener('DOMContentLoaded', function () {
                 'X-Requested-With': 'XMLHttpRequest'
             }
         })
-            .then(response => {
-                console.log('Raw response:', response);
-                return response.text();
-            })
-            .then(text => {
-                console.log('Response text:', text);
-                try {
-                    return JSON.parse(text);
-                } catch (e) {
-                    console.error('Error parsing JSON:', e);
-                    console.error('Raw response:', text);
-                    throw new Error('Invalid JSON response from server');
-                }
-            })
+            .then(response => response.json())
             .then(data => {
-                console.log('Parsed data:', data);
                 if (data.status === 'success') {
                     if (!isPasswordVisible) {
+                        // User exists, show password field
                         passwordInput.style.display = 'block';
-                        passwordInput.required = true;
-                        signInButton.textContent = 'Sign In';
                         isPasswordVisible = true;
+                        signInButton.textContent = 'Sign in';
                     } else {
-                        window.location.href = 'mainpage.php';
+                        // Password validated, redirect to main page
+                        window.location.href = 'main_page.php';
                     }
                 } else {
+                    // Handle login failure
                     const errorMessage = data.message || 'An error occurred. Please try again.';
                     if (!isPasswordVisible) {
                         userError.textContent = errorMessage;

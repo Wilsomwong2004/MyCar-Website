@@ -12,6 +12,7 @@ try {
     $last_name = $_POST['last_user_name'] ?? '';
     $user_username = $_POST['username'] ?? '';
     $user_password = $_POST['password'] ?? '';
+    // $hashed_password = password_hash($user_password, PASSWORD_DEFAULT);
     $email = $_POST['email'] ?? '';
     $address = $_POST['address'] ?? '';
     $birthday = $_POST['birthday'] ?? '';
