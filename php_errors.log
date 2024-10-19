@@ -12,3 +12,45 @@
 )
 
 [19-Oct-2024 20:38:14 Europe/Berlin] Login successful for user: Wilsomwong
+[19-Oct-2024 20:40:20 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => checkUser
+)
+
+[19-Oct-2024 20:40:21 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => login
+    [password] => 20040727
+)
+
+[19-Oct-2024 20:40:21 Europe/Berlin] Login successful for user: Wilsomwong
+[19-Oct-2024 20:40:22 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => checkUser
+)
+
+[19-Oct-2024 20:40:26 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => login
+    [password] => 20040727
+)
+
+[19-Oct-2024 20:40:26 Europe/Berlin] Login successful for user: Wilsomwong
+[19-Oct-2024 20:43:01 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => checkUser
+)
+
+[19-Oct-2024 20:43:04 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => login
+    [password] => 20040727
+)
+
+[19-Oct-2024 20:43:04 Europe/Berlin] Login successful for user: Wilsomwong
