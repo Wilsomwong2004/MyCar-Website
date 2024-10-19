@@ -60,7 +60,9 @@ try {
                 if ($result && mysqli_num_rows($result) == 1) {
                     $user = mysqli_fetch_assoc($result);
                     $_SESSION['user_email'] = $user['user_email'];
-                    error_log("Login successful for user: $userInput");
+                    $_SESSION['user_username'] = $user['user_username'];  // Make sure 'username' matches your database column name
+    
+                    error_log("Login successful for user: " . $user['username']);
                     outputJSON(['status' => 'success', 'message' => 'Login successful']);
                 } else {
                     error_log("Login failed: Invalid credentials for user: $userInput");

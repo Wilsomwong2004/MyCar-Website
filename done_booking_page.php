@@ -2,6 +2,7 @@
     session_start();
     if(!isset($_SESSION['user_email'])) {
         header("Location: index.php");
+        exit();
     }
 ?>
 
@@ -41,8 +42,8 @@
                 <div class="profile-info">
                     <img src="assets/css/pic/Unknown_acc-removebg.png" alt="Jackson Low">
                     <div>
-                    <h3>Jackson Low</h3>
-                    <p>hello@jacksonlow.com</p>
+                        <h3><?php echo $_SESSION['user_username']; ?></h3>
+                        <p><?php echo $_SESSION['user_email']; ?></p>
                     </div>
                 </div>
                 <ul>
