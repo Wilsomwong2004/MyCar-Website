@@ -418,3 +418,140 @@
 )
 
 [19-Oct-2024 13:16:51 Europe/Berlin] Login successful for user: Wilsomwong
+[19-Oct-2024 13:33:06 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => checkUser
+)
+
+[19-Oct-2024 13:33:10 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => login
+    [password] => 20040727
+)
+
+[19-Oct-2024 13:33:10 Europe/Berlin] Login successful for user: Wilsomwong
+[19-Oct-2024 13:33:15 Europe/Berlin] Attempting to reset password for email: wilsomwong040727@gmail.com
+[19-Oct-2024 13:33:31 Europe/Berlin] Attempting to reset password for email: wilsomwong2004@gmail.com
+[19-Oct-2024 13:34:12 Europe/Berlin] Attempting to reset password for email: bryan@gmail.com
+[19-Oct-2024 13:34:12 Europe/Berlin] Caught exception: Unknown column 'user_verification_code' in 'field list'
+[19-Oct-2024 13:35:07 Europe/Berlin] Attempting to reset password for email: wilsomwong204@gmail.com
+[19-Oct-2024 13:35:28 Europe/Berlin] Attempting to reset password for email: wilsomwong2004@gmail.com
+[19-Oct-2024 13:35:28 Europe/Berlin] Caught exception: Unknown column 'user_verification_code' in 'field list'
+[19-Oct-2024 13:38:38 Europe/Berlin] Attempting to reset password for email: wilsomwong2004@gmail.com
+[19-Oct-2024 13:38:40 Europe/Berlin] PHP Warning:  mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\xampp\htdocs\MyCar_Website\index.php on line 103
+[19-Oct-2024 13:44:05 Europe/Berlin] Attempting to reset password for email: wilsomwong2004@gmail.com
+[19-Oct-2024 13:46:46 Europe/Berlin] Attempting to reset password for email: wilsomwong2004@gmail.com
+[19-Oct-2024 13:53:16 Europe/Berlin] Attempting to reset password for email: wilsomwong2004@gmail.com
+[19-Oct-2024 13:58:20 Europe/Berlin] Attempting to reset password for email: wilsomwong2004@gmail.com
+[19-Oct-2024 13:59:05 Europe/Berlin] Attempting to reset password with verification code: 556209
+[19-Oct-2024 13:59:22 Europe/Berlin] Attempting to reset password for email: wilsomwong2004@gmail.com
+[19-Oct-2024 13:59:40 Europe/Berlin] Attempting to reset password with verification code: 13
+[19-Oct-2024 13:59:47 Europe/Berlin] Attempting to reset password for email: wilsomwong2004@gmail.com
+[19-Oct-2024 13:59:49 Europe/Berlin] Attempting to reset password with verification code: 13
+[19-Oct-2024 14:00:02 Europe/Berlin] Attempting to reset password with verification code: 803596
+[19-Oct-2024 15:08:38 Europe/Berlin] Attempting to reset password with verification code: 803596
+[19-Oct-2024 15:12:10 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => checkUser
+)
+
+[19-Oct-2024 15:12:15 Europe/Berlin] Attempting to reset password for email: wilsomwong2004@gmail.com
+[19-Oct-2024 15:12:36 Europe/Berlin] Attempting to reset password with verification code: 327615
+[19-Oct-2024 15:12:41 Europe/Berlin] Attempting to reset password with verification code: 327615
+[19-Oct-2024 15:13:47 Europe/Berlin] Attempting to reset password for email: wilsomwong2004@gmail.com
+[19-Oct-2024 15:14:11 Europe/Berlin] Attempting to reset password with verification code: 327615
+[19-Oct-2024 15:14:34 Europe/Berlin] Attempting to reset password for email: wilsomwong2004@gmail.com
+[19-Oct-2024 15:14:43 Europe/Berlin] Attempting to reset password with verification code: 578441
+[19-Oct-2024 15:16:36 Europe/Berlin] Attempting to reset password for email: wilsomwong2004@gmail.com
+[19-Oct-2024 15:16:49 Europe/Berlin] Attempting to reset password with verification code: 576588
+[19-Oct-2024 15:16:59 Europe/Berlin] Attempting to reset password with verification code: 576588
+[19-Oct-2024 15:19:02 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => checkUser
+)
+
+[19-Oct-2024 15:19:06 Europe/Berlin] Attempting to reset password for email: wilsomwong2004@gmail.com
+[19-Oct-2024 15:19:27 Europe/Berlin] Attempting to reset password with verification code: 437196
+[19-Oct-2024 15:19:34 Europe/Berlin] Attempting to reset password with verification code: 437196
+[19-Oct-2024 15:19:45 Europe/Berlin] Attempting to reset password with verification code: 437196
+[19-Oct-2024 15:21:05 Europe/Berlin] Attempting to reset password for email: wilsomwong2004@gmail.com
+[19-Oct-2024 15:21:24 Europe/Berlin] Attempting to reset password with verification code: 973744
+[19-Oct-2024 15:21:26 Europe/Berlin] Attempting to reset password with verification code: 973744
+[19-Oct-2024 15:23:34 Europe/Berlin] Attempting to reset password for email: wilsomwong2004@gmail.com
+[19-Oct-2024 15:24:04 Europe/Berlin] Attempting to reset password for email: wilsomwong2004@gmail.com
+[19-Oct-2024 15:24:22 Europe/Berlin] Attempting to reset password. Verification code: 335459, New password length: 0
+[19-Oct-2024 15:24:22 Europe/Berlin] Query executed. Number of rows: 1
+[19-Oct-2024 15:24:22 Europe/Berlin] User found: wilsomwong2004@gmail.com
+[19-Oct-2024 15:24:22 Europe/Berlin] Password reset successful for user: wilsomwong2004@gmail.com
+[19-Oct-2024 15:24:27 Europe/Berlin] Attempting to reset password. Verification code: 335459, New password length: 8
+[19-Oct-2024 15:24:27 Europe/Berlin] Query executed. Number of rows: 0
+[19-Oct-2024 15:24:27 Europe/Berlin] Invalid verification code. No matching user found.
+[19-Oct-2024 15:26:42 Europe/Berlin] Attempting to reset password for email: wilsomwong2004@gmail.com
+[19-Oct-2024 15:26:55 Europe/Berlin] Attempting to reset password. Verification code: 481364, New password length: 0
+[19-Oct-2024 15:26:55 Europe/Berlin] Query executed. Number of rows: 1
+[19-Oct-2024 15:26:55 Europe/Berlin] User found: wilsomwong2004@gmail.com
+[19-Oct-2024 15:26:55 Europe/Berlin] No new password provided for user: wilsomwong2004@gmail.com
+[19-Oct-2024 15:27:01 Europe/Berlin] Attempting to reset password. Verification code: 20040727, New password length: 0
+[19-Oct-2024 15:27:01 Europe/Berlin] Query executed. Number of rows: 0
+[19-Oct-2024 15:27:01 Europe/Berlin] Invalid verification code. No matching user found.
+[19-Oct-2024 15:27:18 Europe/Berlin] Attempting to reset password for email: wilsomwong2004@gmail.com
+[19-Oct-2024 15:27:30 Europe/Berlin] Attempting to reset password. Verification code: 276774, New password length: 0
+[19-Oct-2024 15:27:30 Europe/Berlin] Query executed. Number of rows: 1
+[19-Oct-2024 15:27:30 Europe/Berlin] User found: wilsomwong2004@gmail.com
+[19-Oct-2024 15:27:30 Europe/Berlin] No new password provided for user: wilsomwong2004@gmail.com
+[19-Oct-2024 15:27:45 Europe/Berlin] Attempting to reset password for email: wilsomwong2004@gmail.com
+[19-Oct-2024 15:27:54 Europe/Berlin] Attempting to reset password. Verification code: 196776, New password length: 0
+[19-Oct-2024 15:27:54 Europe/Berlin] Query executed. Number of rows: 1
+[19-Oct-2024 15:27:54 Europe/Berlin] User found: wilsomwong2004@gmail.com
+[19-Oct-2024 15:27:54 Europe/Berlin] No new password provided for user: wilsomwong2004@gmail.com
+[19-Oct-2024 15:29:10 Europe/Berlin] Attempting to reset password for email: wilsomwong2004@gmail.com
+[19-Oct-2024 15:31:02 Europe/Berlin] Attempting to reset password for email: wilsomwong2004@gmail.com
+[19-Oct-2024 15:31:13 Europe/Berlin] Attempting to reset password. Verification code: 196776, New password length: 0
+[19-Oct-2024 15:31:13 Europe/Berlin] Query executed. Number of rows: 0
+[19-Oct-2024 15:31:24 Europe/Berlin] Attempting to reset password. Verification code: 126878, New password length: 0
+[19-Oct-2024 15:31:24 Europe/Berlin] Query executed. Number of rows: 1
+[19-Oct-2024 15:31:24 Europe/Berlin] User found: wilsomwong2004@gmail.com
+[19-Oct-2024 15:31:29 Europe/Berlin] Attempting to reset password. Verification code: 126878, New password length: 3
+[19-Oct-2024 15:31:29 Europe/Berlin] Query executed. Number of rows: 0
+[19-Oct-2024 15:31:35 Europe/Berlin] Attempting to reset password. Verification code: 126878, New password length: 3
+[19-Oct-2024 15:31:35 Europe/Berlin] Query executed. Number of rows: 0
+[19-Oct-2024 15:33:22 Europe/Berlin] Attempting to reset password for email: wilsomwong2004@gmail.com
+[19-Oct-2024 15:33:34 Europe/Berlin] Attempting to reset password. Verification code: 381534, New password length: 0
+[19-Oct-2024 15:33:34 Europe/Berlin] Query executed. Number of rows: 1
+[19-Oct-2024 15:33:34 Europe/Berlin] User found: wilsomwong2004@gmail.com
+[19-Oct-2024 15:33:37 Europe/Berlin] Attempting to reset password. Verification code: 381534, New password length: 4
+[19-Oct-2024 15:33:37 Europe/Berlin] Query executed. Number of rows: 1
+[19-Oct-2024 15:33:37 Europe/Berlin] User found: wilsomwong2004@gmail.com
+[19-Oct-2024 15:34:29 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => checkUser
+)
+
+[19-Oct-2024 15:34:32 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => login
+    [password] => 1234
+)
+
+[19-Oct-2024 15:34:32 Europe/Berlin] Login successful for user: Wilsomwong
+[19-Oct-2024 15:34:57 Europe/Berlin] Attempting to reset password for email: wilsomwong2004@gmail.com
+[19-Oct-2024 15:35:53 Europe/Berlin] Attempting to reset password for email: wilsomwong2004@gmail.com
+[19-Oct-2024 15:36:27 Europe/Berlin] Attempting to reset password for email: wilsomwong2004@gmail.com
+[19-Oct-2024 15:36:56 Europe/Berlin] User found: wilsomwong2004@gmail.com
+[19-Oct-2024 15:37:20 Europe/Berlin] User found: wilsomwong2004@gmail.com
+[19-Oct-2024 15:42:15 Europe/Berlin] Attempting to reset password for email: wilsomwong2004@gmail.com
+[19-Oct-2024 15:42:37 Europe/Berlin] User found: wilsomwong2004@gmail.com
+[19-Oct-2024 15:42:40 Europe/Berlin] User found: wilsomwong2004@gmail.com
+[19-Oct-2024 15:44:09 Europe/Berlin] Attempting to reset password for email: wilsomwong2004@gmail.com
+[19-Oct-2024 15:44:30 Europe/Berlin] User found: wilsomwong2004@gmail.com
+[19-Oct-2024 15:44:35 Europe/Berlin] User found: wilsomwong2004@gmail.com
+[19-Oct-2024 15:52:34 Europe/Berlin] Attempting to reset password for email: wilsomwong2004@gmail.com
+[19-Oct-2024 15:54:45 Europe/Berlin] Attempting to reset password for email: wilsomwong2004@gmail.com
+[19-Oct-2024 15:55:16 Europe/Berlin] Attempting to reset password for email: wilsomwong2004@gmail.com
+[19-Oct-2024 15:55:31 Europe/Berlin] Attempting to reset password for email: wilsomwong2004@gmail.com

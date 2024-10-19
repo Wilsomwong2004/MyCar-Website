@@ -1,15 +1,17 @@
 const loginForm = document.getElementById('login-form');
 const userInput = document.getElementById('user-input');
-let passwordInput = document.getElementById('password-input');
+const passwordInput = document.getElementById('password-input');
 const signInButton = document.getElementById('sign-in-button');
 const forgotPasswordModal = document.getElementById('forgot-password-modal');
 const forgotPasswordLink = document.getElementById('forgot-password-link');
 const closeModal = document.querySelector('.modal .close');
+const forgotPasswordForm = document.getElementById('forgot-password-form');
 const getVerificationCodeButton = document.getElementById('get-verification-code');
-const verificationCodeInput = document.getElementById('verification-code-input');
+const verificationForm = document.getElementById('vertification-form');
 const submitVerificationButton = document.getElementById('submit-verification');
 const countdownElement = document.getElementById('countdown');
 const resetEmailInput = document.getElementById('reset-email-input');
+const verificationCodeInput = document.getElementById('verification-code-input');
 const verificationError = document.getElementById('verification-error');
 const newPasswordContainer = document.getElementById('new-password-container');
 const resetEmailDisplay = document.getElementById('reset-email-display');
@@ -176,10 +178,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    function generateVerificationCode() {
-        return Math.floor(100000 + Math.random() * 900000).toString();
-    }
-
     function startCountdown() {
         let timeLeft = 60;
         countdownElement.style.display = 'block';
@@ -200,11 +198,8 @@ document.addEventListener('DOMContentLoaded', function () {
     function resendVerificationCode(e) {
         e.preventDefault();
         clearInterval(countdownTimer);
-        getVerificationCodeButton.style.display = 'none';
+        getVerificationCodeButton.style.display = 'block';
         countdownElement.style.display = 'none';
-        verificationCode = generateVerificationCode();
-        console.log('New verification code:', verificationCode); // In a real app, this would be sent to the user's email
-        startCountdown();
     }
 
     function resetModalState() {
@@ -218,49 +213,108 @@ document.addEventListener('DOMContentLoaded', function () {
         verificationCodeInput.value = '';
         newPasswordInput.value = '';
         verificationError.style.display = 'none';
-        verificationCode = '';
     }
 
-    getVerificationCodeButton.onclick = function () {
+    forgotPasswordForm.onsubmit = function (e) {
+        e.preventDefault();
         const email = resetEmailInput.value.trim();
         if (!email || !isValidEmail(email)) {
             alert('Please enter a valid email address.');
             return;
         }
 
-        verificationCode = generateVerificationCode();
-        console.log('Verification code:', verificationCode); // In a real app, this would be sent to the user's email
-        verificationContainer.style.display = 'block';
-        startCountdown();
+        const formData = new FormData();
+        formData.append('forgot-email', email);
+
+        fetch('index.php', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    verificationContainer.style.display = 'block';
+                    startCountdown();
+                } else {
+                    alert(data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Fetch error:', error);
+                alert('An error occurred. Please try again later.');
+            });
     }
 
-    submitVerificationButton.onclick = function () {
-        if (verificationCodeInput.value === verificationCode) {
-            verificationError.style.display = 'none';
-            verificationContainer.style.display = 'none';
-            newPasswordContainer.style.display = 'block';
-            resetEmailDisplay.textContent = `Email: ${resetEmailInput.value}`;
-            resetEmailContainer.style.display = 'none';
-            clearInterval(countdownTimer);
-            countdownElement.style.display = 'none';
-        } else {
-            verificationError.textContent = 'Verification code you entered is invalid. Please try again!';
+    verificationForm.onsubmit = function (e) {
+        e.preventDefault();
+        const code = verificationCodeInput.value.trim();
+        if (!code) {
+            verificationError.textContent = 'Please enter the verification code.';
             verificationError.style.display = 'block';
-            verificationError.style.fontSize = '12px';
-            verificationError.style.textAlign = 'center';
-            verificationError.style.marginBottom = '14px';
+            return;
         }
+
+        const formData = new FormData();
+        formData.append('verification-code', code);
+        formData.append('new-password', ''); // Temporary placeholder
+
+        fetch('index.php', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    verificationContainer.style.display = 'none';
+                    newPasswordContainer.style.display = 'block';
+                    // resetEmailDisplay.textContent = `Email: ${resetEmailInput.value}`;
+                    clearInterval(countdownTimer);
+                    countdownElement.style.display = 'none';
+                } else {
+                    verificationError.textContent = data.message;
+                    verificationError.style.display = 'block';
+                }
+            })
+            .catch(error => {
+                console.error('Fetch error:', error);
+                verificationError.textContent = 'An error occurred. Please try again later.';
+                verificationError.style.display = 'block';
+            });
     }
 
     submitNewPasswordButton.onclick = function () {
         const newPassword = newPasswordInput.value.trim();
-        if (newPassword) {
-            // Here you would typically send the new password to your server
-            alert('Password reset successfully!');
-            forgotPasswordModal.style.display = 'none';
-            resetModalState();
-        } else {
+        const verificationCode = verificationCodeInput.value.trim();
+
+        console.log("Sending verification code:", verificationCode);
+        console.log("New password length:", newPassword.length);
+
+        if (!newPassword) {
             alert('Please enter a new password.');
+            return;
         }
+
+        const formData = new FormData();
+        formData.append('verification-code', verificationCode);
+        formData.append('new-password', newPassword);
+
+        fetch('index.php', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    alert(data.message);
+                    forgotPasswordModal.style.display = 'none';
+                    resetModalState();
+                } else {
+                    alert(data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Fetch error:', error);
+                alert('An error occurred. Please try again later.');
+            });
     }
 });

@@ -90,27 +90,25 @@ try {
             
             if ($result && mysqli_num_rows($result) == 1) {
                 $user = mysqli_fetch_assoc($result);
-                // Generate a random verification code
-                $verification_code = bin2hex(random_bytes(16));
+                // Generate 6-digit verification code
+                $verification_code = rand(100000, 999999);
+                
                 // Insert the verification code into the database
                 $sql = "UPDATE user_account_data SET user_verification_code = '$verification_code' WHERE user_email = '$forgot_email'";
                 mysqli_query($conn, $sql);
-                // Send the verification code to the user's email
-                $to = $user['user_email'];
-                $subject = "MyCar Password Reset Verification Code";
-                $message = "Your verification code for resetting your password is: $verification_code";
-                $headers = "From: MyCar Support <<EMAIL>>";
-                mail($to, $subject, $message, $headers);
-                // Display the email and verification code to the user
+                
                 $reset_message = "An email has been sent to $forgot_email with a verification code. Please enter the code below to reset your password.";
-                echo json_encode(['status' => 'success', 'message' => $reset_message]);
+                outputJSON(['status' => 'success', 'message' => $reset_message]);
+
+                $verification_message = "Your verification code is: ";
+                outputJSON(['status' => 'success', 'message' => $verification_message]);
             } else {
                 $reset_message = "Invalid email. Please enter a valid email to reset your password.";
-                echo json_encode(['status' => 'error', 'message' => $reset_message]);
+                outputJSON(['status' => 'error', 'message' => $reset_message]);
             }
         } else {
             $reset_message = "Invalid email. Please enter a valid email to reset your password.";
-            echo json_encode(['status' => 'error', 'message' => $reset_message]);
+            outputJSON(['status' => 'error', 'message' => $reset_message]);
         }
         exit();
     }
@@ -120,28 +118,41 @@ try {
         $verification_code = $_POST['verification-code'];
         $new_password = $_POST['new-password'];
         
-        error_log("Attempting to reset password with verification code: $verification_code");
+        // error_log("Attempting to reset password. Verification code: $verification_code, New password length: " . strlen($new_password));
         
         // Check if the verification code is valid
-        $sql = "SELECT * FROM user_account_data WHERE user_verification_code = '$verification_code'";
-        $result = mysqli_query($conn, $sql);
+        $sql = "SELECT * FROM user_account_data WHERE user_verification_code = ?";
+        $stmt = mysqli_prepare($conn, $sql);
+        mysqli_stmt_bind_param($stmt, "s", $verification_code);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+        
+        // error_log("Query executed. Number of rows: " . mysqli_num_rows($result));
         
         if ($result && mysqli_num_rows($result) == 1) {
             $user = mysqli_fetch_assoc($result);
-            // Update the user's password in the database
-            $hashed_password = password_hash($new_password, PASSWORD_DEFAULT);
-            $sql = "UPDATE user_account_data SET user_password = '$hashed_password', user_verification_code = NULL WHERE user_email = '$user[user_email]'";
-            mysqli_query($conn, $sql);
-            // Display a success message to the user
-            $reset_message = "Your password has been reset. You can now log in with your new password.";
-            echo json_encode(['status' => 'success', 'message' => $reset_message]);
+            // error_log("User found: " . $user['user_email']);
+            
+            $sql = "UPDATE user_account_data SET user_password = ? WHERE user_email = ?";
+            $stmt = mysqli_prepare($conn, $sql);
+            mysqli_stmt_bind_param($stmt, "ss", $new_password, $user['user_email']);
+            mysqli_stmt_execute($stmt);
+            
+            $reset_message = "Password reset successful. You can now log in with your new password.";
+            outputJSON(['status' => 'success', 'message' => $reset_message]);
+
+            // $sql = "UPDATE user_account_data SET user_verification_code = NULL WHERE user_email = ?";
+            // $stmt = mysqli_prepare($conn, $sql);
+            // mysqli_stmt_bind_param($stmt, "s", $user['user_email']);
+
+            echo "<script>alert('$reset_message');</script>";
         } else {
             $reset_message = "Invalid verification code. Please try again.";
-            echo json_encode(['status' => 'error', 'message' => $reset_message]);
+            outputJSON(['status' => 'error', 'message' => $reset_message]);
+            echo "<script>alert('$reset_message');</script>";
         }
         exit();
     }
-
 } catch (Exception $e) {
     error_log("Caught exception: " . $e->getMessage());
     if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
@@ -194,18 +205,22 @@ try {
             <span class="close">&times;</span>
             <h2>Reset Password</h2>
             <div id="reset-email-container">
-                <input type="email" id="reset-email-input" placeholder="Enter your email">
-                <button id="get-verification-code">Get Verification Code</button>
+                <form id="forgot-password-form" method="post">
+                    <input type="email" name="forgot-email" id="reset-email-input" placeholder="Enter your email">
+                    <button type="submit" id="get-verification-code">Get Verification Code</button>
+                </form>
             </div>
             <div id="verification-container" style="display: none;">
-                <input type="text" id="verification-code-input" placeholder="Enter verification code">
-                <div id="verification-error" style="color: red; display: none;"></div>
-                <button id="submit-verification">Submit</button>
+                <form id="vertification-form" method="post">
+                    <input type="text" name="verification-code" id="verification-code-input" placeholder="Enter verification code">
+                    <div id="verification-error" style="color: red; display: none;"></div>
+                    <button type="submit" id="submit-verification">Submit</button>
+                </form>
             </div>
             <div id="new-password-container" style="display: none;">
                 <p id="reset-email-display"></p>
-                <input type="password" id="new-password-input" placeholder="Enter new password">
-                <button id="submit-new-password">Reset Password</button>
+                <input type="password" name="new-password" id="new-password-input" placeholder="Enter new password">
+                <button type="submit" id="submit-new-password">Reset Password</button>
             </div>
             <div id="countdown" style="display: none;"></div>
         </div>
