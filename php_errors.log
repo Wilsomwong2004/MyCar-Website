@@ -310,3 +310,18 @@ Stack trace:
 
 [20-Oct-2024 10:14:54 Europe/Berlin] PHP Warning:  Undefined array key "username" in C:\xampp\htdocs\MyCar_Website\index.php on line 66
 [20-Oct-2024 10:14:54 Europe/Berlin] Login successful for user: 
+[20-Oct-2024 10:18:55 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => checkUser
+)
+
+[20-Oct-2024 10:18:56 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => login
+    [password] => 20040727
+)
+
+[20-Oct-2024 10:18:56 Europe/Berlin] PHP Warning:  Undefined array key "username" in C:\xampp\htdocs\MyCar_Website\index.php on line 66
+[20-Oct-2024 10:18:56 Europe/Berlin] Login successful for user: 

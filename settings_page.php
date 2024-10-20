@@ -67,7 +67,7 @@
         <div class="log-out-button">Log Out <i class="fas fa-sign-out-alt"></i></div>
 
         <div class="profile-section">
-            <img src="assets/css/pic/Unknown_acc-removebg.png" alt="Profile Picture" class="profile-pic">
+            <img src="<?php echo $_SESSION['user_profile_pic']; ?>" alt="Profile Picture" class="profile-pic">
             <div class="profile-info">
                 <h2><?php echo $_SESSION['user_username']; ?></h2>
                 <a href="#" class="change-photo">Change profile photo</a>
