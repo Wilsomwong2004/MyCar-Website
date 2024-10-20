@@ -509,3 +509,34 @@ Stack trace:
     [password] => 0000
 )
 
+[20-Oct-2024 21:48:59 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => admin
+    [action] => checkUser
+)
+
+[20-Oct-2024 21:49:04 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => admin
+    [action] => login
+    [password] => 0000
+)
+
+[20-Oct-2024 21:55:23 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'user_id' in 'where clause' in C:\xampp\htdocs\MyCar_Website\update-user.php:17
+Stack trace:
+#0 C:\xampp\htdocs\MyCar_Website\update-user.php(17): mysqli_prepare(Object(mysqli), 'UPDATE user_acc...')
+#1 {main}
+  thrown in C:\xampp\htdocs\MyCar_Website\update-user.php on line 17
+[20-Oct-2024 22:01:33 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => admin
+    [action] => checkUser
+)
+
+[20-Oct-2024 22:01:37 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => admin
+    [action] => login
+    [password] => 0000
+)
+
