@@ -162,6 +162,9 @@ html.dark-mode .nav-links {
     width: 48px;
     height: 48px;
     margin-top: 3px;
+    border-radius: 50%;
+    object-fit: cover;
+    overflow: hidden;
 }
 
 .profile-dropdown {
