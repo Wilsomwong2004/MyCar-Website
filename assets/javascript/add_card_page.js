@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         loading_text[0].innerHTML = "Almost done... Take a coffee break before we're finished.";
                     }, 6000);
                     setTimeout(() => {
-                        loading_text[0].innerHTML = "Done saving. Redirecting to the main page...";
+                        loading_text[0].innerHTML = "Done saving. Redirecting to the back page...";
                     }, 10000);
 
                     // Hide the loading overlay and redirect after a delay

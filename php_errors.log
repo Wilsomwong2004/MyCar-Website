@@ -184,3 +184,30 @@
     [user_id] => 1
 )
 
+[20-Oct-2024 08:42:42 Europe/Berlin] Received card data: Array
+(
+    [bank_name] => Maybank
+    [number_on_card] => 1234567891234567
+    [name_on_card] => Wilsomwong
+    [card_expiration_date] => 12/29
+    [card_cvv_number] => 122
+    [card_password] => 20040727
+    [user_id] => 1
+)
+
+[20-Oct-2024 08:42:42 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: The number of variables must match the number of parameters in the prepared statement in C:\xampp\htdocs\MyCar_Website\insert_card_details.php:39
+Stack trace:
+#0 C:\xampp\htdocs\MyCar_Website\insert_card_details.php(39): mysqli_stmt_bind_param(Object(mysqli_stmt), 'isssss', '1', 'Maybank', '123456789123456...', 'Wilsomwong', '12/29', '122')
+#1 {main}
+  thrown in C:\xampp\htdocs\MyCar_Website\insert_card_details.php on line 39
+[20-Oct-2024 08:45:49 Europe/Berlin] Received card data: Array
+(
+    [bank_name] => Maybank
+    [number_on_card] => 1234567891234567
+    [name_on_card] => Wilsomwong
+    [card_expiration_date] => 12/29
+    [card_cvv_number] => 122
+    [card_password] => 20040727
+    [user_id] => 1
+)
+

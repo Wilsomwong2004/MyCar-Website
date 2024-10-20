@@ -17,6 +17,11 @@ try {
     $card_password = $_POST['card_password'] ?? '';
     $user_id = $_POST['user_id'] ?? '';
 
+    // Validate input data
+    if (empty($bank_name) || empty($card_number) || empty($card_name) || empty($card_expdate) || empty($card_cvv) || empty($card_password) || empty($user_id)) {
+        throw new Exception("All fields are required");
+    }
+
     // Log the received data (remove this in production)
     error_log("Received card data: " . print_r($_POST, true));
 
@@ -36,7 +41,7 @@ try {
     }
 
     // Bind parameters and execute
-    mysqli_stmt_bind_param($stmt, "isssss", $user_id, $bank_name, $card_number, $card_name, $card_expdate, $card_cvv);
+    mysqli_stmt_bind_param($stmt, "sssssss", $user_id, $bank_name, $card_number, $card_name, $card_expdate, $card_cvv, $card_password);
 
     if (mysqli_stmt_execute($stmt)) {
         echo json_encode(['status' => 'success', 'message' => 'Card details added successfully']);
@@ -51,7 +56,7 @@ try {
     error_log("Error in insert_card_details.php: " . $e->getMessage());
     echo json_encode([
         'status' => 'error',
-        'message' => $e->getMessage()
+        'message' => 'An error occurred while processing your request.'
     ]);
 }
 ?>
