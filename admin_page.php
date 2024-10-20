@@ -14,19 +14,20 @@
             <p class="navbar-title">Admin Page</p>
         </div>
         <div class="button">
-            <i class="fas fa-sign-out-alt"></i>
+            <i id="logout-icon" class="fas fa-sign-out-alt"></i>
         </div>
     </nav>
     <div class="container">
         <aside class="sidebar">
+            <h2 class="sidebar-title">Menu</h2>
             <nav>
-                <div class="menu-item active">Manage Users</div>
-                <div class="menu-item">Manage Payment</div>
+                <div class="menu-item active"><i class="fas fa-users"></i> Manage Users</div>
+                <div class="menu-item"><i class="far fa-credit-card"></i> Manage Payment</div>
             </nav>
         </aside>
         <main class="main-content">
             <section>
-                <h2>Manage Users</h2>
+                <h2 class="section-title">Manage Users</h2>
                 <div class="search-bar">
                     <input type="text" placeholder="Search User">
                 </div>

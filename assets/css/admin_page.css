@@ -5,7 +5,6 @@ body {
     margin: 0;
     font-size: 16px;
     background-color: #f4f5f5;
-    overflow: hidden;
 }
 
 .navbar {
@@ -51,14 +50,27 @@ body {
 
 .sidebar {
     width: 250px;
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border-right: 1px solid #dedede;
+}
+
+.sidebar i {
+    margin-right: 8px;
+}
+
+.sidebar-title {
+    margin-left: 25px;
 }
 
 .main-content {
     flex-grow: 1;
     padding: 20px;
+    background-color: #ffffff;
+}
+
+.section-title {
+    margin-left: 4px;
 }
 
 .header {
@@ -85,7 +97,7 @@ body {
 }
 
 .menu-item {
-    padding: 10px;
+    padding: 13px 25px;
     cursor: pointer;
 }
 
@@ -129,7 +141,7 @@ th {
 }
 
 .btn-edit {
-    background-color: #4CAF50;
+    background-color: #dcaf48;
     color: white;
 }
 
@@ -165,7 +177,7 @@ th {
 }
 
 .btn-submit {
-    background-color: #4CAF50;
+    background-color: #dcaf48;
     color: white;
 }
 
@@ -186,14 +198,19 @@ th {
 }
 
 .search-bar {
+    display: flex;
     margin-bottom: 20px;
 }
 
 .search-bar input {
     width: 98%;
     padding: 10px 8px;
-    border: 1px solid white;
+    border: 1px solid rgb(202, 202, 202);
     border-radius: 10px;
+}
+
+.search-bar input::placeholder {
+    margin-left: 4px;
 }
 
 .search-bar input:focus {
