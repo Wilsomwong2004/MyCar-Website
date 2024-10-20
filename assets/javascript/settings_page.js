@@ -502,8 +502,34 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         submitButton.addEventListener('click', function () {
-            alert('Profile photo changed successfully');
-            closePopup();
+            // Convert the canvas to a Blob
+            previewCanvas.toBlob(function (blob) {
+                // Create a FormData object and append the blob
+                const formData = new FormData();
+                formData.append('photo', blob, 'profile.jpg');
+
+                // Send the FormData to the server
+                fetch('update_profile_photo.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.status === 'success') {
+                            // Update the profile picture on the page
+                            document.querySelector('.profile-pic').src = data.new_photo_url;
+                            document.getElementById('profile-pic').src = data.new_photo_url;
+                            alert('Profile photo changed successfully');
+                            closePopup();
+                        } else {
+                            alert('Error: ' + data.message);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('An error occurred while updating the profile photo');
+                    });
+            }, 'image/jpeg', 0.8);
         });
 
         document.getElementById('close-photo').addEventListener('click', closePopup);
