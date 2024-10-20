@@ -32,42 +32,53 @@ try {
             $userInput = $_POST['userInput'] ?? '';
 
             if ($action == 'checkUser') {
-                // Check if user exists
-                $sql = "SELECT * FROM user_account_data WHERE user_email = ? OR user_username = ?";
-                $stmt = mysqli_prepare($conn, $sql);
-                if (!$stmt) {
-                    throw new Exception("Prepare failed: " . mysqli_error($conn));
-                }
-                mysqli_stmt_bind_param($stmt, "ss", $userInput, $userInput);
-                mysqli_stmt_execute($stmt);
-                $result = mysqli_stmt_get_result($stmt);
-
-                if (mysqli_num_rows($result) == 1) {
+                // Check if user is admin
+                if ($userInput === 'admin') {
                     outputJSON(['status' => 'success', 'message' => 'User found']);
                 } else {
-                    outputJSON(['status' => 'error', 'message' => 'User not found']);
+                    // Check if user exists in database
+                    $sql = "SELECT * FROM user_account_data WHERE user_email = ? OR user_username = ?";
+                    $stmt = mysqli_prepare($conn, $sql);
+                    if (!$stmt) {
+                        throw new Exception("Prepare failed: " . mysqli_error($conn));
+                    }
+                    mysqli_stmt_bind_param($stmt, "ss", $userInput, $userInput);
+                    mysqli_stmt_execute($stmt);
+                    $result = mysqli_stmt_get_result($stmt);
+
+                    if (mysqli_num_rows($result) == 1) {
+                        outputJSON(['status' => 'success', 'message' => 'User found']);
+                    } else {
+                        outputJSON(['status' => 'error', 'message' => 'User not found']);
+                    }
                 }
             } elseif ($action == 'login') {
                 $password = $_POST['password'] ?? '';
 
-                // Perform login
-                $sql = "SELECT * FROM user_account_data WHERE (user_email = ? OR user_username = ?) AND user_password = ?";
-                $stmt = mysqli_prepare($conn, $sql);
-                mysqli_stmt_bind_param($stmt, "sss", $userInput, $userInput, $password);
-                mysqli_stmt_execute($stmt);
-                $result = mysqli_stmt_get_result($stmt);
-
-                if ($result && mysqli_num_rows($result) == 1) {
-                    $user = mysqli_fetch_assoc($result);
-                    $_SESSION['user_email'] = $user['user_email'];
-                    $_SESSION['user_username'] = $user['user_username'];  // Make sure 'username' matches your database column name
-                    $_SESSION['user_profile_pic'] = $user['user_profile_pic'];
-    
-                    error_log("Login successful for user: " . $user['username']);
-                    outputJSON(['status' => 'success', 'message' => 'Login successful']);
+                // Check for admin login
+                if ($userInput === 'admin' && $password === '0000') {
+                    $_SESSION['admin'] = true;
+                    outputJSON(['status' => 'success', 'message' => 'Admin login successful', 'redirect' => 'admin_page.php']);
                 } else {
-                    error_log("Login failed: Invalid credentials for user: $userInput");
-                    outputJSON(['status' => 'error', 'message' => 'Invalid username/email or password']);
+                    // Perform regular user login
+                    $sql = "SELECT * FROM user_account_data WHERE (user_email = ? OR user_username = ?) AND user_password = ?";
+                    $stmt = mysqli_prepare($conn, $sql);
+                    mysqli_stmt_bind_param($stmt, "sss", $userInput, $userInput, $password);
+                    mysqli_stmt_execute($stmt);
+                    $result = mysqli_stmt_get_result($stmt);
+
+                    if ($result && mysqli_num_rows($result) == 1) {
+                        $user = mysqli_fetch_assoc($result);
+                        $_SESSION['user_email'] = $user['user_email'];
+                        $_SESSION['user_username'] = $user['user_username'];
+                        $_SESSION['user_profile_pic'] = $user['user_profile_pic'];
+        
+                        error_log("Login successful for user: " . $user['username']);
+                        outputJSON(['status' => 'success', 'message' => 'Login successful']);
+                    } else {
+                        error_log("Login failed: Invalid credentials for user: $userInput");
+                        outputJSON(['status' => 'error', 'message' => 'Invalid username/email or password']);
+                    }
                 }
             } else {
                 outputJSON(['status' => 'error', 'message' => 'Invalid action']);
@@ -76,8 +87,6 @@ try {
             outputJSON(['status' => 'error', 'message' => 'Invalid request method']);
         }
     }
-
-    
 
     // Forgot password validation
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['forgot-email'])) {

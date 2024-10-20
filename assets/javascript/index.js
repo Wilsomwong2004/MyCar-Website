@@ -1,87 +1,57 @@
-const loginForm = document.getElementById('login-form');
-const userInput = document.getElementById('user-input');
-const passwordInput = document.getElementById('password-input');
-const signInButton = document.getElementById('sign-in-button');
-const forgotPasswordModal = document.getElementById('forgot-password-modal');
-const forgotPasswordLink = document.getElementById('forgot-password-link');
-const closeModal = document.querySelector('.modal .close');
-const forgotPasswordForm = document.getElementById('forgot-password-form');
-const getVerificationCodeButton = document.getElementById('get-verification-code');
-const verificationForm = document.getElementById('vertification-form');
-const submitVerificationButton = document.getElementById('submit-verification');
-const countdownElement = document.getElementById('countdown');
-const resetEmailInput = document.getElementById('reset-email-input');
-const verificationCodeInput = document.getElementById('verification-code-input');
-const verificationError = document.getElementById('verification-error');
-const newPasswordContainer = document.getElementById('new-password-container');
-const resetEmailDisplay = document.getElementById('reset-email-display');
-const newPasswordInput = document.getElementById('new-password-input');
-const submitNewPasswordButton = document.getElementById('submit-new-password');
-const resetEmailContainer = document.getElementById('reset-email-container');
-const verificationContainer = document.getElementById('verification-container');
-
-let verificationCode = '';
-let countdownTimer;
-let expiryTimer;
-
-// Create error message elements
-const userError = document.getElementById('user-error');
-const passwordError = document.getElementById('password-error');
-
-[userError, passwordError].forEach(error => {
-    error.style.color = 'red';
-    error.style.fontSize = '12px';
-    error.style.marginTop = '5px';
-    error.style.marginBottom = '5px';
-    error.style.display = 'none';
-});
-
-userInput.parentNode.insertBefore(userError, userInput.nextSibling);
-passwordInput.parentNode.insertBefore(passwordError, passwordInput.nextSibling);
-
-
 document.addEventListener('DOMContentLoaded', function () {
-    // Function to validate email format
+    const loginForm = document.getElementById('login-form');
+    const userInput = document.getElementById('user-input');
+    const passwordInput = document.getElementById('password-input');
+    const signInButton = document.getElementById('sign-in-button');
+    const forgotPasswordModal = document.getElementById('forgot-password-modal');
+    const forgotPasswordLink = document.getElementById('forgot-password-link');
+    const closeModal = document.querySelector('.modal .close');
+    const forgotPasswordForm = document.getElementById('forgot-password-form');
+    const getVerificationCodeButton = document.getElementById('get-verification-code');
+    const verificationForm = document.getElementById('vertification-form');
+    const submitVerificationButton = document.getElementById('submit-verification');
+    const countdownElement = document.getElementById('countdown');
+    const resetEmailInput = document.getElementById('reset-email-input');
+    const verificationCodeInput = document.getElementById('verification-code-input');
+    const verificationError = document.getElementById('verification-error');
+    const newPasswordContainer = document.getElementById('new-password-container');
+    const resetEmailDisplay = document.getElementById('reset-email-display');
+    const newPasswordInput = document.getElementById('new-password-input');
+    const submitNewPasswordButton = document.getElementById('submit-new-password');
+    const resetEmailContainer = document.getElementById('reset-email-container');
+    const verificationContainer = document.getElementById('verification-container');
+    const userError = document.getElementById('user-error');
+    const passwordError = document.getElementById('password-error');
+
+    let verificationCode = '';
+    let countdownTimer;
+    let expiryTimer;
+    let isPasswordVisible = false;
+
+    [userError, passwordError].forEach(error => {
+        error.style.color = 'red';
+        error.style.fontSize = '12px';
+        error.style.marginTop = '5px';
+        error.style.marginBottom = '5px';
+        error.style.display = 'none';
+    });
+
     function isValidEmail(email) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email);
     }
 
-    // Function to validate username format
     function isValidUsername(username) {
-        // This is a simple example. Adjust the regex based on your username requirements
         const usernameRegex = /^[a-zA-Z0-9_]{3,20}$/;
         return usernameRegex.test(username);
     }
 
-    // Function to check if password is entered
-    function isPasswordEntered() {
-        return passwordInput.value.trim() !== '';
-    }
-
-    // Mock function to check if credentials are correct (replace with actual authentication logic)
-    function areCredentialsCorrect(user, password) {
-        // This is a placeholder. In a real app, you'd check against a server or secure storage
-        return password === 'correctpassword';
-    }
-
-    const loginForm = document.getElementById('login-form');
-    const userInput = document.getElementById('user-input');
-    const passwordInput = document.getElementById('password-input');
-    const signInButton = document.getElementById('sign-in-button');
-    const userError = document.getElementById('user-error');
-    const passwordError = document.getElementById('password-error');
-
-    let isPasswordVisible = false;
-
-    // Handle submitting the login form
     loginForm.addEventListener('submit', function (e) {
         e.preventDefault();
 
         const userValue = userInput.value.trim();
         const passwordValue = passwordInput.value.trim();
 
-        // Clear previous error messages
         userError.textContent = '';
         passwordError.textContent = '';
 
@@ -94,10 +64,8 @@ document.addEventListener('DOMContentLoaded', function () {
         formData.append('userInput', userValue);
 
         if (!isPasswordVisible) {
-            // First step: Check if user exists
             formData.append('action', 'checkUser');
         } else {
-            // Second step: Attempt login with password
             if (!passwordValue) {
                 passwordError.textContent = 'Please enter your password.';
                 return;
@@ -117,16 +85,19 @@ document.addEventListener('DOMContentLoaded', function () {
             .then(data => {
                 if (data.status === 'success') {
                     if (!isPasswordVisible) {
-                        // User exists, show password field
                         passwordInput.style.display = 'block';
                         isPasswordVisible = true;
                         signInButton.textContent = 'Sign in';
                     } else {
-                        // Password validated, redirect to main page
-                        window.location.href = 'main_page.php';
+                        if (data.redirect) {
+                            // Redirect to admin page
+                            window.location.href = data.redirect;
+                        } else {
+                            // Regular user login successful
+                            window.location.href = 'main_page.php';
+                        }
                     }
                 } else {
-                    // Handle login failure
                     const errorMessage = data.message || 'An error occurred. Please try again.';
                     if (!isPasswordVisible) {
                         userError.textContent = errorMessage;
@@ -154,11 +125,6 @@ document.addEventListener('DOMContentLoaded', function () {
     passwordInput.addEventListener('input', () => {
         passwordError.style.display = 'none';
     });
-
-    // Update placeholder and labels
-    if (userInput) {
-        userInput.placeholder = 'Enter username or email';
-    }
 
     // Forgot password functionality
     forgotPasswordLink.onclick = function (e) {
@@ -268,7 +234,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (data.status === 'success') {
                     verificationContainer.style.display = 'none';
                     newPasswordContainer.style.display = 'block';
-                    // resetEmailDisplay.textContent = `Email: ${resetEmailInput.value}`;
                     clearInterval(countdownTimer);
                     countdownElement.style.display = 'none';
                 } else {
@@ -286,9 +251,6 @@ document.addEventListener('DOMContentLoaded', function () {
     submitNewPasswordButton.onclick = function () {
         const newPassword = newPasswordInput.value.trim();
         const verificationCode = verificationCodeInput.value.trim();
-
-        console.log("Sending verification code:", verificationCode);
-        console.log("New password length:", newPassword.length);
 
         if (!newPassword) {
             alert('Please enter a new password.');
