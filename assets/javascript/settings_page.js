@@ -553,8 +553,26 @@ document.addEventListener('DOMContentLoaded', function () {
             </div>
         `);
         document.getElementById('confirm-delete').addEventListener('click', function () {
-            // Add account deletion logic here
-            alert('Account deleted successfully');
+            // Send request to delete account
+            fetch('delete_account.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        alert('Account deleted successfully');
+                        window.location.href = 'index.php'; // Redirect to index.php
+                    } else {
+                        alert('Error deleting account: ' + data.message);
+                    }
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                    alert('An error occurred while deleting the account');
+                });
             closePopup();
         });
         document.getElementById('cancel-delete').addEventListener('click', closePopup);
