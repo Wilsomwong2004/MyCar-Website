@@ -317,14 +317,14 @@ document.addEventListener('DOMContentLoaded', function () {
             </div>
         </div>
         <div id="preview-area" class="preview-area" hidden>
-            <canvas id="preview-canvas" width="220" height="300"></canvas>
+            <canvas id="preview-canvas" width="150" height="150"></canvas>
         </div>
         <div class="button-group">
             <button id="crop-photo" class="crop-btn" hidden>Crop Photo</button>
             <button id="submit-photo" class="save-btn" hidden>Save Photo</button>
             <button id="close-photo" class="close-btn">Close</button>
         </div>
-    `);
+        `);
 
         const dropArea = document.getElementById('drop-area');
         const fileInput = document.getElementById('profile-photo-upload');
@@ -493,7 +493,14 @@ document.addEventListener('DOMContentLoaded', function () {
         cropButton.addEventListener('click', function () {
             const ctx = previewCanvas.getContext('2d');
             ctx.clearRect(0, 0, previewCanvas.width, previewCanvas.height);
-            ctx.drawImage(cropCanvas, 0, 0, cropCanvas.width, cropCanvas.height, 0, 0, previewCanvas.width, previewCanvas.height);
+
+            // Draw circular crop
+            ctx.save();
+            ctx.beginPath();
+            ctx.arc(75, 75, 75, 0, Math.PI * 2);
+            ctx.clip();
+            ctx.drawImage(cropCanvas, 0, 0, cropCanvas.width, cropCanvas.height, 0, 0, 150, 150);
+            ctx.restore();
 
             cropArea.hidden = true;
             previewArea.hidden = false;
@@ -502,13 +509,10 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         submitButton.addEventListener('click', function () {
-            // Convert the canvas to a Blob
             previewCanvas.toBlob(function (blob) {
-                // Create a FormData object and append the blob
                 const formData = new FormData();
                 formData.append('photo', blob, 'profile.jpg');
 
-                // Send the FormData to the server
                 fetch('update_profile_photo.php', {
                     method: 'POST',
                     body: formData

@@ -161,6 +161,9 @@ html.dark-mode .nav-links {
     width: 48px;
     height: 48px;
     margin-top: 3px;
+    border-radius: 50%;
+    object-fit: cover;
+    overflow: hidden;
 }
 
 .profile-dropdown-miniprofile {
@@ -448,9 +451,13 @@ html.dark-mode .profile-section::after {
 }
 
 .profile-pic {
-    margin-left: 40px;
-    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    overflow: hidden;
     z-index: 2;
+    margin-left: 30px;
 }
 
 .profile-info {

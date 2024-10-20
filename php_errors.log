@@ -340,3 +340,41 @@ Stack trace:
 
 [20-Oct-2024 13:49:44 Europe/Berlin] PHP Warning:  Undefined array key "username" in C:\xampp\htdocs\MyCar_Website\index.php on line 66
 [20-Oct-2024 13:49:44 Europe/Berlin] Login successful for user: 
+[20-Oct-2024 14:00:26 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined function imagecreatefromstring() in C:\xampp\htdocs\MyCar_Website\update_profile_photo.php:43
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\MyCar_Website\update_profile_photo.php on line 43
+[20-Oct-2024 14:02:02 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => checkUser
+)
+
+[20-Oct-2024 14:02:03 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => login
+    [password] => 20040727
+)
+
+[20-Oct-2024 14:02:03 Europe/Berlin] PHP Warning:  Undefined array key "username" in C:\xampp\htdocs\MyCar_Website\index.php on line 66
+[20-Oct-2024 14:02:03 Europe/Berlin] Login successful for user: 
+[20-Oct-2024 14:02:14 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined function imagecreatefromstring() in C:\xampp\htdocs\MyCar_Website\update_profile_photo.php:43
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\MyCar_Website\update_profile_photo.php on line 43
+[20-Oct-2024 14:07:23 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => checkUser
+)
+
+[20-Oct-2024 14:07:23 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => login
+    [password] => 20040727
+)
+
+[20-Oct-2024 14:07:23 Europe/Berlin] PHP Warning:  Undefined array key "username" in C:\xampp\htdocs\MyCar_Website\index.php on line 66
+[20-Oct-2024 14:07:23 Europe/Berlin] Login successful for user: 
