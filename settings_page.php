@@ -30,7 +30,7 @@
             <a href="#" id="settings-button"><i class="fas fa-cog"></i> Settings</a>
         </div>
         <div class="profile">
-            <img src="assets/css/pic/Unknown_acc-removebg.png" alt="Profile" id="profile-pic">
+            <img src="<?php echo $_SESSION['user_profile_pic']; ?>" alt="Profile" id="profile-pic">
             <div class="header-right">
                 <button id="hamburger-menu" aria-label="Menu">
                     <span></span>
@@ -40,7 +40,7 @@
             </div>
             <div class="profile-dropdown-miniprofile" id="profile-dropdown-miniprofile">
                 <div class="profile-info-miniprofile">
-                    <img src="assets/css/pic/Unknown_acc-removebg.png" alt="Jackson Low">
+                    <img src="<?php echo $_SESSION['user_profile_pic']; ?>" alt="<?php echo $_SESSION['user_username']; ?>">
                     <div>
                         <h3><?php echo $_SESSION['user_username']; ?></h3>
                         <p><?php echo $_SESSION['user_email']; ?></p>

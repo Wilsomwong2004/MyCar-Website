@@ -61,6 +61,7 @@ try {
                     $user = mysqli_fetch_assoc($result);
                     $_SESSION['user_email'] = $user['user_email'];
                     $_SESSION['user_username'] = $user['user_username'];  // Make sure 'username' matches your database column name
+                    $_SESSION['user_profile_pic'] = $user['user_profile_pic'];
     
                     error_log("Login successful for user: " . $user['username']);
                     outputJSON(['status' => 'success', 'message' => 'Login successful']);

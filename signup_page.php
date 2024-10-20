@@ -20,8 +20,6 @@
         
         <div class="create_acc_right">
             <div class="create_acc_right_details">
-                <!-- ADD PHP HERE -->
-                <!-- <form id="createAccountForm" action=".php"> -->
                 <form id="createAccountForm" action="insert.php" method="post">
                     <h2>Create New Account</h2>
                     <p>Enter your details to sign in to the website</p>
@@ -84,7 +82,7 @@
                         <input type="radio" name="gender" value="Other"> Other
                     </div>
 
-                    <!--HYPERLINK THE TnC-->
+                    
                     <div class="agree_w_tnc_container">
                         <input class="agree_w_tnc"
                         type="checkbox"
@@ -93,8 +91,7 @@
                         placeholder="I hereby agree with the Terms & Conditions of MyCar"
                         required
                         />
-                        <p>I hereby agree with the <a href="terms_services.php">Terms & Conditions</a> of MyCar</p>
-                        <!--HYPERLINK THE TnC-->
+                        <p>I hereby agree with the <a href="terms_service.php">Terms & Conditions</a> of MyCar</p>
                     </div>
 
                     <button id="create_new_acc_btn" type="submit">Create New Account</button>

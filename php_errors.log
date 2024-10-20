@@ -211,3 +211,102 @@ Stack trace:
     [user_id] => 1
 )
 
+[20-Oct-2024 08:56:33 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => checkUser
+)
+
+[20-Oct-2024 08:56:40 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => login
+    [password] => 20040727
+)
+
+[20-Oct-2024 08:56:40 Europe/Berlin] PHP Warning:  Undefined array key "username" in C:\xampp\htdocs\MyCar_Website\index.php on line 65
+[20-Oct-2024 08:56:40 Europe/Berlin] Login successful for user: 
+[20-Oct-2024 10:04:51 Europe/Berlin] Received data: Array
+(
+    [first_user_name] => Song
+    [last_user_name] => Joe Han
+    [username] => Song Joe Han
+    [password] => 123123
+    [email] => Songjoehan@gmail.com
+    [address] => 2388, Jalan Hala Timah 4, Taman Bandar Baru Kampar,
+    [birthday] => 1222-12-12
+    [gender] => Female
+    [agree_w_tnc] => agree_w_tnc
+)
+
+[20-Oct-2024 10:05:34 Europe/Berlin] Received card data: Array
+(
+    [bank_name] => Maybank
+    [number_on_card] => 1234567891234563
+    [name_on_card] => Song Joe Han
+    [card_expiration_date] => 12/31
+    [card_cvv_number] => 422
+    [card_password] => 123123
+    [user_id] => 1
+)
+
+[20-Oct-2024 10:06:48 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Song Joe Han
+    [action] => checkUser
+)
+
+[20-Oct-2024 10:06:50 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Song Joe Han
+    [action] => login
+    [password] => 123123
+)
+
+[20-Oct-2024 10:06:50 Europe/Berlin] PHP Warning:  Undefined array key "username" in C:\xampp\htdocs\MyCar_Website\index.php on line 65
+[20-Oct-2024 10:06:50 Europe/Berlin] Login successful for user: 
+[20-Oct-2024 10:11:31 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => checkUser
+)
+
+[20-Oct-2024 10:11:34 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => login
+    [password] => 20040727
+)
+
+[20-Oct-2024 10:11:34 Europe/Berlin] PHP Warning:  Undefined array key "username" in C:\xampp\htdocs\MyCar_Website\index.php on line 66
+[20-Oct-2024 10:11:34 Europe/Berlin] Login successful for user: 
+[20-Oct-2024 10:13:52 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => checkUser
+)
+
+[20-Oct-2024 10:13:52 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => login
+    [password] => 20040727
+)
+
+[20-Oct-2024 10:13:52 Europe/Berlin] PHP Warning:  Undefined array key "username" in C:\xampp\htdocs\MyCar_Website\index.php on line 66
+[20-Oct-2024 10:13:52 Europe/Berlin] Login successful for user: 
+[20-Oct-2024 10:14:53 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => checkUser
+)
+
+[20-Oct-2024 10:14:54 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => login
+    [password] => 20040727
+)
+
+[20-Oct-2024 10:14:54 Europe/Berlin] PHP Warning:  Undefined array key "username" in C:\xampp\htdocs\MyCar_Website\index.php on line 66
+[20-Oct-2024 10:14:54 Europe/Berlin] Login successful for user: 
