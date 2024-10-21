@@ -1,9 +1,17 @@
 <?php
-    session_start();
-    if(!isset($_SESSION['user_email'])) {
-        header("Location: index.php");
-        exit();
-    }
+  error_reporting(E_ALL);
+  ini_set('display_errors', 1);
+
+  session_start();
+  if(!isset($_SESSION['user_email'])) {
+      header("Location: index.php");
+      exit();
+  }
+
+  // Use for Debugging
+  // echo "<pre>";
+  // print_r($_SESSION);
+  // echo "</pre>";
 ?>
 
 <!DOCTYPE html>
@@ -70,10 +78,10 @@
               </div>
               <div class="wallet-content">
                 <div class="wallet-user-information">
-                  <h1>Hi, Ariana.</h1>
+                  <h1>Hi, <?php echo $_SESSION['user_username']; ?>.</h1>
                   <div class="balance-info">
                     <p class="balance-label">Balance</p>
-                    <p class="balance">RM 12.43</p>
+                    <p class="balance">RM <?php echo $_SESSION['user_payment_balance'] ?></p>
                     <p class="main-balance">Main Wallet</p>
                   </div>
                   <div class="wallet-actions">
@@ -83,8 +91,8 @@
                 </div>
                 <div class="wallet-cards">
                   <div class="wallet-card">
-                    <p class="card-balance">$45,500.12</p>
-                    <p class="card-number">444 221 224 ***</p>
+                    <p class="card-balance">RM <?php echo $_SESSION['user_payment_balance'] ?></p>
+                    <p class="card-number">**** **** **** <?php echo htmlspecialchars(substr($_SESSION['user_card_number'] ?? '', -4) ?: 'N/A'); ?></p>
                   </div>
                 </div>
               </div>
@@ -93,19 +101,19 @@
                 <div class="card-details-grid">
                 <div class="card-detail-item">
                     <p class="card-detail-label">Card Holder</p>
-                    <p class="card-detail-value">Marquezz Silalahi</p>
+                    <p class="card-detail-value"><?php echo htmlspecialchars($_SESSION['user_card_name'] ?? 'N/A'); ?></p>
                     </div>
                   <div class="card-detail-item">
                     <p class="card-detail-label">Bank Name</p>
-                    <p class="card-detail-value">ABC Center Bank</p>
+                    <p class="card-detail-value"><?php echo htmlspecialchars($_SESSION['user_bank_name'] ?? 'N/A'); ?></p>
                   </div>
                   <div class="card-detail-item">
                     <p class="card-detail-label">Valid Date</p>
-                    <p class="card-detail-value">08/21</p>
+                    <p class="card-detail-value"><?php echo htmlspecialchars($_SESSION['user_card_expiry_date'] ?? 'N/A'); ?></p>
                   </div>
                   <div class="card-detail-item">
                     <p class="card-detail-label">Card Number</p>
-                    <p class="card-detail-value">**** **** **** 1234</p>
+                    <p class="card-detail-value">**** **** **** <?php echo htmlspecialchars(substr($_SESSION['user_card_number'] ?? '', -4) ?: 'N/A'); ?></p>
                   </div>
                 </div>
               </div>

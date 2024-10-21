@@ -26,7 +26,7 @@
             </nav>
         </aside>
         <main class="main-content">
-            <section id="manage-users" class="content-section">
+            <section id="manage-users" class="content-section active">
                 <h2 class="section-title">Manage Users</h2>
                 <div class="search-bar">
                     <input type="text" placeholder="Search User">
@@ -48,7 +48,7 @@
                     </table>
                 </div>
             </section>
-            <section id="manage-payment" class="content-section" style="display: none;">
+            <section id="manage-payment" class="content-section">
                 <h2 class="section-title">Manage Payment</h2>
                 <div class="search-bar">
                     <input type="text" placeholder="Search Payment">
@@ -59,9 +59,10 @@
                             <tr>
                                 <th>No</th>
                                 <th>User</th>
-                                <th>Amount</th>
-                                <th>Date</th>
-                                <th>Status</th>
+                                <th>Bank Name</th>
+                                <th>Card Number</th>
+                                <th>Balance</th>
+                                <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>

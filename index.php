@@ -72,9 +72,38 @@ try {
                         $_SESSION['user_email'] = $user['user_email'];
                         $_SESSION['user_username'] = $user['user_username'];
                         $_SESSION['user_profile_pic'] = $user['user_profile_pic'];
-        
+                    
+                        // Fetch the user's payment data by id (just id => user_id)
+                        $sql = "SELECT * FROM user_payment_data WHERE id = ?";
+                        $stmt = mysqli_prepare($conn, $sql);
+                        mysqli_stmt_bind_param($stmt, "i", $user['id']);
+                        mysqli_stmt_execute($stmt);
+                        $result = mysqli_stmt_get_result($stmt);
+                    
+                        if ($result && mysqli_num_rows($result) == 1) {
+                            $userPaymentData = mysqli_fetch_assoc($result);
+                            $_SESSION['user_payment_balance'] = $userPaymentData['user_payment_balance'];
+                            $_SESSION['user_bank_name'] = $userPaymentData['user_payment_bankname'];
+                            $_SESSION['user_card_number'] = $userPaymentData['user_payment_cardnumber'];
+                            $_SESSION['user_card_name'] = $userPaymentData['user_payment_cardname'];
+                            $_SESSION['user_card_expiry_date'] = $userPaymentData['user_payment_cardexpdate'];
+                        } else {
+                            // Handle the case where the payment data is not found
+                            $_SESSION['user_payment_balance'] = 0;
+                            $_SESSION['user_bank_name'] = '';
+                            $_SESSION['user_card_number'] = '';
+                            $_SESSION['user_card_name'] = '';
+                            $_SESSION['user_card_expiry_date'] = '';
+                        }
+
+                        error_log("User ID: " . $user['id']);
+                        error_log("SQL Query: " . $sql);
+                        error_log("Query result: " . ($result ? "Success" : "Failure"));
+                        error_log("Number of rows: " . mysqli_num_rows($result));
+                        error_log("User payment data: " . print_r($userPaymentData, true));
                         error_log("Login successful for user: " . $user['username']);
                         outputJSON(['status' => 'success', 'message' => 'Login successful']);
+
                     } else {
                         error_log("Login failed: Invalid credentials for user: $userInput");
                         outputJSON(['status' => 'error', 'message' => 'Invalid username/email or password']);

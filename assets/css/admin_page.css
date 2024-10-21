@@ -48,6 +48,20 @@ body {
     min-height: 100vh;
 }
 
+.content-section {
+    display: none;
+}
+
+.content-section.active {
+    display: block;
+}
+
+/* Ensure this rule exists for the menu items */
+.menu-item.active {
+    background-color: #e6e9ed;
+    font-weight: bold;
+}
+
 .sidebar {
     width: 250px;
     background-color: #ffffff;
@@ -102,11 +116,6 @@ body {
 
 .menu-item:hover {
     background-color: #f0f2f5;
-}
-
-.active {
-    background-color: #e6e9ed;
-    font-weight: bold;
 }
 
 table {

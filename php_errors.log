@@ -1,233 +1,102 @@
-[21-Oct-2024 03:03:03 Europe/Berlin] Received POST data: Array
+[21-Oct-2024 20:52:25 Europe/Berlin] Received POST data: Array
 (
     [userInput] => Wilsomwong
     [action] => checkUser
 )
 
-[21-Oct-2024 03:03:04 Europe/Berlin] Received POST data: Array
-(
-    [userInput] => Wilsomwong
-    [action] => login
-    [password] => 20040727
-)
-
-[21-Oct-2024 03:03:04 Europe/Berlin] PHP Warning:  Undefined array key "username" in C:\xampp\htdocs\MyCar_Website\index.php on line 76
-[21-Oct-2024 03:03:04 Europe/Berlin] Login successful for user: 
-[21-Oct-2024 03:03:59 Europe/Berlin] Received POST data: Array
-(
-    [userInput] => Wilsomwong
-    [action] => checkUser
-)
-
-[21-Oct-2024 03:04:00 Europe/Berlin] Received POST data: Array
+[21-Oct-2024 20:52:26 Europe/Berlin] Received POST data: Array
 (
     [userInput] => Wilsomwong
     [action] => login
     [password] => 20040727
 )
 
-[21-Oct-2024 03:04:00 Europe/Berlin] PHP Warning:  Undefined array key "username" in C:\xampp\htdocs\MyCar_Website\index.php on line 76
-[21-Oct-2024 03:04:00 Europe/Berlin] Login successful for user: 
-[21-Oct-2024 05:22:11 Europe/Berlin] Received POST data: Array
+[21-Oct-2024 20:52:26 Europe/Berlin] PHP Warning:  Undefined variable $userPaymentData in C:\xampp\htdocs\MyCar_Website\index.php on line 99
+[21-Oct-2024 20:52:26 Europe/Berlin] User payment data: 
+[21-Oct-2024 20:52:26 Europe/Berlin] PHP Warning:  Undefined array key "username" in C:\xampp\htdocs\MyCar_Website\index.php on line 100
+[21-Oct-2024 20:52:26 Europe/Berlin] Login successful for user: 
+[21-Oct-2024 20:57:34 Europe/Berlin] Received POST data: Array
 (
     [userInput] => Wilsomwong
     [action] => checkUser
 )
 
-[21-Oct-2024 05:22:13 Europe/Berlin] Received POST data: Array
-(
-    [userInput] => Wilsomwong
-    [action] => login
-    [password] => 20040727
-)
-
-[21-Oct-2024 05:22:13 Europe/Berlin] PHP Warning:  Undefined array key "username" in C:\xampp\htdocs\MyCar_Website\index.php on line 76
-[21-Oct-2024 05:22:13 Europe/Berlin] Login successful for user: 
-[21-Oct-2024 05:23:55 Europe/Berlin] Received POST data: Array
-(
-    [userInput] => admin
-    [action] => checkUser
-)
-
-[21-Oct-2024 05:23:58 Europe/Berlin] Received POST data: Array
-(
-    [userInput] => admin
-    [action] => login
-    [password] => 0000
-)
-
-[21-Oct-2024 05:25:36 Europe/Berlin] Received POST data: Array
-(
-    [userInput] => Wilsomwong
-    [action] => checkUser
-)
-
-[21-Oct-2024 05:25:37 Europe/Berlin] Received POST data: Array
+[21-Oct-2024 20:57:35 Europe/Berlin] Received POST data: Array
 (
     [userInput] => Wilsomwong
     [action] => login
     [password] => 20040727
 )
 
-[21-Oct-2024 05:25:37 Europe/Berlin] PHP Warning:  Undefined array key "username" in C:\xampp\htdocs\MyCar_Website\index.php on line 76
-[21-Oct-2024 05:25:37 Europe/Berlin] Login successful for user: 
-[21-Oct-2024 05:30:33 Europe/Berlin] Received POST data: Array
+[21-Oct-2024 20:57:35 Europe/Berlin] User ID: 12
+[21-Oct-2024 20:57:35 Europe/Berlin] SQL Query: SELECT * FROM user_payment_data WHERE id = ?
+[21-Oct-2024 20:57:35 Europe/Berlin] Query result: Success
+[21-Oct-2024 20:57:35 Europe/Berlin] Number of rows: 2
+[21-Oct-2024 20:57:35 Europe/Berlin] PHP Warning:  Undefined variable $userPaymentData in C:\xampp\htdocs\MyCar_Website\index.php on line 103
+[21-Oct-2024 20:57:35 Europe/Berlin] User payment data: 
+[21-Oct-2024 20:57:35 Europe/Berlin] PHP Warning:  Undefined array key "username" in C:\xampp\htdocs\MyCar_Website\index.php on line 104
+[21-Oct-2024 20:57:35 Europe/Berlin] Login successful for user: 
+[21-Oct-2024 20:58:51 Europe/Berlin] Received POST data: Array
 (
     [userInput] => Wilsomwong
     [action] => checkUser
 )
 
-[21-Oct-2024 05:30:33 Europe/Berlin] Received POST data: Array
-(
-    [userInput] => Wilsomwong
-    [action] => login
-    [password] => 20040727
-)
-
-[21-Oct-2024 05:30:33 Europe/Berlin] PHP Warning:  Undefined array key "username" in C:\xampp\htdocs\MyCar_Website\index.php on line 76
-[21-Oct-2024 05:30:33 Europe/Berlin] Login successful for user: 
-[21-Oct-2024 05:32:16 Europe/Berlin] Received POST data: Array
-(
-    [userInput] => admin
-    [action] => checkUser
-)
-
-[21-Oct-2024 05:32:23 Europe/Berlin] Received POST data: Array
-(
-    [userInput] => admin
-    [action] => login
-    [password] => 0000
-)
-
-[21-Oct-2024 05:32:35 Europe/Berlin] Received POST data: Array
-(
-    [userInput] => admin
-    [action] => checkUser
-)
-
-[21-Oct-2024 05:32:40 Europe/Berlin] Received POST data: Array
-(
-    [userInput] => admin
-    [action] => login
-    [password] => 0000
-)
-
-[21-Oct-2024 05:35:35 Europe/Berlin] Received POST data: Array
-(
-    [userInput] => Wilsomwong
-    [action] => checkUser
-)
-
-[21-Oct-2024 05:35:45 Europe/Berlin] Received POST data: Array
-(
-    [userInput] => admin
-    [action] => login
-    [password] => 0000
-)
-
-[21-Oct-2024 05:42:30 Europe/Berlin] Received POST data: Array
-(
-    [userInput] => Wilsomwong
-    [action] => checkUser
-)
-
-[21-Oct-2024 05:42:31 Europe/Berlin] Received POST data: Array
+[21-Oct-2024 20:58:52 Europe/Berlin] Received POST data: Array
 (
     [userInput] => Wilsomwong
     [action] => login
     [password] => 20040727
 )
 
-[21-Oct-2024 05:42:31 Europe/Berlin] PHP Warning:  Undefined array key "username" in C:\xampp\htdocs\MyCar_Website\index.php on line 76
-[21-Oct-2024 05:42:31 Europe/Berlin] Login successful for user: 
-[21-Oct-2024 05:48:16 Europe/Berlin] Received data: Array
+[21-Oct-2024 20:58:52 Europe/Berlin] User ID: 12
+[21-Oct-2024 20:58:52 Europe/Berlin] SQL Query: SELECT * FROM user_payment_data WHERE id = ?
+[21-Oct-2024 20:58:52 Europe/Berlin] Query result: Success
+[21-Oct-2024 20:58:52 Europe/Berlin] Number of rows: 1
+[21-Oct-2024 20:58:52 Europe/Berlin] User payment data: Array
 (
-    [first_user_name] => dsadsasadda#!@!#
-    [last_user_name] => dsada!@#@!
-    [username] => dasdsaas!@#!#$
-    [password] => DASdsa12321sdsz
-    [email] => csdsadsasdadasd@gmail.com
-    [address] => No.18 , Lorong 9
-    [birthday] => 2024-10-21
-    [gender] => Male
-    [agree_w_tnc] => agree_w_tnc
+    [payment_id] => 6
+    [id] => 12
+    [user_payment_bankname] => Maybank
+    [user_payment_cardnumber] => 2147483647
+    [user_payment_cardname] => Wilsomwong
+    [user_payment_cardexpdate] => 12/29
+    [user_payment_cvv] => 458
+    [user_payment_password] => 20040727
+    [user_payment_balance] => 0
 )
 
-[21-Oct-2024 05:53:19 Europe/Berlin] Received POST data: Array
+[21-Oct-2024 20:58:52 Europe/Berlin] PHP Warning:  Undefined array key "username" in C:\xampp\htdocs\MyCar_Website\index.php on line 104
+[21-Oct-2024 20:58:52 Europe/Berlin] Login successful for user: 
+[21-Oct-2024 20:59:32 Europe/Berlin] Received POST data: Array
 (
     [userInput] => Wilsomwong
     [action] => checkUser
 )
 
-[21-Oct-2024 05:53:20 Europe/Berlin] Received POST data: Array
+[21-Oct-2024 20:59:32 Europe/Berlin] Received POST data: Array
 (
     [userInput] => Wilsomwong
-    [action] => checkUser
-)
-
-[21-Oct-2024 05:53:26 Europe/Berlin] Received POST data: Array
-(
-    [userInput] => Wilsomwongweisheng
-    [action] => checkUser
-)
-
-[21-Oct-2024 05:53:28 Europe/Berlin] Received POST data: Array
-(
-    [userInput] => Wilsomwongweisheng
     [action] => login
     [password] => 20040727
 )
 
-[21-Oct-2024 05:53:28 Europe/Berlin] PHP Warning:  Undefined array key "username" in C:\xampp\htdocs\MyCar_Website\index.php on line 76
-[21-Oct-2024 05:53:28 Europe/Berlin] Login successful for user: 
-[21-Oct-2024 10:14:41 Europe/Berlin] Received POST data: Array
+[21-Oct-2024 20:59:32 Europe/Berlin] User ID: 12
+[21-Oct-2024 20:59:32 Europe/Berlin] SQL Query: SELECT * FROM user_payment_data WHERE id = ?
+[21-Oct-2024 20:59:32 Europe/Berlin] Query result: Success
+[21-Oct-2024 20:59:32 Europe/Berlin] Number of rows: 1
+[21-Oct-2024 20:59:32 Europe/Berlin] User payment data: Array
 (
-    [userInput] => admin
-    [action] => checkUser
+    [payment_id] => 6
+    [id] => 12
+    [user_payment_bankname] => Maybank
+    [user_payment_cardnumber] => 2147483647
+    [user_payment_cardname] => Wilsomwong
+    [user_payment_cardexpdate] => 12/29
+    [user_payment_cvv] => 458
+    [user_payment_password] => 20040727
+    [user_payment_balance] => 100
 )
 
-[21-Oct-2024 10:14:44 Europe/Berlin] Received POST data: Array
-(
-    [userInput] => admin
-    [action] => login
-    [password] => 0000
-)
-
-[21-Oct-2024 10:18:36 Europe/Berlin] Received POST data: Array
-(
-    [userInput] => Wilsomwong
-    [action] => checkUser
-)
-
-[21-Oct-2024 10:18:40 Europe/Berlin] Received POST data: Array
-(
-    [userInput] => 0000
-    [action] => checkUser
-)
-
-[21-Oct-2024 10:18:43 Europe/Berlin] Received POST data: Array
-(
-    [userInput] => admin
-    [action] => checkUser
-)
-
-[21-Oct-2024 10:18:47 Europe/Berlin] Received POST data: Array
-(
-    [userInput] => admin
-    [action] => login
-    [password] => 0000
-)
-
-[21-Oct-2024 10:19:03 Europe/Berlin] Received POST data: Array
-(
-    [userInput] => admin
-    [action] => checkUser
-)
-
-[21-Oct-2024 10:19:06 Europe/Berlin] Received POST data: Array
-(
-    [userInput] => admin
-    [action] => login
-    [password] => 0000
-)
-
+[21-Oct-2024 20:59:32 Europe/Berlin] PHP Warning:  Undefined array key "username" in C:\xampp\htdocs\MyCar_Website\index.php on line 104
+[21-Oct-2024 20:59:32 Europe/Berlin] Login successful for user: 

@@ -132,8 +132,44 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function getUserId() {
-        // Implement this function to return the current user's ID
-        // This could be stored in a session, localStorage, or retrieved from the server
-        return '1'; // Placeholder, replace with actual implementation
+        // Check if the user's ID is stored in the session
+        if (sessionStorage.getItem('userId')) {
+            return sessionStorage.getItem('userId');
+        }
+        // If not in the session, check if it's stored in localStorage
+        else if (localStorage.getItem('userId')) {
+            return localStorage.getItem('userId');
+        }
+        // If not found in either session or localStorage, fetch the user's ID from the server
+        else {
+            // Make an AJAX request to the server to retrieve the user's ID
+            return fetchUserId();
+        }
+    }
+
+    function fetchUserId() {
+        // Make an AJAX request to the server to retrieve the user's ID
+        return new Promise((resolve, reject) => {
+            fetch('get_user_id.php', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        // Store the user's ID in the session and localStorage
+                        sessionStorage.setItem('userId', data.userId);
+                        localStorage.setItem('userId', data.userId);
+                        resolve(data.userId);
+                    } else {
+                        reject('Error fetching user ID: ' + data.message);
+                    }
+                })
+                .catch(error => {
+                    reject('Error fetching user ID: ' + error);
+                });
+        });
     }
 });
