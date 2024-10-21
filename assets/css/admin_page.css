@@ -215,3 +215,88 @@ th {
 .search-bar input:focus {
     border: 1px solid #dcaf48;
 }
+
+/* Payment Table CSS */
+#paymentTable th,
+#paymentTable td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+#paymentTable th {
+    background-color: #f8f9fa;
+}
+
+.content-section {
+    display: none;
+}
+
+.content-section.active {
+    display: block;
+}
+
+@media screen and (max-width: 862px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar-title {
+        display: none;
+    }
+
+    .sidebar {
+        width: 100%;
+        border-right: none;
+    }
+
+    .section-title {
+        margin-top: 5px;
+    }
+
+    .menu-item-container {
+        display: flex;
+    }
+
+    .menu-item {
+        width: 100%;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .table-container {
+        overflow-x: auto;
+    }
+
+    table {
+        min-width: 600px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-bottom: 20px;
+    }
+
+    .button {
+        align-self: flex-end;
+        margin-top: -40px;
+    }
+
+    .user_account_table_status {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 639px) {
+    .user_account_table_email {
+        display: none;
+    }
+
+    th,
+    td {
+        padding-right: 10px;
+    }
+}

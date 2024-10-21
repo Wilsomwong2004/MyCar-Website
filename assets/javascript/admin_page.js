@@ -1,4 +1,5 @@
 let users = [];
+let payments = [];
 let currentEditingId = null;
 
 //log-out button
@@ -26,6 +27,71 @@ logout_btn.addEventListener('click', function (e) {
         });
 });
 
+// User Payment Table
+function fetchPayments() {
+    fetch('get-payments.php')
+        .then(response => response.json())
+        .then(data => {
+            payments = data;
+            populatePaymentTable(payments);
+        })
+        .catch(error => console.error('Error fetching payments:', error));
+}
+
+function populatePaymentTable(paymentsToDisplay) {
+    const tableBody = document.querySelector('#paymentTable tbody');
+    tableBody.innerHTML = '';
+
+    paymentsToDisplay.forEach((payment, index) => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${index + 1}</td>
+            <td>${payment.user_firstname} ${payment.user_lastname}</td>
+            <td>$${payment.amount}</td>
+            <td>${payment.payment_date}</td>
+            <td>${payment.status}</td>
+        `;
+        tableBody.appendChild(row);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    fetchUsers();
+    fetchPayments();
+
+    const menuItems = document.querySelectorAll('.menu-item');
+    const contentSections = document.querySelectorAll('.content-section');
+
+    menuItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const targetSection = item.getAttribute('data-section');
+
+            menuItems.forEach(mi => mi.classList.remove('active'));
+            item.classList.add('active');
+
+            contentSections.forEach(section => {
+                if (section.id === targetSection) {
+                    section.style.display = 'block';
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+        });
+    });
+});
+
+document.querySelector('#manage-payment .search-bar input').addEventListener('input', function (e) {
+    const searchTerm = e.target.value.toLowerCase();
+    const filteredPayments = payments.filter(payment =>
+        `${payment.user_firstname} ${payment.user_lastname}`.toLowerCase().includes(searchTerm) ||
+        payment.amount.toString().includes(searchTerm) ||
+        payment.payment_date.toLowerCase().includes(searchTerm) ||
+        payment.status.toLowerCase().includes(searchTerm)
+    );
+    populatePaymentTable(filteredPayments);
+});
+
+// User Management Table
 function fetchUsers() {
     fetch('get-users.php')
         .then(response => response.json())
@@ -53,8 +119,8 @@ function populateUserTable(usersToDisplay) {
                     ${user.user_firstname} ${user.user_lastname}
                 </div>
             </td>
-            <td>${user.user_email}</td>
-            <td>${user.user_verification_code ? 'Verified' : 'Unverified'}</td>
+            <td class="user_account_table_email">${user.user_email}</td>
+            <td class="user_account_table_status">${user.user_verification_code ? 'Verified' : 'Unverified'}</td>
             <td>
                 <div class="action-buttons">
                     <button class="btn btn-edit" onclick="editUser('${user.id}')">Edit</button>

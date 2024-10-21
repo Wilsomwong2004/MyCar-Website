@@ -20,7 +20,7 @@
     <div class="container">
         <aside class="sidebar">
             <h2 class="sidebar-title">Menu</h2>
-            <nav>
+            <nav class="menu-item-container">
                 <div class="menu-item active"><i class="fas fa-users"></i> Manage Users</div>
                 <div class="menu-item"><i class="far fa-credit-card"></i> Manage Payment</div>
             </nav>
@@ -36,8 +36,8 @@
                         <tr>
                             <th>No</th>
                             <th>Profile</th>
-                            <th>Email</th>
-                            <th>Status</th>
+                            <th class="user_account_table_email">Email</th>
+                            <th class="user_account_table_status"> Status</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
