@@ -7,12 +7,12 @@ ini_set('error_log', 'php_errors.log');
 
 require_once 'conn.php';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['user_id'])) {
-    $user_id = $_POST['user_id'];
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'])) {
+    $id = $_POST['id'];
     
-    $sql = "DELETE FROM user_account_data WHERE user_id = ?";
+    $sql = "DELETE FROM user_account_data WHERE id = ?";
     $stmt = mysqli_prepare($conn, $sql);
-    mysqli_stmt_bind_param($stmt, "i", $user_id);
+    mysqli_stmt_bind_param($stmt, "i", $id);
     
     if (mysqli_stmt_execute($stmt)) {
         echo json_encode(["success" => true]);

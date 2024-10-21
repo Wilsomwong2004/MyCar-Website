@@ -7,17 +7,22 @@ const logout_btn = document.getElementById('logout-icon');
 logout_btn.addEventListener('click', function (e) {
     e.preventDefault();
     fetch('logout.php')
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
         .then(data => {
             if (data.success) {
                 window.location.href = 'index.php';
             } else {
-                alert('Error logging out: ' + (data.error || 'Unknown error'));
+                throw new Error(data.error || 'Unknown error occurred during logout');
             }
         })
         .catch(error => {
             console.error('Error:', error);
-            alert('An error occurred while logging out.');
+            alert('An error occurred while logging out: ' + error.message);
         });
 });
 
@@ -43,8 +48,10 @@ function populateUserTable(usersToDisplay) {
         row.innerHTML = `
             <td>${index + 1}</td>
             <td>
-                <img src="path/to/default/avatar.png" alt="${user.user_firstname} ${user.user_lastname}" style="width: 30px; height: 30px; border-radius: 50%; margin-right: 10px;">
-                ${user.user_firstname} ${user.user_lastname}
+                <div class="user-info">
+                    <img src="${user.user_profile_pic || 'path/to/default/avatar.png'}" alt="${user.user_firstname} ${user.user_lastname}" style="width: 30px; height: 30px; border-radius: 50%; margin-right: 10px;">
+                    ${user.user_firstname} ${user.user_lastname}
+                </div>
             </td>
             <td>${user.user_email}</td>
             <td>${user.user_verification_code ? 'Verified' : 'Unverified'}</td>
