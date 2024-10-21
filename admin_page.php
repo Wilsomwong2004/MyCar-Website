@@ -20,31 +20,55 @@
     <div class="container">
         <aside class="sidebar">
             <h2 class="sidebar-title">Menu</h2>
-            <nav class="menu-item-container">
-                <div class="menu-item active"><i class="fas fa-users"></i> Manage Users</div>
-                <div class="menu-item"><i class="far fa-credit-card"></i> Manage Payment</div>
+            <nav>
+                <div class="menu-item active" data-section="manage-users"><i class="fas fa-users"></i> Manage Users</div>
+                <div class="menu-item" data-section="manage-payment"><i class="far fa-credit-card"></i> Manage Payment</div>
             </nav>
         </aside>
         <main class="main-content">
-            <section>
+            <section id="manage-users" class="content-section">
                 <h2 class="section-title">Manage Users</h2>
                 <div class="search-bar">
                     <input type="text" placeholder="Search User">
                 </div>
-                <table id="userTable">
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>Profile</th>
-                            <th class="user_account_table_email">Email</th>
-                            <th class="user_account_table_status"> Status</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Table rows will be dynamically populated here -->
-                    </tbody>
-                </table>
+                <div class="table-container">
+                    <table id="userTable">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Profile</th>
+                                <th>Email</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Table rows will be dynamically populated here -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section id="manage-payment" class="content-section" style="display: none;">
+                <h2 class="section-title">Manage Payment</h2>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search Payment">
+                </div>
+                <div class="table-container">
+                    <table id="paymentTable">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>User</th>
+                                <th>Amount</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Table rows will be dynamically populated here -->
+                        </tbody>
+                    </table>
+                </div>
             </section>
         </main>
     </div>

@@ -180,3 +180,54 @@
 
 [21-Oct-2024 05:53:28 Europe/Berlin] PHP Warning:  Undefined array key "username" in C:\xampp\htdocs\MyCar_Website\index.php on line 76
 [21-Oct-2024 05:53:28 Europe/Berlin] Login successful for user: 
+[21-Oct-2024 10:14:41 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => admin
+    [action] => checkUser
+)
+
+[21-Oct-2024 10:14:44 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => admin
+    [action] => login
+    [password] => 0000
+)
+
+[21-Oct-2024 10:18:36 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => checkUser
+)
+
+[21-Oct-2024 10:18:40 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => 0000
+    [action] => checkUser
+)
+
+[21-Oct-2024 10:18:43 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => admin
+    [action] => checkUser
+)
+
+[21-Oct-2024 10:18:47 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => admin
+    [action] => login
+    [password] => 0000
+)
+
+[21-Oct-2024 10:19:03 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => admin
+    [action] => checkUser
+)
+
+[21-Oct-2024 10:19:06 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => admin
+    [action] => login
+    [password] => 0000
+)
+

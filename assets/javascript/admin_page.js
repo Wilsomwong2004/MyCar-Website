@@ -30,12 +30,20 @@ logout_btn.addEventListener('click', function (e) {
 // User Payment Table
 function fetchPayments() {
     fetch('get-payments.php')
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
         .then(data => {
             payments = data;
             populatePaymentTable(payments);
         })
-        .catch(error => console.error('Error fetching payments:', error));
+        .catch(error => {
+            console.error('Error fetching payments:', error);
+            document.querySelector('#paymentTable tbody').innerHTML = `<tr><td colspan="5">Error loading payments: ${error.message}</td></tr>`;
+        });
 }
 
 function populatePaymentTable(paymentsToDisplay) {
