@@ -269,7 +269,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function changeUsernamePassword() {
-        const newUsername = document.getElementById('new-username').value;
+        const newUsername = document.getElementById('new-username').value.trim();
         const currentPassword = document.getElementById('current-password').value;
         const newPassword = document.getElementById('new-password').value;
         const confirmPassword = document.getElementById('confirm-password').value;
@@ -279,20 +279,46 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
+        if (newPassword !== confirmPassword) {
+            alert('New passwords do not match.');
+            return;
+        }
+
+        const data = new FormData();
+        data.append('current_password', currentPassword);
         if (newUsername !== '') {
-            // Update username logic here
+            data.append('new_username', newUsername);
         }
-
         if (newPassword !== '') {
-            if (newPassword !== confirmPassword) {
-                alert('New passwords do not match.');
-                return;
-            }
-            // Update password logic here
+            data.append('new_password', newPassword);
         }
 
-        alert('Changes saved successfully');
-        closePopup();
+        fetch('update_user_credentials.php', {
+            method: 'POST',
+            body: data
+        })
+            .then(response => response.json())
+            .then(result => {
+                if (result.success) {
+                    alert('Changes saved successfully');
+                    alert('Please refersh the page to see the changes.');
+                    closePopup();
+                    // If username was changed, update it in the UI
+                    if (newUsername !== '') {
+                        const usernameElement = document.querySelector('.username-display');
+                        if (usernameElement) {
+                            usernameElement.textContent = newUsername;
+                        }
+                        // You might need to update the username in other places as well
+                    }
+                } else {
+                    throw new Error(result.message || 'An error occurred while updating credentials.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred while updating credentials: ' + error.message);
+            });
     }
 
     // Two Factor Authentication
