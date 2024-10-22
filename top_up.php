@@ -2,8 +2,8 @@
 session_start();
 
 // Enable error logging to a file
-ini_set('log_errors', 1);
-ini_set('error_log', 'top_up_errors.log');
+// ini_set('log_errors', 1);
+// ini_set('error_log', 'top_up_errors.log');
 
 // Set JSON header
 header('Content-Type: application/json');
@@ -80,34 +80,33 @@ try {
     $conn->begin_transaction();
 
     try {
-        // First, verify the password using the correct table
-        // Changed from user_account_data to match your database structure
         $sql = "SELECT user_password FROM user_account_data WHERE id = ?";
         $stmt = $conn->prepare($sql);
-        
+
         if (!$stmt) {
             throw new Exception('Failed to prepare password verification query: ' . $conn->error);
         }
-        
+
         $stmt->bind_param("i", $user_id);
-        
+
         if (!$stmt->execute()) {
             throw new Exception('Failed to execute password verification: ' . $stmt->error);
         }
-        
+
         $result = $stmt->get_result();
         $user = $result->fetch_assoc();
-        
-        // Verify password using password_verify() for hashed passwords
-        if (!$user || !password_verify($password, $user['user_password'])) {
+
+        // Direct string comparison for plain text passwords
+        if (!$user || $password !== $user['user_password']) {
+            error_log("Password verification failed. Input: $password, Stored: " . ($user ? $user['user_password'] : 'no user found'));
             $conn->rollback();
             sendJsonResponse('error', 'Invalid password', 'Password verification failed');
         }
 
         // Update balance
-        $update_sql = "UPDATE user_payment_data 
-                      SET user_payment_balance = user_payment_balance + ? 
-                      WHERE id = ? AND user_payment_cardnumber = ?";
+        $update_sql = "UPDATE user_payment_data
+                        SET user_payment_balance = user_payment_balance + ?
+                        WHERE id = ? AND user_payment_cardnumber = ?";
         $update_stmt = $conn->prepare($update_sql);
         
         if (!$update_stmt) {

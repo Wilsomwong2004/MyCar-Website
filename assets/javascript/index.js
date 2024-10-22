@@ -122,38 +122,6 @@ document.addEventListener('DOMContentLoaded', function () {
             });
     });
 
-    forgotPasswordForm.onsubmit = function (e) {
-        e.preventDefault();
-        const email = resetEmailInput.value.trim();
-        if (!email || !isValidEmail(email)) {
-            alert('Please enter a valid email address.');
-            return;
-        }
-
-        const formData = new FormData();
-        formData.append('forgot-email', email);
-
-        fetch('index.php', {
-            method: 'POST',
-            body: formData
-        })
-            .then(response => response.json())
-            .then(data => {
-                if (data.status === 'success') {
-                    // Show the verification code in an alert
-                    console.log(`Your verification code is: ${data.verification_code}`);
-                    verificationContainer.style.display = 'block';
-                    startCountdown();
-                } else {
-                    alert(data.message);
-                }
-            })
-            .catch(error => {
-                console.error('Fetch error:', error);
-                alert('An error occurred. Please try again later.');
-            });
-    }
-
     // Hide error messages when user starts typing
     userInput.addEventListener('input', () => {
         userError.style.display = 'none';
@@ -237,6 +205,8 @@ document.addEventListener('DOMContentLoaded', function () {
             .then(response => response.json())
             .then(data => {
                 if (data.status === 'success') {
+                    // Show the verification code in an alert
+                    console.log(`Your verification code is: ${data.verification_code}`);
                     verificationContainer.style.display = 'block';
                     startCountdown();
                 } else {

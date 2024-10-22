@@ -104,3 +104,21 @@
 [22-Oct-2024 14:53:36 Europe/Berlin] Session state: {"user_id_set":true,"cards_set":true,"active_card_index_set":true}
 [22-Oct-2024 14:53:36 Europe/Berlin] Processing top-up for user_id: 24
 [22-Oct-2024 14:53:36 Europe/Berlin] Sending response: {"status":"error","message":"Invalid password","debug":"Password verification failed"}
+[22-Oct-2024 16:31:17 Europe/Berlin] Top-up request received. POST data: {"amount":"50","password":"[REDACTED]"}
+[22-Oct-2024 16:31:17 Europe/Berlin] Session state: {"user_id_set":true,"cards_set":true,"active_card_index_set":true}
+[22-Oct-2024 16:31:17 Europe/Berlin] Processing top-up for user_id: 24
+[22-Oct-2024 16:31:17 Europe/Berlin] Sending response: {"status":"error","message":"Invalid password","debug":"Password verification failed"}
+[22-Oct-2024 16:32:45 Europe/Berlin] Top-up request received. POST data: {"amount":"50","password":"[REDACTED]"}
+[22-Oct-2024 16:32:45 Europe/Berlin] Session state: {"user_id_set":true,"cards_set":true,"active_card_index_set":true}
+[22-Oct-2024 16:32:45 Europe/Berlin] Processing top-up for user_id: 24
+[22-Oct-2024 16:32:45 Europe/Berlin] Sending response: {"status":"error","message":"Invalid password","debug":"Password verification failed"}
+[22-Oct-2024 16:36:48 Europe/Berlin] Top-up request received. POST data: {"amount":"20","password":"[REDACTED]"}
+[22-Oct-2024 16:36:48 Europe/Berlin] Session state: {"user_id_set":true,"cards_set":true,"active_card_index_set":true}
+[22-Oct-2024 16:36:48 Europe/Berlin] Processing top-up for user_id: 24
+[22-Oct-2024 16:36:48 Europe/Berlin] Password verification failed. Input: 123, Stored: 12345
+[22-Oct-2024 16:36:48 Europe/Berlin] Sending response: {"status":"error","message":"Invalid password","debug":"Password verification failed"}
+[22-Oct-2024 16:36:51 Europe/Berlin] Top-up request received. POST data: {"amount":"20","password":"[REDACTED]"}
+[22-Oct-2024 16:36:51 Europe/Berlin] Session state: {"user_id_set":true,"cards_set":true,"active_card_index_set":true}
+[22-Oct-2024 16:36:51 Europe/Berlin] Processing top-up for user_id: 24
+[22-Oct-2024 16:36:51 Europe/Berlin] Executing update with params: amount=20, id=24, card_number=1234567891233225
+[22-Oct-2024 16:36:51 Europe/Berlin] Sending response: {"status":"success","message":"Top up successful","newBalance":"70.00"}
