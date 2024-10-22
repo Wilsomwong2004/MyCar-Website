@@ -14,6 +14,35 @@ document.addEventListener('DOMContentLoaded', function () {
     const loading_text = document.getElementsByClassName('loading-text');
     const term_condition = document.getElementsByClassName('agree_w_tnc');
 
+    // Add event listener for card number input
+    cardNumber.addEventListener('blur', function () {
+        if (cardNumber.value.trim().length === 16) {
+            checkDuplicateCard(cardNumber.value.trim());
+        }
+    });
+
+    function checkDuplicateCard(cardNumber) {
+        const formData = new FormData();
+        formData.append('number_on_card', cardNumber);
+        formData.append('user_id', getUserId());
+
+        fetch('check_duplicate_card.php', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.exists) {
+                    alert('This card is already registered with your account. Please use a different card.');
+                    document.getElementById('number_on_card').value = '';
+                    document.getElementById('number_on_card').focus();
+                }
+            })
+            .catch(error => {
+                console.error('Error checking duplicate card:', error);
+            });
+    }
+
     function validateForm() {
         // Check if all fields are filled
         if (bankName.value.trim() === '' ||
@@ -31,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
             return false;
         }
 
-        // Check if the card expiry date is valid date
+        // Check if the card expiry date is valid
         if (!/^\d{2}\/\d{2}$/.test(cardExpiry.value.trim())) {
             alert('Please enter a valid card expiration date (MM/YY).');
             return false;
@@ -53,27 +82,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Handle form submission
     cardForm.addEventListener('click', function (e) {
-        e.preventDefault(); // Prevent default form submission
+        e.preventDefault();
 
-        // Validate the form
         if (!validateForm()) {
             return;
         }
 
-        // Show loading overlay
         loadingOverlay.style.display = 'flex';
 
-        // Prepare form data
         const formData = new FormData();
         formData.append('bank_name', bankName.value);
         formData.append('number_on_card', cardNumber.value);
         formData.append('name_on_card', cardName.value);
         formData.append('card_expiration_date', cardExpiry.value);
         formData.append('card_cvv_number', cardCvv.value);
-        formData.append('card_password', cardPassword.value); // Implement password encryption here
-        formData.append('user_id', getUserId()); // Implement getUserId() to get the current user's ID
+        formData.append('card_password', cardPassword.value);
+        formData.append('user_id', getUserId());
 
-        // Send data to the server
         fetch('insert_card_details.php', {
             method: 'POST',
             body: formData
@@ -81,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function () {
             .then(response => response.json())
             .then(data => {
                 if (data.status === 'success') {
-                    // Change the loading text in sequence
+                    // Loading sequence
                     setTimeout(() => {
                         loading_text[0].innerHTML = "Adding your card information...";
                     }, 0);
@@ -95,10 +120,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         loading_text[0].innerHTML = "Done saving. Redirecting to the back page...";
                     }, 10000);
 
-                    // Hide the loading overlay and redirect after a delay
                     setTimeout(() => {
                         loadingOverlay.style.display = 'none';
-                        // Redirect to the main page
                         window.location.href = 'main_page.php';
                     }, 12000);
                 } else {

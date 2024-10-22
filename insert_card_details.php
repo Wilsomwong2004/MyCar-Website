@@ -22,36 +22,38 @@ try {
         throw new Exception("All fields are required");
     }
 
-    // Log the received data (remove this in production)
-    error_log("Received card data: " . print_r($_POST, true));
-
     require_once __DIR__ . '/conn.php';
 
     if (!isset($conn)) {
         throw new Exception("Database connection not established");
     }
 
-    // After successfully inserting the card
-    $newCard = [
-        'payment_id' => $lastInsertId, // Assuming you have this from the insertion
-        'id' => $_SESSION['user_id'],
-        'user_payment_bankname' => $_POST['bank_name'],
-        'user_payment_cardnumber' => $_POST['number_on_card'],
-        'user_payment_cardname' => $_POST['name_on_card'],
-        'user_payment_cardexpdate' => $_POST['card_expiration_date'],
-        'user_payment_cvv' => $_POST['card_cvv_number'],
-        'user_payment_password' => $_POST['card_password'],
-        'user_payment_balance' => 0 // Set initial balance
-    ];
-
-    if (!isset($_SESSION['user_cards'])) {
-        $_SESSION['user_cards'] = [];
+    // First check if this card number exists ANYWHERE in the system
+    $check_sql = "SELECT COUNT(*) as count FROM user_payment_data WHERE user_payment_cardnumber = ?";
+    $check_stmt = mysqli_prepare($conn, $check_sql);
+    
+    if (!$check_stmt) {
+        throw new Exception("Prepare check failed: " . mysqli_error($conn));
     }
 
-    $_SESSION['user_cards'][] = $newCard;
-    $_SESSION['active_card_index'] = count($_SESSION['user_cards']) - 1;
+    mysqli_stmt_bind_param($check_stmt, "s", $card_number);
+    mysqli_stmt_execute($check_stmt);
+    $result = mysqli_stmt_get_result($check_stmt);
+    $row = mysqli_fetch_assoc($result);
 
-    // Insert the card details
+    if ($row['count'] > 0) {
+        echo json_encode([
+            'status' => 'error',
+            'message' => 'This card number is already registered in the system. Each card can only be registered once.'
+        ]);
+        mysqli_stmt_close($check_stmt);
+        mysqli_close($conn);
+        exit;
+    }
+
+    mysqli_stmt_close($check_stmt);
+
+    // If no duplicate found, proceed with insertion
     $sql = "INSERT INTO user_payment_data (id, user_payment_bankname, user_payment_cardnumber, user_payment_cardname, user_payment_cardexpdate, user_payment_cvv, user_payment_password)
             VALUES (?, ?, ?, ?, ?, ?, ?)";
 
@@ -60,10 +62,29 @@ try {
         throw new Exception("Prepare failed: " . mysqli_error($conn));
     }
 
-    // Bind parameters and execute
     mysqli_stmt_bind_param($stmt, "sssssss", $user_id, $bank_name, $card_number, $card_name, $card_expdate, $card_cvv, $card_password);
 
     if (mysqli_stmt_execute($stmt)) {
+        // Update session data
+        if (!isset($_SESSION['user_cards'])) {
+            $_SESSION['user_cards'] = [];
+        }
+
+        $newCard = [
+            'payment_id' => mysqli_insert_id($conn),
+            'id' => $user_id,
+            'user_payment_bankname' => $bank_name,
+            'user_payment_cardnumber' => $card_number,
+            'user_payment_cardname' => $card_name,
+            'user_payment_cardexpdate' => $card_expdate,
+            'user_payment_cvv' => $card_cvv,
+            'user_payment_password' => $card_password,
+            'user_payment_balance' => 0
+        ];
+
+        $_SESSION['user_cards'][] = $newCard;
+        $_SESSION['active_card_index'] = count($_SESSION['user_cards']) - 1;
+
         echo json_encode(['status' => 'success', 'message' => 'Card details added successfully']);
     } else {
         throw new Exception("Execute failed: " . mysqli_stmt_error($stmt));

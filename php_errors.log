@@ -2060,3 +2060,997 @@
 
 )
 
+[22-Oct-2024 10:27:17 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 12
+    [user_email] => wilsomwong2004@gmail.com
+    [user_username] => Wilsomwong
+    [user_profile_pic] => ./assets/css/pic/profile_pics/67169cb11f0e5_profile.jpg
+    [user_payment_balance] => 87
+    [user_bank_name] => Maybank
+    [user_card_number] => 2147483647
+    [user_card_name] => Wilsomwong
+    [user_card_expiry_date] => 12/29
+    [user_cards] => Array
+        (
+            [0] => Array
+                (
+                    [payment_id] => 20
+                    [id] => 12
+                    [user_payment_bankname] => Maybank
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 12/29
+                    [user_payment_cvv] => 458
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 94
+                )
+
+            [1] => Array
+                (
+                    [payment_id] => 22
+                    [id] => 12
+                    [user_payment_bankname] => CIMB
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 12/29
+                    [user_payment_cvv] => 299
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 7
+                )
+
+            [2] => Array
+                (
+                    [payment_id] => 23
+                    [id] => 12
+                    [user_payment_bankname] => HLB
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 23/99
+                    [user_payment_cvv] => 876
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 0
+                )
+
+        )
+
+    [active_card_index] => 0
+)
+
+[22-Oct-2024 10:27:17 Europe/Berlin] Number of cards found: 3
+[22-Oct-2024 10:27:17 Europe/Berlin] Active card index: 0
+[22-Oct-2024 10:27:17 Europe/Berlin] Cards data: Array
+(
+    [0] => Array
+        (
+            [payment_id] => 20
+            [id] => 12
+            [user_payment_bankname] => Maybank
+            [user_payment_cardnumber] => 2147483647
+            [user_payment_cardname] => Wilsomwong
+            [user_payment_cardexpdate] => 12/29
+            [user_payment_cvv] => 458
+            [user_payment_password] => 20040727
+            [user_payment_balance] => 94
+        )
+
+    [1] => Array
+        (
+            [payment_id] => 22
+            [id] => 12
+            [user_payment_bankname] => CIMB
+            [user_payment_cardnumber] => 2147483647
+            [user_payment_cardname] => Wilsomwong
+            [user_payment_cardexpdate] => 12/29
+            [user_payment_cvv] => 299
+            [user_payment_password] => 20040727
+            [user_payment_balance] => 7
+        )
+
+    [2] => Array
+        (
+            [payment_id] => 23
+            [id] => 12
+            [user_payment_bankname] => HLB
+            [user_payment_cardnumber] => 2147483647
+            [user_payment_cardname] => Wilsomwong
+            [user_payment_cardexpdate] => 23/99
+            [user_payment_cvv] => 876
+            [user_payment_password] => 20040727
+            [user_payment_balance] => 0
+        )
+
+)
+
+[22-Oct-2024 10:27:19 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 12
+    [user_email] => wilsomwong2004@gmail.com
+    [user_username] => Wilsomwong
+    [user_profile_pic] => ./assets/css/pic/profile_pics/67169cb11f0e5_profile.jpg
+    [user_payment_balance] => 87
+    [user_bank_name] => Maybank
+    [user_card_number] => 2147483647
+    [user_card_name] => Wilsomwong
+    [user_card_expiry_date] => 12/29
+    [user_cards] => Array
+        (
+            [0] => Array
+                (
+                    [payment_id] => 20
+                    [id] => 12
+                    [user_payment_bankname] => Maybank
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 12/29
+                    [user_payment_cvv] => 458
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 94
+                )
+
+            [1] => Array
+                (
+                    [payment_id] => 22
+                    [id] => 12
+                    [user_payment_bankname] => CIMB
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 12/29
+                    [user_payment_cvv] => 299
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 7
+                )
+
+            [2] => Array
+                (
+                    [payment_id] => 23
+                    [id] => 12
+                    [user_payment_bankname] => HLB
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 23/99
+                    [user_payment_cvv] => 876
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 0
+                )
+
+        )
+
+    [active_card_index] => 0
+)
+
+[22-Oct-2024 10:27:19 Europe/Berlin] Number of cards found: 3
+[22-Oct-2024 10:27:19 Europe/Berlin] Active card index: 0
+[22-Oct-2024 10:27:19 Europe/Berlin] Cards data: Array
+(
+    [0] => Array
+        (
+            [payment_id] => 20
+            [id] => 12
+            [user_payment_bankname] => Maybank
+            [user_payment_cardnumber] => 2147483647
+            [user_payment_cardname] => Wilsomwong
+            [user_payment_cardexpdate] => 12/29
+            [user_payment_cvv] => 458
+            [user_payment_password] => 20040727
+            [user_payment_balance] => 94
+        )
+
+    [1] => Array
+        (
+            [payment_id] => 22
+            [id] => 12
+            [user_payment_bankname] => CIMB
+            [user_payment_cardnumber] => 2147483647
+            [user_payment_cardname] => Wilsomwong
+            [user_payment_cardexpdate] => 12/29
+            [user_payment_cvv] => 299
+            [user_payment_password] => 20040727
+            [user_payment_balance] => 7
+        )
+
+    [2] => Array
+        (
+            [payment_id] => 23
+            [id] => 12
+            [user_payment_bankname] => HLB
+            [user_payment_cardnumber] => 2147483647
+            [user_payment_cardname] => Wilsomwong
+            [user_payment_cardexpdate] => 23/99
+            [user_payment_cvv] => 876
+            [user_payment_password] => 20040727
+            [user_payment_balance] => 0
+        )
+
+)
+
+[22-Oct-2024 10:28:07 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 12
+    [user_email] => wilsomwong2004@gmail.com
+    [user_username] => Wilsomwong
+    [user_profile_pic] => ./assets/css/pic/profile_pics/67169cb11f0e5_profile.jpg
+    [user_payment_balance] => 87
+    [user_bank_name] => Maybank
+    [user_card_number] => 2147483647
+    [user_card_name] => Wilsomwong
+    [user_card_expiry_date] => 12/29
+    [user_cards] => Array
+        (
+            [0] => Array
+                (
+                    [payment_id] => 20
+                    [id] => 12
+                    [user_payment_bankname] => Maybank
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 12/29
+                    [user_payment_cvv] => 458
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 94
+                )
+
+            [1] => Array
+                (
+                    [payment_id] => 22
+                    [id] => 12
+                    [user_payment_bankname] => CIMB
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 12/29
+                    [user_payment_cvv] => 299
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 7
+                )
+
+            [2] => Array
+                (
+                    [payment_id] => 23
+                    [id] => 12
+                    [user_payment_bankname] => HLB
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 23/99
+                    [user_payment_cvv] => 876
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 0
+                )
+
+        )
+
+    [active_card_index] => 0
+)
+
+[22-Oct-2024 10:28:07 Europe/Berlin] Number of cards found: 4
+[22-Oct-2024 10:28:07 Europe/Berlin] Active card index: 0
+[22-Oct-2024 10:28:07 Europe/Berlin] Cards data: Array
+(
+    [0] => Array
+        (
+            [payment_id] => 20
+            [id] => 12
+            [user_payment_bankname] => Maybank
+            [user_payment_cardnumber] => 2147483647
+            [user_payment_cardname] => Wilsomwong
+            [user_payment_cardexpdate] => 12/29
+            [user_payment_cvv] => 458
+            [user_payment_password] => 20040727
+            [user_payment_balance] => 94
+        )
+
+    [1] => Array
+        (
+            [payment_id] => 22
+            [id] => 12
+            [user_payment_bankname] => CIMB
+            [user_payment_cardnumber] => 2147483647
+            [user_payment_cardname] => Wilsomwong
+            [user_payment_cardexpdate] => 12/29
+            [user_payment_cvv] => 299
+            [user_payment_password] => 20040727
+            [user_payment_balance] => 7
+        )
+
+    [2] => Array
+        (
+            [payment_id] => 23
+            [id] => 12
+            [user_payment_bankname] => HLB
+            [user_payment_cardnumber] => 2147483647
+            [user_payment_cardname] => Wilsomwong
+            [user_payment_cardexpdate] => 23/99
+            [user_payment_cvv] => 876
+            [user_payment_password] => 20040727
+            [user_payment_balance] => 0
+        )
+
+    [3] => Array
+        (
+            [payment_id] => 24
+            [id] => 12
+            [user_payment_bankname] => Public Bank
+            [user_payment_cardnumber] => 2147483647
+            [user_payment_cardname] => Wilsomwong
+            [user_payment_cardexpdate] => 26/22
+            [user_payment_cvv] => 243
+            [user_payment_password] => 20040727
+            [user_payment_balance] => 0
+        )
+
+)
+
+[22-Oct-2024 10:28:09 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 12
+    [user_email] => wilsomwong2004@gmail.com
+    [user_username] => Wilsomwong
+    [user_profile_pic] => ./assets/css/pic/profile_pics/67169cb11f0e5_profile.jpg
+    [user_payment_balance] => 87
+    [user_bank_name] => Maybank
+    [user_card_number] => 2147483647
+    [user_card_name] => Wilsomwong
+    [user_card_expiry_date] => 12/29
+    [user_cards] => Array
+        (
+            [0] => Array
+                (
+                    [payment_id] => 20
+                    [id] => 12
+                    [user_payment_bankname] => Maybank
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 12/29
+                    [user_payment_cvv] => 458
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 94
+                )
+
+            [1] => Array
+                (
+                    [payment_id] => 22
+                    [id] => 12
+                    [user_payment_bankname] => CIMB
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 12/29
+                    [user_payment_cvv] => 299
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 7
+                )
+
+            [2] => Array
+                (
+                    [payment_id] => 23
+                    [id] => 12
+                    [user_payment_bankname] => HLB
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 23/99
+                    [user_payment_cvv] => 876
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 0
+                )
+
+            [3] => Array
+                (
+                    [payment_id] => 24
+                    [id] => 12
+                    [user_payment_bankname] => Public Bank
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 26/22
+                    [user_payment_cvv] => 243
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 0
+                )
+
+        )
+
+    [active_card_index] => 0
+)
+
+[22-Oct-2024 10:28:09 Europe/Berlin] Number of cards found: 4
+[22-Oct-2024 10:28:09 Europe/Berlin] Active card index: 0
+[22-Oct-2024 10:28:09 Europe/Berlin] Cards data: Array
+(
+    [0] => Array
+        (
+            [payment_id] => 20
+            [id] => 12
+            [user_payment_bankname] => Maybank
+            [user_payment_cardnumber] => 2147483647
+            [user_payment_cardname] => Wilsomwong
+            [user_payment_cardexpdate] => 12/29
+            [user_payment_cvv] => 458
+            [user_payment_password] => 20040727
+            [user_payment_balance] => 94
+        )
+
+    [1] => Array
+        (
+            [payment_id] => 22
+            [id] => 12
+            [user_payment_bankname] => CIMB
+            [user_payment_cardnumber] => 2147483647
+            [user_payment_cardname] => Wilsomwong
+            [user_payment_cardexpdate] => 12/29
+            [user_payment_cvv] => 299
+            [user_payment_password] => 20040727
+            [user_payment_balance] => 7
+        )
+
+    [2] => Array
+        (
+            [payment_id] => 23
+            [id] => 12
+            [user_payment_bankname] => HLB
+            [user_payment_cardnumber] => 2147483647
+            [user_payment_cardname] => Wilsomwong
+            [user_payment_cardexpdate] => 23/99
+            [user_payment_cvv] => 876
+            [user_payment_password] => 20040727
+            [user_payment_balance] => 0
+        )
+
+    [3] => Array
+        (
+            [payment_id] => 24
+            [id] => 12
+            [user_payment_bankname] => Public Bank
+            [user_payment_cardnumber] => 2147483647
+            [user_payment_cardname] => Wilsomwong
+            [user_payment_cardexpdate] => 26/22
+            [user_payment_cvv] => 243
+            [user_payment_password] => 20040727
+            [user_payment_balance] => 0
+        )
+
+)
+
+[22-Oct-2024 10:30:19 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 12
+    [user_email] => wilsomwong2004@gmail.com
+    [user_username] => Wilsomwong
+    [user_profile_pic] => ./assets/css/pic/profile_pics/67169cb11f0e5_profile.jpg
+    [user_payment_balance] => 87
+    [user_bank_name] => Maybank
+    [user_card_number] => 2147483647
+    [user_card_name] => Wilsomwong
+    [user_card_expiry_date] => 12/29
+    [user_cards] => Array
+        (
+            [0] => Array
+                (
+                    [payment_id] => 20
+                    [id] => 12
+                    [user_payment_bankname] => Maybank
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 12/29
+                    [user_payment_cvv] => 458
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 94
+                )
+
+            [1] => Array
+                (
+                    [payment_id] => 22
+                    [id] => 12
+                    [user_payment_bankname] => CIMB
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 12/29
+                    [user_payment_cvv] => 299
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 7
+                )
+
+            [2] => Array
+                (
+                    [payment_id] => 23
+                    [id] => 12
+                    [user_payment_bankname] => HLB
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 23/99
+                    [user_payment_cvv] => 876
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 0
+                )
+
+            [3] => Array
+                (
+                    [payment_id] => 24
+                    [id] => 12
+                    [user_payment_bankname] => Public Bank
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 26/22
+                    [user_payment_cvv] => 243
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 0
+                )
+
+        )
+
+    [active_card_index] => 0
+)
+
+[22-Oct-2024 10:30:19 Europe/Berlin] Number of cards found: 4
+[22-Oct-2024 10:30:19 Europe/Berlin] Active card index: 0
+[22-Oct-2024 10:30:19 Europe/Berlin] Cards data: Array
+(
+    [0] => Array
+        (
+            [payment_id] => 20
+            [id] => 12
+            [user_payment_bankname] => Maybank
+            [user_payment_cardnumber] => 2147483647
+            [user_payment_cardname] => Wilsomwong
+            [user_payment_cardexpdate] => 12/29
+            [user_payment_cvv] => 458
+            [user_payment_password] => 20040727
+            [user_payment_balance] => 94
+        )
+
+    [1] => Array
+        (
+            [payment_id] => 22
+            [id] => 12
+            [user_payment_bankname] => CIMB
+            [user_payment_cardnumber] => 2147483647
+            [user_payment_cardname] => Wilsomwong
+            [user_payment_cardexpdate] => 12/29
+            [user_payment_cvv] => 299
+            [user_payment_password] => 20040727
+            [user_payment_balance] => 7
+        )
+
+    [2] => Array
+        (
+            [payment_id] => 23
+            [id] => 12
+            [user_payment_bankname] => HLB
+            [user_payment_cardnumber] => 2147483647
+            [user_payment_cardname] => Wilsomwong
+            [user_payment_cardexpdate] => 23/99
+            [user_payment_cvv] => 876
+            [user_payment_password] => 20040727
+            [user_payment_balance] => 0
+        )
+
+    [3] => Array
+        (
+            [payment_id] => 24
+            [id] => 12
+            [user_payment_bankname] => Public Bank
+            [user_payment_cardnumber] => 2147483647
+            [user_payment_cardname] => Wilsomwong
+            [user_payment_cardexpdate] => 26/22
+            [user_payment_cvv] => 243
+            [user_payment_password] => 20040727
+            [user_payment_balance] => 0
+        )
+
+)
+
+[22-Oct-2024 10:30:56 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 12
+    [user_email] => wilsomwong2004@gmail.com
+    [user_username] => Wilsomwong
+    [user_profile_pic] => ./assets/css/pic/profile_pics/67169cb11f0e5_profile.jpg
+    [user_payment_balance] => 87
+    [user_bank_name] => Maybank
+    [user_card_number] => 2147483647
+    [user_card_name] => Wilsomwong
+    [user_card_expiry_date] => 12/29
+    [user_cards] => Array
+        (
+            [0] => Array
+                (
+                    [payment_id] => 20
+                    [id] => 12
+                    [user_payment_bankname] => Maybank
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 12/29
+                    [user_payment_cvv] => 458
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 94
+                )
+
+            [1] => Array
+                (
+                    [payment_id] => 22
+                    [id] => 12
+                    [user_payment_bankname] => CIMB
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 12/29
+                    [user_payment_cvv] => 299
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 7
+                )
+
+            [2] => Array
+                (
+                    [payment_id] => 23
+                    [id] => 12
+                    [user_payment_bankname] => HLB
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 23/99
+                    [user_payment_cvv] => 876
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 0
+                )
+
+            [3] => Array
+                (
+                    [payment_id] => 24
+                    [id] => 12
+                    [user_payment_bankname] => Public Bank
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 26/22
+                    [user_payment_cvv] => 243
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 0
+                )
+
+        )
+
+    [active_card_index] => 0
+)
+
+[22-Oct-2024 10:30:56 Europe/Berlin] Number of cards found: 2
+[22-Oct-2024 10:30:56 Europe/Berlin] Active card index: 0
+[22-Oct-2024 10:30:56 Europe/Berlin] Cards data: Array
+(
+    [0] => Array
+        (
+            [payment_id] => 20
+            [id] => 12
+            [user_payment_bankname] => Maybank
+            [user_payment_cardnumber] => 2147483647
+            [user_payment_cardname] => Wilsomwong
+            [user_payment_cardexpdate] => 12/29
+            [user_payment_cvv] => 458
+            [user_payment_password] => 20040727
+            [user_payment_balance] => 94
+        )
+
+    [1] => Array
+        (
+            [payment_id] => 25
+            [id] => 12
+            [user_payment_bankname] => Public Bank
+            [user_payment_cardnumber] => 2147483647
+            [user_payment_cardname] => Wilsomwong
+            [user_payment_cardexpdate] => 26/22
+            [user_payment_cvv] => 243
+            [user_payment_password] => 20040727
+            [user_payment_balance] => 0
+        )
+
+)
+
+[22-Oct-2024 10:33:11 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 12
+    [user_email] => wilsomwong2004@gmail.com
+    [user_username] => Wilsomwong
+    [user_profile_pic] => ./assets/css/pic/profile_pics/67169cb11f0e5_profile.jpg
+    [user_payment_balance] => 87
+    [user_bank_name] => Maybank
+    [user_card_number] => 2147483647
+    [user_card_name] => Wilsomwong
+    [user_card_expiry_date] => 12/29
+    [user_cards] => Array
+        (
+            [0] => Array
+                (
+                    [payment_id] => 20
+                    [id] => 12
+                    [user_payment_bankname] => Maybank
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 12/29
+                    [user_payment_cvv] => 458
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 94
+                )
+
+            [1] => Array
+                (
+                    [payment_id] => 25
+                    [id] => 12
+                    [user_payment_bankname] => Public Bank
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 26/22
+                    [user_payment_cvv] => 243
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 0
+                )
+
+        )
+
+    [active_card_index] => 0
+)
+
+[22-Oct-2024 10:33:11 Europe/Berlin] Number of cards found: 2
+[22-Oct-2024 10:33:11 Europe/Berlin] Active card index: 0
+[22-Oct-2024 10:33:11 Europe/Berlin] Cards data: Array
+(
+    [0] => Array
+        (
+            [payment_id] => 20
+            [id] => 12
+            [user_payment_bankname] => Maybank
+            [user_payment_cardnumber] => 2147483647
+            [user_payment_cardname] => Wilsomwong
+            [user_payment_cardexpdate] => 12/29
+            [user_payment_cvv] => 458
+            [user_payment_password] => 20040727
+            [user_payment_balance] => 94
+        )
+
+    [1] => Array
+        (
+            [payment_id] => 26
+            [id] => 12
+            [user_payment_bankname] => Public Bank
+            [user_payment_cardnumber] => 2147483647
+            [user_payment_cardname] => Wilsomwong
+            [user_payment_cardexpdate] => 26/22
+            [user_payment_cvv] => 243
+            [user_payment_password] => 20040727
+            [user_payment_balance] => 0
+        )
+
+)
+
+[22-Oct-2024 10:36:34 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 12
+    [user_email] => wilsomwong2004@gmail.com
+    [user_username] => Wilsomwong
+    [user_profile_pic] => ./assets/css/pic/profile_pics/67169cb11f0e5_profile.jpg
+    [user_payment_balance] => 87
+    [user_bank_name] => Maybank
+    [user_card_number] => 2147483647
+    [user_card_name] => Wilsomwong
+    [user_card_expiry_date] => 12/29
+    [user_cards] => Array
+        (
+            [0] => Array
+                (
+                    [payment_id] => 20
+                    [id] => 12
+                    [user_payment_bankname] => Maybank
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 12/29
+                    [user_payment_cvv] => 458
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 94
+                )
+
+            [1] => Array
+                (
+                    [payment_id] => 26
+                    [id] => 12
+                    [user_payment_bankname] => Public Bank
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 26/22
+                    [user_payment_cvv] => 243
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 0
+                )
+
+        )
+
+    [active_card_index] => 0
+)
+
+[22-Oct-2024 10:36:34 Europe/Berlin] Number of cards found: 2
+[22-Oct-2024 10:36:34 Europe/Berlin] Active card index: 0
+[22-Oct-2024 10:36:34 Europe/Berlin] Cards data: Array
+(
+    [0] => Array
+        (
+            [payment_id] => 20
+            [id] => 12
+            [user_payment_bankname] => Maybank
+            [user_payment_cardnumber] => 2147483647
+            [user_payment_cardname] => Wilsomwong
+            [user_payment_cardexpdate] => 12/29
+            [user_payment_cvv] => 458
+            [user_payment_password] => 20040727
+            [user_payment_balance] => 94
+        )
+
+    [1] => Array
+        (
+            [payment_id] => 27
+            [id] => 12
+            [user_payment_bankname] => Public Bank
+            [user_payment_cardnumber] => 1999213487645738
+            [user_payment_cardname] => Wilsomwong
+            [user_payment_cardexpdate] => 26/22
+            [user_payment_cvv] => 243
+            [user_payment_password] => 20040727
+            [user_payment_balance] => 0
+        )
+
+)
+
+[22-Oct-2024 10:37:39 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 12
+    [user_email] => wilsomwong2004@gmail.com
+    [user_username] => Wilsomwong
+    [user_profile_pic] => ./assets/css/pic/profile_pics/67169cb11f0e5_profile.jpg
+    [user_payment_balance] => 87
+    [user_bank_name] => Maybank
+    [user_card_number] => 2147483647
+    [user_card_name] => Wilsomwong
+    [user_card_expiry_date] => 12/29
+    [user_cards] => Array
+        (
+            [0] => Array
+                (
+                    [payment_id] => 20
+                    [id] => 12
+                    [user_payment_bankname] => Maybank
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 12/29
+                    [user_payment_cvv] => 458
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 94
+                )
+
+            [1] => Array
+                (
+                    [payment_id] => 27
+                    [id] => 12
+                    [user_payment_bankname] => Public Bank
+                    [user_payment_cardnumber] => 1999213487645738
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 26/22
+                    [user_payment_cvv] => 243
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 0
+                )
+
+        )
+
+    [active_card_index] => 1
+)
+
+[22-Oct-2024 10:37:39 Europe/Berlin] Number of cards found: 2
+[22-Oct-2024 10:37:39 Europe/Berlin] Active card index: 1
+[22-Oct-2024 10:37:39 Europe/Berlin] Cards data: Array
+(
+    [0] => Array
+        (
+            [payment_id] => 20
+            [id] => 12
+            [user_payment_bankname] => Maybank
+            [user_payment_cardnumber] => 2147483647
+            [user_payment_cardname] => Wilsomwong
+            [user_payment_cardexpdate] => 12/29
+            [user_payment_cvv] => 458
+            [user_payment_password] => 20040727
+            [user_payment_balance] => 94
+        )
+
+    [1] => Array
+        (
+            [payment_id] => 27
+            [id] => 12
+            [user_payment_bankname] => Public Bank
+            [user_payment_cardnumber] => 1999213487645738
+            [user_payment_cardname] => Wilsomwong
+            [user_payment_cardexpdate] => 26/22
+            [user_payment_cvv] => 243
+            [user_payment_password] => 20040727
+            [user_payment_balance] => 0
+        )
+
+)
+
+[22-Oct-2024 10:41:40 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 12
+    [user_email] => wilsomwong2004@gmail.com
+    [user_username] => Wilsomwong
+    [user_profile_pic] => ./assets/css/pic/profile_pics/67169cb11f0e5_profile.jpg
+    [user_payment_balance] => 87
+    [user_bank_name] => Maybank
+    [user_card_number] => 2147483647
+    [user_card_name] => Wilsomwong
+    [user_card_expiry_date] => 12/29
+    [user_cards] => Array
+        (
+            [0] => Array
+                (
+                    [payment_id] => 20
+                    [id] => 12
+                    [user_payment_bankname] => Maybank
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 12/29
+                    [user_payment_cvv] => 458
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 94
+                )
+
+            [1] => Array
+                (
+                    [payment_id] => 27
+                    [id] => 12
+                    [user_payment_bankname] => Public Bank
+                    [user_payment_cardnumber] => 1999213487645738
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 26/22
+                    [user_payment_cvv] => 243
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 0
+                )
+
+        )
+
+    [active_card_index] => 1
+)
+
+[22-Oct-2024 10:41:40 Europe/Berlin] Number of cards found: 2
+[22-Oct-2024 10:41:40 Europe/Berlin] Active card index: 1
+[22-Oct-2024 10:41:40 Europe/Berlin] Cards data: Array
+(
+    [0] => Array
+        (
+            [payment_id] => 20
+            [id] => 12
+            [user_payment_bankname] => Maybank
+            [user_payment_cardnumber] => 2147483647
+            [user_payment_cardname] => Wilsomwong
+            [user_payment_cardexpdate] => 12/29
+            [user_payment_cvv] => 458
+            [user_payment_password] => 20040727
+            [user_payment_balance] => 94
+        )
+
+    [1] => Array
+        (
+            [payment_id] => 27
+            [id] => 12
+            [user_payment_bankname] => Public Bank
+            [user_payment_cardnumber] => 1999213487645738
+            [user_payment_cardname] => Wilsomwong
+            [user_payment_cardexpdate] => 26/22
+            [user_payment_cvv] => 243
+            [user_payment_password] => 20040727
+            [user_payment_balance] => 0
+        )
+
+)
+
+[22-Oct-2024 10:42:50 Europe/Berlin] Received data: Array
+(
+    [first_user_name] => Janson
+    [last_user_name] => liew
+    [username] => Janson
+    [password] => 1111
+    [email] => Janson@gmail.com
+    [address] => No.18 , Lorong 9
+    [birthday] => 1111-11-11
+    [gender] => Male
+    [agree_w_tnc] => agree_w_tnc
+)
+
