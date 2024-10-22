@@ -2,8 +2,8 @@
 session_start();
 
 // Enable error logging to a file
-// ini_set('log_errors', 1);
-// ini_set('error_log', 'top_up_errors.log');
+ini_set('log_errors', 1);
+ini_set('error_log', 'top_up_errors.log');
 
 // Set JSON header
 header('Content-Type: application/json');
