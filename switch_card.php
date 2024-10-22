@@ -2,38 +2,34 @@
 session_start();
 header('Content-Type: application/json');
 
-if (!isset($_SESSION['user_email'])) {
-    echo json_encode(['status' => 'error', 'message' => 'User not logged in']);
-    exit();
-}
-
 if (!isset($_SESSION['user_cards']) || empty($_SESSION['user_cards'])) {
-    echo json_encode(['status' => 'error', 'message' => 'No cards available']);
-    exit();
+    echo json_encode([
+        'status' => 'error',
+        'message' => 'No cards available'
+    ]);
+    exit;
 }
 
+// Get the current number of cards
 $cardCount = count($_SESSION['user_cards']);
 
-if ($cardCount === 1) {
-    $active_card = $_SESSION['user_cards'][0];
-    $_SESSION['active_card_index'] = 0;
-} else {
-    // Switch to the next card
-    $_SESSION['active_card_index'] = ($_SESSION['active_card_index'] + 1) % $cardCount;
-    $active_card = $_SESSION['user_cards'][$_SESSION['active_card_index']];
-}
+// Increment the active card index and wrap around if necessary
+$_SESSION['active_card_index'] = ($_SESSION['active_card_index'] + 1) % $cardCount;
 
-// Prepare the response data
+// Get the new active card
+$activeCard = $_SESSION['user_cards'][$_SESSION['active_card_index']];
+
+// Format the response with string values
 $response = [
     'status' => 'success',
+    'cardCount' => $cardCount,
     'card' => [
-        'balance' => $active_card['user_payment_balance'],
-        'cardNumber' => $active_card['user_payment_cardnumber'],
-        'cardName' => $active_card['user_payment_cardname'],
-        'bankName' => $active_card['user_payment_bankname'],
-        'expiryDate' => $active_card['user_payment_cardexpdate'],
-    ],
-    'cardCount' => $cardCount
+        'cardNumber' => strval($activeCard['user_payment_cardnumber']), // Ensure it's a string
+        'bankName' => strval($activeCard['user_payment_bankname']),
+        'cardName' => strval($activeCard['user_payment_cardname']),
+        'expiryDate' => strval($activeCard['user_payment_cardexpdate']),
+        'balance' => number_format((float)$activeCard['user_payment_balance'], 2)
+    ]
 ];
 
 echo json_encode($response);

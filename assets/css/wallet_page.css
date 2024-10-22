@@ -568,7 +568,7 @@ tr td:last-child {
 
 .transaction-message {
     text-align: center;
-    margin-top: 50%;
+    margin-top: 25%;
 }
 
 .status {
@@ -598,7 +598,7 @@ tr td:last-child {
     justify-content: space-between;
     align-items: center;
     color: var(--text-color);
-    margin-top: 30vh;
+    margin-top: 32vh;
 }
 
 .per-page-select,

@@ -6,12 +6,9 @@
   ini_set('error_log', 'php_errors.log');
 
   // Debug: Print session data
-  // echo "<pre>Session Data:\n";
-  // print_r($_SESSION);
-  // echo "</pre>";
-
   error_log("Session data in wallet_page.php: " . print_r($_SESSION, true));
 
+  // Check if user is logged in
   if(!isset($_SESSION['user_email'])) {
       error_log("User not logged in. Redirecting to index.php");
       header("Location: index.php");
@@ -24,50 +21,43 @@
       exit();
   }
 
-  // if (!isset($_SESSION['user_cards']) || empty($_SESSION['user_cards'])) {
-  //   // Fetch the user's cards from the database
-  //   $user_id = $_SESSION['user_id'];
-  //   $sql = "SELECT * FROM user_payment_data WHERE id = ?";
-  //   $stmt = $conn->prepare($sql);
-  //   $stmt->bind_param("i", $user_id);
-  //   $stmt->execute();
-  //   $result = $stmt->get_result();
-
-  //   $_SESSION['user_cards'] = [];
-  //   while ($row = $result->fetch_assoc()) {
-  //       $_SESSION['user_cards'][] = $row;
-  //   }
-
-  //   if (!empty($_SESSION['user_cards'])) {
-  //       $_SESSION['active_card_index'] = 0;
-  //   }
-  // }
-
-  $user_id = $_SESSION['user_id'];
-
+  // Include database connection
   require_once 'conn.php';
 
+  $user_id = $_SESSION['user_id'];
+  
+  // Fetch all cards for the user using user_id
   $sql = "SELECT * FROM user_payment_data WHERE id = ?";
   $stmt = $conn->prepare($sql);
   $stmt->bind_param("i", $user_id);
   $stmt->execute();
   $result = $stmt->get_result();
 
-  if ($result->num_rows > 0) {
-      $user_data = $result->fetch_assoc();
-  } else {
-      error_log("No payment data found for user ID: " . $user_id);
-      echo "<script>alert('Error: No payment data found. Please add card before using wallet.');</script>";
-  }
+  // Reset cards array
+  $_SESSION['user_cards'] = array();
   
-
-  $cards = array();
+  // Fetch all cards
   while ($row = $result->fetch_assoc()) {
-      $cards[] = $row;
+      $_SESSION['user_cards'][] = $row;
   }
 
-  $_SESSION['user_cards'] = $cards;
-  $_SESSION['active_card_index'] = 0; // Set the first card as active by default
+  // Set active card index if not set or if cards exist
+  if (!empty($_SESSION['user_cards'])) {
+      if (!isset($_SESSION['active_card_index']) || $_SESSION['active_card_index'] >= count($_SESSION['user_cards'])) {
+          $_SESSION['active_card_index'] = 0;
+      }
+      $active_card = $_SESSION['user_cards'][$_SESSION['active_card_index']];
+  } else {
+      $active_card = null;
+      error_log("No payment data found for user ID: " . $user_id);
+  }
+
+  $stmt->close();
+
+  // For debugging
+  error_log("Number of cards found: " . count($_SESSION['user_cards']));
+  error_log("Active card index: " . $_SESSION['active_card_index']);
+  error_log("Cards data: " . print_r($_SESSION['user_cards'], true));
 ?>
 
 <!DOCTYPE html>
@@ -137,20 +127,20 @@
                   <h1>Hi, <?php echo $_SESSION['user_username']; ?>.</h1>
                   <div class="balance-info">
                     <p class="balance-label">Balance</p>
-                    <p class="balance">RM <?php echo $cards[0]['user_payment_balance'] ?? '0.00'; ?></p>
+                    <p class="balance">RM <?php echo isset($_SESSION['user_cards'][0]) ? number_format($_SESSION['user_cards'][0]['user_payment_balance'], 2) : '0.00'; ?></p>
                     <p class="main-balance">Main Wallet</p>
                   </div>
                   <div class="wallet-actions">
                     <button class="top-up">Top Up</button>
-                    <?php if (count($cards) > 1): ?>
-                    <button class="switch-card"><i class="fas fa-sync-alt"></i></button>
-                    <?php endif; ?>
+                    <?php if (isset($_SESSION['user_cards']) && count($_SESSION['user_cards']) > 1): ?>
+                      <button class="switch-card"><i class="fas fa-sync-alt"></i></button>
+                  <?php endif; ?>
                   </div>
                 </div>
                 <div class="wallet-cards">
                   <div class="wallet-card">
-                    <p class="card-balance">RM <?php echo $cards[0]['user_payment_balance'] ?? '0.00'; ?></p>
-                    <p class="card-number">**** **** **** <?php echo substr($cards[0]['user_payment_cardnumber'] ?? '', -4); ?></p>
+                    <p class="card-balance">RM <?php echo isset($_SESSION['user_cards'][0]) ? number_format($_SESSION['user_cards'][0]['user_payment_balance'], 2) : '0.00'; ?></p>
+                    <p class="card-number">**** **** **** <?php echo isset($_SESSION['user_cards'][0]) ? substr($_SESSION['user_cards'][0]['user_payment_cardnumber'], -4) : '****'; ?></p>
                   </div>
                 </div>
               </div>
@@ -159,19 +149,27 @@
                 <div class="card-details-grid">
                 <div class="card-detail-item">
                     <p class="card-detail-label">Card Holder</p>
-                    <p class="card-detail-value"><?php echo htmlspecialchars($cards[0]['user_payment_cardname'] ?? 'N/A'); ?></p>
+                    <p class="card-detail-value"><?php echo isset($_SESSION['user_cards'][0]) ? htmlspecialchars($_SESSION['user_cards'][0]['user_payment_cardname']) : 'N/A'; ?></p>
                     </div>
                   <div class="card-detail-item">
                     <p class="card-detail-label">Bank Name</p>
-                    <p class="card-detail-value"><?php echo htmlspecialchars($cards[0]['user_payment_bankname'] ?? 'N/A'); ?></p>
+                    <p class="card-detail-value"><?php echo isset($_SESSION['user_cards'][0]) ? htmlspecialchars($_SESSION['user_cards'][0]['user_payment_bankname']) : 'N/A'; ?></p>
                   </div>
                   <div class="card-detail-item">
                     <p class="card-detail-label">Valid Date</p>
-                    <p class="card-detail-value"><?php echo htmlspecialchars($cards[0]['user_payment_cardexpdate'] ?? 'N/A'); ?></p>
+                    <p class="card-detail-value"><?php echo isset($_SESSION['user_cards'][0]) ? htmlspecialchars($_SESSION['user_cards'][0]['user_payment_cardexpdate']) : 'N/A'; ?>
                   </div>
                   <div class="card-detail-item">
                     <p class="card-detail-label">Card Number</p>
-                    <p class="card-detail-value">**** **** **** <?php echo substr($cards[0]['user_payment_cardnumber'] ?? 'N/A', -4); ?></p>
+                    <p class="card-detail-value">
+                      <?php
+                          if (isset($_SESSION['user_cards'][0]) && $_SESSION['user_cards'][0]['user_payment_cardnumber'] != 'N/A') {
+                              echo '**** **** **** ' . substr($_SESSION['user_cards'][0]['user_payment_cardnumber'], -4);
+                          } else {
+                              echo 'N/A';
+                          }
+                      ?>
+                    </p>
                   </div>
                 </div>
               </div>

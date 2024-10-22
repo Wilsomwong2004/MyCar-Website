@@ -227,27 +227,56 @@ document.addEventListener('DOMContentLoaded', function () {
         topUpButton.addEventListener('click', function () {
             showPopup('Top Up', `
                 <div id="top-up-form">
-                    <div class= "top-up-container">
-                        <div class= "top-up-input">
+                    <div class="top-up-container">
+                        <div class="top-up-input">
                             <div class="amount">Amount</div>
                             <input type="number" id="amount" name="amount" placeholder="Enter amount here" required>
+                            <div class="password">Password</div>
+                            <input type="password" id="password" name="password" placeholder="Enter your password" required>
                         </div>
                         <button class="top-up-submit-btn" type="submit">Confirm Top Up</button>
                     </div>
                 </div>
             `);
 
-            document.getElementById('top-up-form').addEventListener('submit', function (e) {
+            const form = document.getElementById('top-up-form');
+            form.addEventListener('submit', function (e) {
                 e.preventDefault();
                 const amount = document.getElementById('amount').value;
-                // Here you would typically send this data to your server
-                console.log('Top up amount:', amount);
-                closePopup();
-                showAnimatedPopup(`Successfully topped up $${amount}`);
+                const password = document.getElementById('password').value;
+
+                // Create FormData object
+                const formData = new FormData();
+                formData.append('amount', amount);
+                formData.append('password', password);
+
+                // Send top-up request
+                fetch('top_up.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.status === 'success') {
+                            // Update balance display
+                            const balanceElement = document.querySelector('.balance');
+                            if (balanceElement) {
+                                balanceElement.textContent = 'RM ' + data.newBalance;
+                            }
+
+                            closePopup();
+                            showAnimatedPopup('Top up successful');
+                        } else {
+                            showAnimatedPopup(data.message || 'Failed to process top up');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        showAnimatedPopup('An error occurred. Please try again.');
+                    });
             });
         });
     }
-
 
     // Close popup when clicking outside
     popupContainer.addEventListener('click', function (e) {
@@ -268,9 +297,10 @@ document.addEventListener('DOMContentLoaded', function () {
             })
                 .then(response => response.json())
                 .then(data => {
+                    console.log('Received data:', data); // Debug log
                     if (data.status === 'success') {
                         updateCardDisplay(data.card);
-                        showAnimatedPopup('Switched to card ending in ' + data.card.cardNumber.slice(-4));
+                        showAnimatedPopup('Switched to card ending in ' + String(data.card.cardNumber).slice(-4));
 
                         // Update switch button visibility
                         if (data.cardCount <= 1) {
@@ -290,22 +320,47 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function updateCardDisplay(card) {
+        console.log('Updating card display with:', card); // Debug log
+
+        // Safely convert card number to string and handle null/undefined
+        const cardNumber = String(card.cardNumber || '');
+        const last4Digits = cardNumber.slice(-4);
+
+        // Update balance
         const balanceElement = document.querySelector('.balance');
         if (balanceElement && card.balance !== undefined) {
             balanceElement.textContent = 'RM ' + card.balance;
         }
 
+        // Update card number in the card display
         const cardNumberElement = document.querySelector('.card-number');
-        if (cardNumberElement && card.cardNumber) {
-            cardNumberElement.textContent = '**** **** **** ' + card.cardNumber.slice(-4);
+        if (cardNumberElement) {
+            cardNumberElement.textContent = '**** **** **** ' + last4Digits;
         }
 
+        // Update all card details
         const cardDetailsValues = document.querySelectorAll('.card-detail-value');
         if (cardDetailsValues.length >= 4) {
-            if (card.cardName) cardDetailsValues[0].textContent = card.cardName;
-            if (card.bankName) cardDetailsValues[1].textContent = card.bankName;
-            if (card.expiryDate) cardDetailsValues[2].textContent = card.expiryDate;
-            if (card.cardNumber) cardDetailsValues[3].textContent = '**** **** **** ' + card.cardNumber.slice(-4);
+            // Card Holder
+            if (card.cardName) {
+                cardDetailsValues[0].textContent = card.cardName;
+            }
+            // Bank Name
+            if (card.bankName) {
+                cardDetailsValues[1].textContent = card.bankName;
+            }
+            // Valid Date
+            if (card.expiryDate) {
+                cardDetailsValues[2].textContent = card.expiryDate;
+            }
+            // Card Number
+            cardDetailsValues[3].textContent = '**** **** **** ' + last4Digits;
+        }
+
+        // Update the card balance display in the wallet card section
+        const cardBalanceElement = document.querySelector('.card-balance');
+        if (cardBalanceElement && card.balance !== undefined) {
+            cardBalanceElement.textContent = 'RM ' + card.balance;
         }
     }
 
