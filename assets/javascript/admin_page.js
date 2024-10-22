@@ -136,7 +136,7 @@ function populatePaymentTable(paymentsToDisplay) {
             <td>${userData.firstName} ${userData.lastName}</td>
             <td>${userData.bankName}</td>
             <td>${maskCardNumber(userData.cardNumber)}</td>
-            <td>$${formatBalance(userData.balance)}</td>
+            <td>RM ${formatBalance(userData.balance)}</td>
             <td>
                 <div class="action-buttons">
                     <button class="btn btn-edit" onclick="editPayment('${payment.payment_id || payment.id}')">Edit</button>
@@ -199,13 +199,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-function editPayment(paymentId, userId) {
+function editPayment(paymentId) {
     if (currentEditingId) {
         cancelEdit(currentEditingId);
     }
 
     currentEditingId = paymentId;
-    const payment = payments.find(p => p.payment_id === paymentId);
+    const payment = payments.find(p => String(p.payment_id) === String(paymentId));
     if (!payment) {
         console.error('Payment not found for payment_id:', paymentId);
         return;
@@ -217,7 +217,6 @@ function editPayment(paymentId, userId) {
         <td colspan="6">
             <form id="editPaymentForm-${paymentId}" class="edit-payment-form">
                 <input type="hidden" name="payment_id" value="${paymentId}">
-                <input type="hidden" name="user_id" value="${userId}">
                 <div class="form-group">
                     <label for="user_payment_bankname">Bank Name:</label>
                     <input type="text" id="user_payment_bankname" name="user_payment_bankname" 
@@ -247,7 +246,6 @@ function editPayment(paymentId, userId) {
     paymentRow.style.display = 'none';
     paymentRow.insertAdjacentElement('afterend', editForm);
 
-    // Form submission handler
     document.getElementById(`editPaymentForm-${paymentId}`).addEventListener('submit', function (e) {
         e.preventDefault();
         const formData = new FormData(e.target);
@@ -256,7 +254,19 @@ function editPayment(paymentId, userId) {
             method: 'POST',
             body: formData
         })
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.text().then(text => {
+                    try {
+                        return JSON.parse(text);
+                    } catch (e) {
+                        console.error('Server response:', text);
+                        throw new Error('Server returned invalid JSON');
+                    }
+                });
+            })
             .then(data => {
                 if (data.success) {
                     fetchPayments();
@@ -266,7 +276,7 @@ function editPayment(paymentId, userId) {
                 }
             })
             .catch(error => {
-                console.error('Error updating payment:', error);
+                console.error('Full error details:', error);
                 alert('Failed to update payment: ' + error.message);
             });
     });
@@ -296,7 +306,19 @@ function deletePayment(paymentId) {
         method: 'POST',
         body: formData
     })
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.text().then(text => {
+                try {
+                    return JSON.parse(text);
+                } catch (e) {
+                    console.error('Server response:', text);
+                    throw new Error('Server returned invalid JSON');
+                }
+            });
+        })
         .then(data => {
             if (data.success) {
                 fetchPayments();
@@ -305,8 +327,8 @@ function deletePayment(paymentId) {
             }
         })
         .catch(error => {
-            console.error('Error deleting payment:', error);
-            alert('Failed to delete payment: ' + error.message);
+            console.error('Full error details:', error);
+            alert('Error deleting payment: ' + error.message);
         });
 }
 
@@ -450,10 +472,18 @@ function cancelEdit(id) {
     if (editForm) {
         editForm.remove();
     }
+
+    // Check both user and payment rows
     const userRow = document.getElementById(`userRow-${id}`);
+    const paymentRow = document.getElementById(`paymentRow-${id}`);
+
     if (userRow) {
-        userRow.style.display = '';
+        userRow.style.display = 'table-row'; // Use 'table-row' instead of ''
     }
+    if (paymentRow) {
+        paymentRow.style.display = 'table-row'; // Use 'table-row' instead of ''
+    }
+
     currentEditingId = null;
 }
 

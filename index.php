@@ -58,6 +58,13 @@ try {
                 // Check for admin login
                 if ($userInput === 'admin' && $password === '0000') {
                     $_SESSION['admin'] = true;
+                    $_SESSION['user_id'] = 'admin';  // Add this
+                    $_SESSION['user_role'] = 'admin'; // Add this - this is what your admin page checks for
+                    $_SESSION['user_username'] = 'admin'; // Optional but good to have
+
+                    error_log('Admin login successful - Session data:');
+                    error_log(print_r($_SESSION, true));
+
                     outputJSON(['status' => 'success', 'message' => 'Admin login successful', 'redirect' => 'admin_page.php']);
                 } else {
                     // Perform regular user login

@@ -281,7 +281,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         }
                     })
                     .catch(error => {
-                        console.error('Error:', error);
+                        console.error('Error details:', error);
+                        error.text().then(text => console.error('Response text:', text));
                         showAnimatedPopup('An error occurred. Please try again.');
                     });
 

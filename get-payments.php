@@ -5,8 +5,8 @@ header('Content-Type: application/json');
 
 try {
     // Join query to get both payment and user data
-    $sql = "SELECT p.*, u.user_firstname, u.user_lastname 
-            FROM user_payment_data p 
+    $sql = "SELECT p.*, u.user_firstname, u.user_lastname
+            FROM user_payment_data p
             LEFT JOIN user_account_data u ON p.id = u.id";
     
     $result = mysqli_query($conn, $sql);
