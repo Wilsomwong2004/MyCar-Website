@@ -1,0 +1,30 @@
+[22-Oct-2024 17:10:30 Europe/Berlin] Top-up request received. POST data: {"amount":"500","password":"[REDACTED]"}
+[22-Oct-2024 17:10:30 Europe/Berlin] Session state: {"user_id_set":true,"cards_set":true,"active_card_index_set":true}
+[22-Oct-2024 17:10:30 Europe/Berlin] Processing top-up for user_id: 27
+[22-Oct-2024 17:10:30 Europe/Berlin] Executing update with params: amount=500, id=27, card_number=1234567890123456
+[22-Oct-2024 17:10:30 Europe/Berlin] Sending response: {"status":"success","message":"Top up successful","newBalance":"500.00"}
+[22-Oct-2024 17:12:48 Europe/Berlin] Top-up request received. POST data: {"amount":"2020","password":"[REDACTED]"}
+[22-Oct-2024 17:12:48 Europe/Berlin] Session state: {"user_id_set":true,"cards_set":true,"active_card_index_set":true}
+[22-Oct-2024 17:12:48 Europe/Berlin] Processing top-up for user_id: 27
+[22-Oct-2024 17:12:48 Europe/Berlin] Executing update with params: amount=2020, id=27, card_number=987654321654321
+[22-Oct-2024 17:12:48 Europe/Berlin] Sending response: {"status":"success","message":"Top up successful","newBalance":"500.00"}
+[22-Oct-2024 17:17:59 Europe/Berlin] Top-up request received. POST data: {"amount":"6666","password":"[REDACTED]"}
+[22-Oct-2024 17:17:59 Europe/Berlin] Session state: {"user_id_set":true,"cards_set":true,"active_card_index_set":true}
+[22-Oct-2024 17:17:59 Europe/Berlin] Processing top-up for user_id: 28
+[22-Oct-2024 17:17:59 Europe/Berlin] Executing update with params: amount=6666, id=28, card_number=1111222233334444
+[22-Oct-2024 17:17:59 Europe/Berlin] Sending response: {"status":"success","message":"Top up successful","newBalance":"6,666.00"}
+[22-Oct-2024 17:22:39 Europe/Berlin] Top-up request received. POST data: {"amount":"1","password":"[REDACTED]"}
+[22-Oct-2024 17:22:39 Europe/Berlin] Session state: {"user_id_set":true,"cards_set":true,"active_card_index_set":true}
+[22-Oct-2024 17:22:39 Europe/Berlin] Processing top-up for user_id: 29
+[22-Oct-2024 17:22:39 Europe/Berlin] Executing update with params: amount=1, id=29, card_number=1234123412341234
+[22-Oct-2024 17:22:39 Europe/Berlin] Sending response: {"status":"success","message":"Top up successful","newBalance":"1.00"}
+[22-Oct-2024 17:26:49 Europe/Berlin] Top-up request received. POST data: {"amount":"189665452","password":"[REDACTED]"}
+[22-Oct-2024 17:26:49 Europe/Berlin] Session state: {"user_id_set":true,"cards_set":true,"active_card_index_set":true}
+[22-Oct-2024 17:26:49 Europe/Berlin] Processing top-up for user_id: 30
+[22-Oct-2024 17:26:49 Europe/Berlin] Executing update with params: amount=189665452, id=30, card_number=9999888877776666
+[22-Oct-2024 17:26:49 Europe/Berlin] Sending response: {"status":"success","message":"Top up successful","newBalance":"189,665,452.00"}
+[22-Oct-2024 17:30:02 Europe/Berlin] Top-up request received. POST data: {"amount":"894586752","password":"[REDACTED]"}
+[22-Oct-2024 17:30:02 Europe/Berlin] Session state: {"user_id_set":true,"cards_set":true,"active_card_index_set":true}
+[22-Oct-2024 17:30:02 Europe/Berlin] Processing top-up for user_id: 30
+[22-Oct-2024 17:30:02 Europe/Berlin] Executing update with params: amount=894586752, id=30, card_number=1234512345123451
+[22-Oct-2024 17:30:02 Europe/Berlin] Sending response: {"status":"success","message":"Top up successful","newBalance":"189,665,452.00"}
