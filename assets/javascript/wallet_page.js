@@ -247,10 +247,27 @@ document.addEventListener('DOMContentLoaded', function () {
                 const amount = document.getElementById('amount').value;
                 const password = document.getElementById('password').value;
 
+                // Validate input
+                if (!amount || amount <= 0) {
+                    showAnimatedPopup('Please enter a valid amount');
+                    return;
+                }
+
+                if (!password) {
+                    showAnimatedPopup('Please enter your password');
+                    return;
+                }
+
                 // Create FormData object
                 const formData = new FormData();
                 formData.append('amount', amount);
                 formData.append('password', password);
+
+                // Show loading state
+                const submitButton = form.querySelector('.top-up-submit-btn');
+                const originalButtonText = submitButton.textContent;
+                submitButton.textContent = 'Processing...';
+                submitButton.disabled = true;
 
                 // Send top-up request
                 fetch('top_up.php', {
@@ -258,20 +275,25 @@ document.addEventListener('DOMContentLoaded', function () {
                     body: formData
                 })
                     .then(response => {
-                        // Check if the response is JSON
                         if (!response.ok) {
-                            return response.text().then(text => {
-                                throw new Error('Server error: ' + text);
-                            });
+                            throw new Error('Network response was not ok');
                         }
                         return response.json();
                     })
                     .then(data => {
+                        console.log('Server response:', data);
+
                         if (data.status === 'success') {
                             // Update balance display
                             const balanceElement = document.querySelector('.balance');
-                            if (balanceElement) {
+                            if (balanceElement && data.newBalance) {
                                 balanceElement.textContent = 'RM ' + data.newBalance;
+                            }
+
+                            // Update card balance display
+                            const cardBalanceElement = document.querySelector('.card-balance');
+                            if (cardBalanceElement && data.newBalance) {
+                                cardBalanceElement.textContent = 'RM ' + data.newBalance;
                             }
 
                             closePopup();
@@ -281,11 +303,14 @@ document.addEventListener('DOMContentLoaded', function () {
                         }
                     })
                     .catch(error => {
-                        console.error('Error details:', error);
-                        error.text().then(text => console.error('Response text:', text));
+                        console.error('Error:', error);
                         showAnimatedPopup('An error occurred. Please try again.');
+                    })
+                    .finally(() => {
+                        // Reset button state
+                        submitButton.textContent = originalButtonText;
+                        submitButton.disabled = false;
                     });
-
             });
         });
     }
