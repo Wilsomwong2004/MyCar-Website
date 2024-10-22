@@ -11,17 +11,16 @@ session_start();
 header('Content-Type: application/json');
 
 try {
-    // First verify that the user is logged in
-    if (!isset($_SESSION['user_id'])) {
-        throw new Exception("User not logged in");
+    // Check for either a regular logged-in user or a temp user from signup
+    $user_id = $_SESSION['temp_user_id'] ?? $_SESSION['user_id'] ?? null;
+    
+    if (!$user_id) {
+        throw new Exception("No valid user ID found in session");
     }
-
-    // Get the actual user ID from the session, not from POST
-    $user_id = $_SESSION['user_id'];
     
     // Log the session data for debugging
-    error_log("Session user_id: " . $_SESSION['user_id']);
-    error_log("Session user_email: " . $_SESSION['user_email']);
+    error_log("Processing card details for user_id: " . $user_id);
+    error_log("Session data: " . print_r($_SESSION, true));
 
     // Get the form data
     $bank_name = $_POST['bank_name'] ?? '';
@@ -121,13 +120,19 @@ try {
         $_SESSION['user_cards'][] = $newCard;
         $_SESSION['active_card_index'] = count($_SESSION['user_cards']) - 1;
 
+        // Clear temporary user ID if it exists
+        if (isset($_SESSION['temp_user_id'])) {
+            unset($_SESSION['temp_user_id']);
+        }
+
         // Log successful insertion
         error_log("Card successfully added for user ID: $user_id");
         
         echo json_encode([
             'status' => 'success', 
             'message' => 'Card details added successfully',
-            'user_id' => $user_id  // Return the user ID for verification
+            'user_id' => $user_id,
+            'setup_source' => $_SESSION['payment_setup_source'] ?? 'unknown'
         ]);
     } else {
         throw new Exception("Execute failed: " . mysqli_stmt_error($stmt));

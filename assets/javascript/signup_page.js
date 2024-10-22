@@ -50,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         // Set the source and new user ID
                         window.paymentSetupHandler.setSource('signup', data.userId);
                         alert('Account created successfully!');
+                        alert('Please login to continue');
                         confirmPopup.classList.remove('hidden');
                     } else {
                         console.error('Server error:', data.message);
@@ -81,8 +82,10 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     noButton.addEventListener('click', function () {
+        alert("This function will be available in the next update. You can set it up after login")
         confirmPopup.classList.add('hidden');
-        window.location.href = 'add_card_page.php';
+        window.location.href = 'index.php';
+        // window.location.href = 'add_card_page.php';
     });
 
     closeModal.onclick = function () {

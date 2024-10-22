@@ -3592,3 +3592,291 @@
 
 )
 
+[22-Oct-2024 13:53:42 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 15
+    [user_email] => Janson@gmail.com
+    [user_username] => Janson
+    [user_profile_pic] => ./assets/css/pic/Unknown_acc-removebg.png
+    [user_cards] => Array
+        (
+            [0] => Array
+                (
+                    [payment_id] => 30
+                    [id] => 15
+                    [user_payment_bankname] => Public Bank
+                    [user_payment_cardnumber] => 7656666665555444
+                    [user_payment_cardname] => Janson
+                    [user_payment_cardexpdate] => 12/34
+                    [user_payment_cvv] => 989
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 0
+                )
+
+        )
+
+    [active_card_index] => 0
+    [active_user_id] => 15
+    [payment_setup_source] => settings
+)
+
+[22-Oct-2024 13:53:42 Europe/Berlin] Number of cards found: 1
+[22-Oct-2024 13:53:42 Europe/Berlin] Active card index: 0
+[22-Oct-2024 13:53:42 Europe/Berlin] Cards data: Array
+(
+    [0] => Array
+        (
+            [payment_id] => 30
+            [id] => 15
+            [user_payment_bankname] => Public Bank
+            [user_payment_cardnumber] => 7656666665555444
+            [user_payment_cardname] => Janson
+            [user_payment_cardexpdate] => 12/34
+            [user_payment_cvv] => 989
+            [user_payment_password] => 20040727
+            [user_payment_balance] => 0
+        )
+
+)
+
+[22-Oct-2024 13:53:43 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 15
+    [user_email] => Janson@gmail.com
+    [user_username] => Janson
+    [user_profile_pic] => ./assets/css/pic/Unknown_acc-removebg.png
+    [user_cards] => Array
+        (
+            [0] => Array
+                (
+                    [payment_id] => 30
+                    [id] => 15
+                    [user_payment_bankname] => Public Bank
+                    [user_payment_cardnumber] => 7656666665555444
+                    [user_payment_cardname] => Janson
+                    [user_payment_cardexpdate] => 12/34
+                    [user_payment_cvv] => 989
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 0
+                )
+
+        )
+
+    [active_card_index] => 0
+    [active_user_id] => 15
+    [payment_setup_source] => settings
+)
+
+[22-Oct-2024 13:53:43 Europe/Berlin] Number of cards found: 1
+[22-Oct-2024 13:53:43 Europe/Berlin] Active card index: 0
+[22-Oct-2024 13:53:43 Europe/Berlin] Cards data: Array
+(
+    [0] => Array
+        (
+            [payment_id] => 30
+            [id] => 15
+            [user_payment_bankname] => Public Bank
+            [user_payment_cardnumber] => 7656666665555444
+            [user_payment_cardname] => Janson
+            [user_payment_cardexpdate] => 12/34
+            [user_payment_cvv] => 989
+            [user_payment_password] => 20040727
+            [user_payment_balance] => 0
+        )
+
+)
+
+[22-Oct-2024 13:54:38 Europe/Berlin] Received data: Array
+(
+    [first_user_name] => Joe
+    [last_user_name] => Han
+    [username] => Joehan
+    [password] => 1111
+    [email] => Joehan@gmail.com
+    [address] => 123123, tmn bukit bintang
+    [birthday] => 1212-11-11
+    [gender] => Female
+    [agree_w_tnc] => agree_w_tnc
+)
+
+[22-Oct-2024 13:54:38 Europe/Berlin] Received data: Array
+(
+    [first_user_name] => Joe
+    [last_user_name] => Han
+    [username] => Joehan
+    [password] => 1111
+    [email] => Joehan@gmail.com
+    [address] => 123123, tmn bukit bintang
+    [birthday] => 1212-11-11
+    [gender] => Female
+    [agree_w_tnc] => agree_w_tnc
+)
+
+[22-Oct-2024 13:54:38 Europe/Berlin] Error in insert.php: No data supplied for parameters in prepared statement
+[22-Oct-2024 13:54:38 Europe/Berlin] Error in insert.php: No data supplied for parameters in prepared statement
+[22-Oct-2024 13:59:45 Europe/Berlin] Received data: Array
+(
+    [first_user_name] => Joe
+    [last_user_name] => Han
+    [username] => Joehan
+    [password] => 1111
+    [email] => Joehan@gmail.com
+    [address] => 123123, tmn bukit bintang
+    [birthday] => 1111-11-11
+    [gender] => Male
+    [agree_w_tnc] => agree_w_tnc
+)
+
+[22-Oct-2024 13:59:45 Europe/Berlin] Received data: Array
+(
+    [first_user_name] => Joe
+    [last_user_name] => Han
+    [username] => Joehan
+    [password] => 1111
+    [email] => Joehan@gmail.com
+    [address] => 123123, tmn bukit bintang
+    [birthday] => 1111-11-11
+    [gender] => Male
+    [agree_w_tnc] => agree_w_tnc
+)
+
+[22-Oct-2024 14:02:07 Europe/Berlin] Received data: Array
+(
+    [first_user_name] => Joe
+    [last_user_name] => Han
+    [username] => Joehan
+    [password] => 1212
+    [email] => Joehan@gmail.com
+    [address] => 123123, tmn bukit bintang
+    [birthday] => 1111-11-11
+    [gender] => Female
+    [agree_w_tnc] => agree_w_tnc
+)
+
+[22-Oct-2024 14:02:07 Europe/Berlin] Received data: Array
+(
+    [first_user_name] => Joe
+    [last_user_name] => Han
+    [username] => Joehan
+    [password] => 1212
+    [email] => Joehan@gmail.com
+    [address] => 123123, tmn bukit bintang
+    [birthday] => 1111-11-11
+    [gender] => Female
+    [agree_w_tnc] => agree_w_tnc
+)
+
+[22-Oct-2024 14:08:05 Europe/Berlin] Received data: Array
+(
+    [first_user_name] => Joe
+    [last_user_name] => Han
+    [username] => Joehan
+    [password] => 1111
+    [email] => Joehan@gmail.com
+    [address] => 123123, tmn bukit bintang
+    [birthday] => 1111-11-11
+    [gender] => Female
+    [agree_w_tnc] => agree_w_tnc
+)
+
+[22-Oct-2024 14:08:57 Europe/Berlin] Received data: Array
+(
+    [first_user_name] => Joe
+    [last_user_name] => Han
+    [username] => Joehan
+    [password] => 2232
+    [email] => Joehan@gmail.com
+    [address] => 123123, tmn bukit bintang
+    [birthday] => 3333-11-22
+    [gender] => Male
+    [agree_w_tnc] => agree_w_tnc
+)
+
+[22-Oct-2024 14:11:15 Europe/Berlin] Received data: Array
+(
+    [first_user_name] => Joe
+    [last_user_name] => Han
+    [username] => Joehan
+    [password] => 111
+    [email] => Joehan@gmail.com
+    [address] => 123123, tmn bukit bintang
+    [birthday] => 1111-11-11
+    [gender] => Female
+    [agree_w_tnc] => agree_w_tnc
+)
+
+[22-Oct-2024 14:11:42 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => checkUser
+)
+
+[22-Oct-2024 14:11:42 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => login
+    [password] => 20040727
+)
+
+[22-Oct-2024 14:11:42 Europe/Berlin] User ID: 12
+[22-Oct-2024 14:11:42 Europe/Berlin] SQL Query: SELECT * FROM user_payment_data WHERE id = ?
+[22-Oct-2024 14:11:42 Europe/Berlin] Query result: Success
+[22-Oct-2024 14:11:42 Europe/Berlin] Number of rows: 3
+[22-Oct-2024 14:11:42 Europe/Berlin] PHP Warning:  Undefined variable $userPaymentData in C:\xampp\htdocs\MyCar_Website\index.php on line 104
+[22-Oct-2024 14:11:42 Europe/Berlin] User payment data: 
+[22-Oct-2024 14:11:42 Europe/Berlin] PHP Warning:  Undefined array key "username" in C:\xampp\htdocs\MyCar_Website\index.php on line 105
+[22-Oct-2024 14:11:42 Europe/Berlin] Login successful for user: 
+[22-Oct-2024 14:11:43 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 12
+    [user_email] => wilsomwong2004@gmail.com
+    [user_username] => Wilsomwong
+    [user_profile_pic] => ./assets/css/pic/profile_pics/67169cb11f0e5_profile.jpg
+)
+
+[22-Oct-2024 14:11:43 Europe/Berlin] Initializing active_card_index to 0 for user: wilsomwong2004@gmail.com
+[22-Oct-2024 14:11:43 Europe/Berlin] Number of cards found: 3
+[22-Oct-2024 14:11:43 Europe/Berlin] Active card index: 0
+[22-Oct-2024 14:11:43 Europe/Berlin] Cards data: Array
+(
+    [0] => Array
+        (
+            [payment_id] => 20
+            [id] => 12
+            [user_payment_bankname] => Maybank
+            [user_payment_cardnumber] => 2147483647
+            [user_payment_cardname] => Wilsomwong
+            [user_payment_cardexpdate] => 12/29
+            [user_payment_cvv] => 458
+            [user_payment_password] => 20040727
+            [user_payment_balance] => 94
+        )
+
+    [1] => Array
+        (
+            [payment_id] => 27
+            [id] => 12
+            [user_payment_bankname] => Public Bank
+            [user_payment_cardnumber] => 1999213487645738
+            [user_payment_cardname] => Wilsomwong
+            [user_payment_cardexpdate] => 26/22
+            [user_payment_cvv] => 243
+            [user_payment_password] => 20040727
+            [user_payment_balance] => 0
+        )
+
+    [2] => Array
+        (
+            [payment_id] => 28
+            [id] => 12
+            [user_payment_bankname] => Maybank
+            [user_payment_cardnumber] => 1234567891234567
+            [user_payment_cardname] => Wilsomwong
+            [user_payment_cardexpdate] => 12/29
+            [user_payment_cvv] => 458
+            [user_payment_password] => 20040727
+            [user_payment_balance] => 0
+        )
+
+)
+

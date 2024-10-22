@@ -223,22 +223,8 @@ mysqli_close($conn);
     <script src="./assets/javascript/payment_setup_handler.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Add hidden fields to the form
             const form = document.querySelector('form');
             
-            const userIdInput = document.createElement('input');
-            userIdInput.type = 'hidden';
-            userIdInput.name = 'user_id';
-            userIdInput.value = '<?php echo htmlspecialchars($activeUserId); ?>';
-            form.appendChild(userIdInput);
-            
-            const sourceInput = document.createElement('input');
-            sourceInput.type = 'hidden';
-            sourceInput.name = 'setup_source';
-            sourceInput.value = '<?php echo htmlspecialchars($source); ?>';
-            form.appendChild(sourceInput);
-
-            // Handle form submission
             form.addEventListener('submit', function(event) {
                 event.preventDefault();
                 const formData = new FormData(this);
@@ -259,8 +245,8 @@ mysqli_close($conn);
                         alert('Card added successfully!');
                         // Clear setup source from session storage
                         window.paymentSetupHandler.clearSource();
-                        // Redirect based on source
-                        window.location.href = '<?php echo $source === "signup" ? "main_page.php" : "settings.php"; ?>';
+                        // Always redirect to index.php after card setup from signup
+                        window.location.href = 'index.php';
                     } else {
                         alert('Error: ' + data.message);
                     }
@@ -268,18 +254,12 @@ mysqli_close($conn);
                 .catch(error => {
                     // Hide loading overlay
                     document.getElementById('loadingOverlay').classList.add('hidden');
-                    
                     console.error('Error:', error);
                     alert('An error occurred while adding the card.');
                 });
             });
-
-            // Handle "Set Up Later" button
-            document.getElementById('setupLater').addEventListener('click', function() {
-                window.paymentSetupHandler.clearSource();
-                window.location.href = '<?php echo $source === "signup" ? "main_page.php" : "settings.php"; ?>';
-            });
         });
+
     </script>
 </body>
 </html>
