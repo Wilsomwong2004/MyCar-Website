@@ -227,19 +227,21 @@ document.addEventListener('DOMContentLoaded', function () {
         topUpButton.addEventListener('click', function () {
             showPopup('Top Up', `
                 <div id="top-up-form">
-                    <div class="top-up-container">
-                        <div class="top-up-input">
-                            <div class="amount">Amount</div>
-                            <input type="number" id="amount" name="amount" placeholder="Enter amount here" required>
-                            <div class="password">Password</div>
-                            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                    <form id="top-up-form-content"> <!-- Add form tag -->
+                        <div class="top-up-container">
+                            <div class="top-up-input">
+                                <div class="amount">Amount</div>
+                                <input type="number" id="amount" name="amount" placeholder="Enter amount here" required>
+                                <div class="password">Password</div>
+                                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                            </div>
+                            <button class="top-up-submit-btn" type="submit">Confirm Top Up</button>
                         </div>
-                        <button class="top-up-submit-btn" type="submit">Confirm Top Up</button>
-                    </div>
+                    </form>
                 </div>
             `);
 
-            const form = document.getElementById('top-up-form');
+            const form = document.getElementById('top-up-form-content'); // Correct form id
             form.addEventListener('submit', function (e) {
                 e.preventDefault();
                 const amount = document.getElementById('amount').value;
@@ -255,7 +257,15 @@ document.addEventListener('DOMContentLoaded', function () {
                     method: 'POST',
                     body: formData
                 })
-                    .then(response => response.json())
+                    .then(response => {
+                        // Check if the response is JSON
+                        if (!response.ok) {
+                            return response.text().then(text => {
+                                throw new Error('Server error: ' + text);
+                            });
+                        }
+                        return response.json();
+                    })
                     .then(data => {
                         if (data.status === 'success') {
                             // Update balance display
@@ -274,9 +284,11 @@ document.addEventListener('DOMContentLoaded', function () {
                         console.error('Error:', error);
                         showAnimatedPopup('An error occurred. Please try again.');
                     });
+
             });
         });
     }
+
 
     // Close popup when clicking outside
     popupContainer.addEventListener('click', function (e) {
