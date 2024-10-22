@@ -69,11 +69,12 @@ try {
 
                     if ($result && mysqli_num_rows($result) == 1) {
                         $user = mysqli_fetch_assoc($result);
+                        $_SESSION['user_id'] = $user['id'];  // Ensure this line is present
                         $_SESSION['user_email'] = $user['user_email'];
                         $_SESSION['user_username'] = $user['user_username'];
                         $_SESSION['user_profile_pic'] = $user['user_profile_pic'];
                     
-                        // Fetch the user's payment data by id (just id => user_id)
+                        // Fetch the user's payment data
                         $sql = "SELECT * FROM user_payment_data WHERE id = ?";
                         $stmt = mysqli_prepare($conn, $sql);
                         mysqli_stmt_bind_param($stmt, "i", $user['id']);
@@ -87,13 +88,6 @@ try {
                             $_SESSION['user_card_number'] = $userPaymentData['user_payment_cardnumber'];
                             $_SESSION['user_card_name'] = $userPaymentData['user_payment_cardname'];
                             $_SESSION['user_card_expiry_date'] = $userPaymentData['user_payment_cardexpdate'];
-                        } else {
-                            // Handle the case where the payment data is not found
-                            $_SESSION['user_payment_balance'] = 0;
-                            $_SESSION['user_bank_name'] = '';
-                            $_SESSION['user_card_number'] = '';
-                            $_SESSION['user_card_name'] = '';
-                            $_SESSION['user_card_expiry_date'] = '';
                         }
 
                         error_log("User ID: " . $user['id']);

@@ -1,102 +1,1341 @@
-[21-Oct-2024 20:52:25 Europe/Berlin] Received POST data: Array
+[21-Oct-2024 21:57:55 Europe/Berlin] Session data in wallet_page.php: Array
 (
-    [userInput] => Wilsomwong
-    [action] => checkUser
-)
-
-[21-Oct-2024 20:52:26 Europe/Berlin] Received POST data: Array
-(
-    [userInput] => Wilsomwong
-    [action] => login
-    [password] => 20040727
-)
-
-[21-Oct-2024 20:52:26 Europe/Berlin] PHP Warning:  Undefined variable $userPaymentData in C:\xampp\htdocs\MyCar_Website\index.php on line 99
-[21-Oct-2024 20:52:26 Europe/Berlin] User payment data: 
-[21-Oct-2024 20:52:26 Europe/Berlin] PHP Warning:  Undefined array key "username" in C:\xampp\htdocs\MyCar_Website\index.php on line 100
-[21-Oct-2024 20:52:26 Europe/Berlin] Login successful for user: 
-[21-Oct-2024 20:57:34 Europe/Berlin] Received POST data: Array
-(
-    [userInput] => Wilsomwong
-    [action] => checkUser
-)
-
-[21-Oct-2024 20:57:35 Europe/Berlin] Received POST data: Array
-(
-    [userInput] => Wilsomwong
-    [action] => login
-    [password] => 20040727
-)
-
-[21-Oct-2024 20:57:35 Europe/Berlin] User ID: 12
-[21-Oct-2024 20:57:35 Europe/Berlin] SQL Query: SELECT * FROM user_payment_data WHERE id = ?
-[21-Oct-2024 20:57:35 Europe/Berlin] Query result: Success
-[21-Oct-2024 20:57:35 Europe/Berlin] Number of rows: 2
-[21-Oct-2024 20:57:35 Europe/Berlin] PHP Warning:  Undefined variable $userPaymentData in C:\xampp\htdocs\MyCar_Website\index.php on line 103
-[21-Oct-2024 20:57:35 Europe/Berlin] User payment data: 
-[21-Oct-2024 20:57:35 Europe/Berlin] PHP Warning:  Undefined array key "username" in C:\xampp\htdocs\MyCar_Website\index.php on line 104
-[21-Oct-2024 20:57:35 Europe/Berlin] Login successful for user: 
-[21-Oct-2024 20:58:51 Europe/Berlin] Received POST data: Array
-(
-    [userInput] => Wilsomwong
-    [action] => checkUser
-)
-
-[21-Oct-2024 20:58:52 Europe/Berlin] Received POST data: Array
-(
-    [userInput] => Wilsomwong
-    [action] => login
-    [password] => 20040727
-)
-
-[21-Oct-2024 20:58:52 Europe/Berlin] User ID: 12
-[21-Oct-2024 20:58:52 Europe/Berlin] SQL Query: SELECT * FROM user_payment_data WHERE id = ?
-[21-Oct-2024 20:58:52 Europe/Berlin] Query result: Success
-[21-Oct-2024 20:58:52 Europe/Berlin] Number of rows: 1
-[21-Oct-2024 20:58:52 Europe/Berlin] User payment data: Array
-(
-    [payment_id] => 6
-    [id] => 12
-    [user_payment_bankname] => Maybank
-    [user_payment_cardnumber] => 2147483647
-    [user_payment_cardname] => Wilsomwong
-    [user_payment_cardexpdate] => 12/29
-    [user_payment_cvv] => 458
-    [user_payment_password] => 20040727
+    [user_id] => 12
+    [user_email] => wilsomwong2004@gmail.com
+    [user_username] => Wilsomwong
+    [user_profile_pic] => ./assets/css/pic/profile_pics/67169cb11f0e5_profile.jpg
     [user_payment_balance] => 0
+    [user_bank_name] => CIMB
+    [user_card_number] => 2147483647
+    [user_card_name] => Wilsomwong
+    [user_card_expiry_date] => 12/29
+    [user_cards] => Array
+        (
+            [0] => Array
+                (
+                    [payment_id] => 14
+                    [id] => 12
+                    [user_payment_bankname] => CIMB
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 12/29
+                    [user_payment_cvv] => 458
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 0
+                )
+
+        )
+
+    [active_card_index] => 0
 )
 
-[21-Oct-2024 20:58:52 Europe/Berlin] PHP Warning:  Undefined array key "username" in C:\xampp\htdocs\MyCar_Website\index.php on line 104
-[21-Oct-2024 20:58:52 Europe/Berlin] Login successful for user: 
-[21-Oct-2024 20:59:32 Europe/Berlin] Received POST data: Array
+[21-Oct-2024 21:57:56 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 12
+    [user_email] => wilsomwong2004@gmail.com
+    [user_username] => Wilsomwong
+    [user_profile_pic] => ./assets/css/pic/profile_pics/67169cb11f0e5_profile.jpg
+    [user_payment_balance] => 0
+    [user_bank_name] => CIMB
+    [user_card_number] => 2147483647
+    [user_card_name] => Wilsomwong
+    [user_card_expiry_date] => 12/29
+    [user_cards] => Array
+        (
+            [0] => Array
+                (
+                    [payment_id] => 14
+                    [id] => 12
+                    [user_payment_bankname] => CIMB
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 12/29
+                    [user_payment_cvv] => 458
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 0
+                )
+
+        )
+
+    [active_card_index] => 0
+)
+
+[21-Oct-2024 21:57:57 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 12
+    [user_email] => wilsomwong2004@gmail.com
+    [user_username] => Wilsomwong
+    [user_profile_pic] => ./assets/css/pic/profile_pics/67169cb11f0e5_profile.jpg
+    [user_payment_balance] => 0
+    [user_bank_name] => CIMB
+    [user_card_number] => 2147483647
+    [user_card_name] => Wilsomwong
+    [user_card_expiry_date] => 12/29
+    [user_cards] => Array
+        (
+            [0] => Array
+                (
+                    [payment_id] => 14
+                    [id] => 12
+                    [user_payment_bankname] => CIMB
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 12/29
+                    [user_payment_cvv] => 458
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 0
+                )
+
+        )
+
+    [active_card_index] => 0
+)
+
+[21-Oct-2024 21:57:57 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 12
+    [user_email] => wilsomwong2004@gmail.com
+    [user_username] => Wilsomwong
+    [user_profile_pic] => ./assets/css/pic/profile_pics/67169cb11f0e5_profile.jpg
+    [user_payment_balance] => 0
+    [user_bank_name] => CIMB
+    [user_card_number] => 2147483647
+    [user_card_name] => Wilsomwong
+    [user_card_expiry_date] => 12/29
+    [user_cards] => Array
+        (
+            [0] => Array
+                (
+                    [payment_id] => 14
+                    [id] => 12
+                    [user_payment_bankname] => CIMB
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 12/29
+                    [user_payment_cvv] => 458
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 0
+                )
+
+        )
+
+    [active_card_index] => 0
+)
+
+[21-Oct-2024 21:57:57 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 12
+    [user_email] => wilsomwong2004@gmail.com
+    [user_username] => Wilsomwong
+    [user_profile_pic] => ./assets/css/pic/profile_pics/67169cb11f0e5_profile.jpg
+    [user_payment_balance] => 0
+    [user_bank_name] => CIMB
+    [user_card_number] => 2147483647
+    [user_card_name] => Wilsomwong
+    [user_card_expiry_date] => 12/29
+    [user_cards] => Array
+        (
+            [0] => Array
+                (
+                    [payment_id] => 14
+                    [id] => 12
+                    [user_payment_bankname] => CIMB
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 12/29
+                    [user_payment_cvv] => 458
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 0
+                )
+
+        )
+
+    [active_card_index] => 0
+)
+
+[21-Oct-2024 21:58:33 Europe/Berlin] Received card data: Array
+(
+    [bank_name] => HLB
+    [number_on_card] => 1249987891234567
+    [name_on_card] => Bryan
+    [card_expiration_date] => 12/30
+    [card_cvv_number] => 211
+    [card_password] => 20040727
+    [user_id] => 12
+)
+
+[21-Oct-2024 21:58:48 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 12
+    [user_email] => wilsomwong2004@gmail.com
+    [user_username] => Wilsomwong
+    [user_profile_pic] => ./assets/css/pic/profile_pics/67169cb11f0e5_profile.jpg
+    [user_payment_balance] => 0
+    [user_bank_name] => CIMB
+    [user_card_number] => 2147483647
+    [user_card_name] => Wilsomwong
+    [user_card_expiry_date] => 12/29
+    [user_cards] => Array
+        (
+            [0] => Array
+                (
+                    [payment_id] => 14
+                    [id] => 12
+                    [user_payment_bankname] => CIMB
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 12/29
+                    [user_payment_cvv] => 458
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 0
+                )
+
+        )
+
+    [active_card_index] => 0
+)
+
+[21-Oct-2024 22:01:41 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 12
+    [user_email] => wilsomwong2004@gmail.com
+    [user_username] => Wilsomwong
+    [user_profile_pic] => ./assets/css/pic/profile_pics/67169cb11f0e5_profile.jpg
+    [user_payment_balance] => 0
+    [user_bank_name] => CIMB
+    [user_card_number] => 2147483647
+    [user_card_name] => Wilsomwong
+    [user_card_expiry_date] => 12/29
+    [user_cards] => Array
+        (
+            [0] => Array
+                (
+                    [payment_id] => 14
+                    [id] => 12
+                    [user_payment_bankname] => CIMB
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 12/29
+                    [user_payment_cvv] => 458
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 0
+                )
+
+            [1] => Array
+                (
+                    [payment_id] => 15
+                    [id] => 12
+                    [user_payment_bankname] => HLB
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Bryan
+                    [user_payment_cardexpdate] => 12/30
+                    [user_payment_cvv] => 211
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 0
+                )
+
+        )
+
+    [active_card_index] => 1
+)
+
+[21-Oct-2024 22:01:41 Europe/Berlin] No payment data found for user ID: 12
+[21-Oct-2024 22:01:45 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 12
+    [user_email] => wilsomwong2004@gmail.com
+    [user_username] => Wilsomwong
+    [user_profile_pic] => ./assets/css/pic/profile_pics/67169cb11f0e5_profile.jpg
+    [user_payment_balance] => 0
+    [user_bank_name] => CIMB
+    [user_card_number] => 2147483647
+    [user_card_name] => Wilsomwong
+    [user_card_expiry_date] => 12/29
+    [user_cards] => Array
+        (
+        )
+
+    [active_card_index] => 0
+)
+
+[21-Oct-2024 22:01:45 Europe/Berlin] No payment data found for user ID: 12
+[21-Oct-2024 22:01:48 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 12
+    [user_email] => wilsomwong2004@gmail.com
+    [user_username] => Wilsomwong
+    [user_profile_pic] => ./assets/css/pic/profile_pics/67169cb11f0e5_profile.jpg
+    [user_payment_balance] => 0
+    [user_bank_name] => CIMB
+    [user_card_number] => 2147483647
+    [user_card_name] => Wilsomwong
+    [user_card_expiry_date] => 12/29
+    [user_cards] => Array
+        (
+        )
+
+    [active_card_index] => 0
+)
+
+[21-Oct-2024 22:01:48 Europe/Berlin] No payment data found for user ID: 12
+[21-Oct-2024 22:02:05 Europe/Berlin] Received card data: Array
+(
+    [bank_name] => Maybank
+    [number_on_card] => 1234567891234567
+    [name_on_card] => Wilsomwong
+    [card_expiration_date] => 12/29
+    [card_cvv_number] => 458
+    [card_password] => 20040727
+    [user_id] => 12
+)
+
+[21-Oct-2024 22:02:19 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 12
+    [user_email] => wilsomwong2004@gmail.com
+    [user_username] => Wilsomwong
+    [user_profile_pic] => ./assets/css/pic/profile_pics/67169cb11f0e5_profile.jpg
+    [user_payment_balance] => 0
+    [user_bank_name] => CIMB
+    [user_card_number] => 2147483647
+    [user_card_name] => Wilsomwong
+    [user_card_expiry_date] => 12/29
+    [user_cards] => Array
+        (
+        )
+
+    [active_card_index] => 0
+)
+
+[21-Oct-2024 22:09:43 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 12
+    [user_email] => wilsomwong2004@gmail.com
+    [user_username] => Wilsomwong
+    [user_profile_pic] => ./assets/css/pic/profile_pics/67169cb11f0e5_profile.jpg
+    [user_payment_balance] => 0
+    [user_bank_name] => CIMB
+    [user_card_number] => 2147483647
+    [user_card_name] => Wilsomwong
+    [user_card_expiry_date] => 12/29
+    [user_cards] => Array
+        (
+        )
+
+    [active_card_index] => 0
+)
+
+[21-Oct-2024 22:09:43 Europe/Berlin] PHP Warning:  Undefined variable $conn in C:\xampp\htdocs\MyCar_Website\wallet_page.php on line 31
+[21-Oct-2024 22:09:43 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in C:\xampp\htdocs\MyCar_Website\wallet_page.php:31
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\MyCar_Website\wallet_page.php on line 31
+[21-Oct-2024 22:11:20 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 12
+    [user_email] => wilsomwong2004@gmail.com
+    [user_username] => Wilsomwong
+    [user_profile_pic] => ./assets/css/pic/profile_pics/67169cb11f0e5_profile.jpg
+    [user_payment_balance] => 0
+    [user_bank_name] => CIMB
+    [user_card_number] => 2147483647
+    [user_card_name] => Wilsomwong
+    [user_card_expiry_date] => 12/29
+    [user_cards] => Array
+        (
+        )
+
+    [active_card_index] => 0
+)
+
+[21-Oct-2024 22:11:35 Europe/Berlin] Received card data: Array
+(
+    [bank_name] => CIMB
+    [number_on_card] => 1234567891234567
+    [name_on_card] => Wilsomwong
+    [card_expiration_date] => 12/29
+    [card_cvv_number] => 458
+    [card_password] => 20040727
+    [user_id] => 12
+)
+
+[21-Oct-2024 22:11:35 Europe/Berlin] PHP Warning:  Undefined variable $lastInsertId in C:\xampp\htdocs\MyCar_Website\insert_card_details.php on line 36
+[21-Oct-2024 22:11:35 Europe/Berlin] PHP Warning:  Undefined global variable $_SESSION in C:\xampp\htdocs\MyCar_Website\insert_card_details.php on line 37
+[21-Oct-2024 22:11:35 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\MyCar_Website\insert_card_details.php on line 37
+[21-Oct-2024 22:11:51 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 12
+    [user_email] => wilsomwong2004@gmail.com
+    [user_username] => Wilsomwong
+    [user_profile_pic] => ./assets/css/pic/profile_pics/67169cb11f0e5_profile.jpg
+    [user_payment_balance] => 0
+    [user_bank_name] => CIMB
+    [user_card_number] => 2147483647
+    [user_card_name] => Wilsomwong
+    [user_card_expiry_date] => 12/29
+    [user_cards] => Array
+        (
+        )
+
+    [active_card_index] => 0
+)
+
+[21-Oct-2024 22:12:19 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 12
+    [user_email] => wilsomwong2004@gmail.com
+    [user_username] => Wilsomwong
+    [user_profile_pic] => ./assets/css/pic/profile_pics/67169cb11f0e5_profile.jpg
+    [user_payment_balance] => 0
+    [user_bank_name] => CIMB
+    [user_card_number] => 2147483647
+    [user_card_name] => Wilsomwong
+    [user_card_expiry_date] => 12/29
+    [user_cards] => Array
+        (
+            [0] => Array
+                (
+                    [payment_id] => 17
+                    [id] => 12
+                    [user_payment_bankname] => CIMB
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 12/29
+                    [user_payment_cvv] => 458
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 0
+                )
+
+        )
+
+    [active_card_index] => 0
+)
+
+[21-Oct-2024 22:12:28 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 12
+    [user_email] => wilsomwong2004@gmail.com
+    [user_username] => Wilsomwong
+    [user_profile_pic] => ./assets/css/pic/profile_pics/67169cb11f0e5_profile.jpg
+    [user_payment_balance] => 0
+    [user_bank_name] => CIMB
+    [user_card_number] => 2147483647
+    [user_card_name] => Wilsomwong
+    [user_card_expiry_date] => 12/29
+    [user_cards] => Array
+        (
+            [0] => Array
+                (
+                    [payment_id] => 17
+                    [id] => 12
+                    [user_payment_bankname] => CIMB
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 12/29
+                    [user_payment_cvv] => 458
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 0
+                )
+
+        )
+
+    [active_card_index] => 0
+)
+
+[21-Oct-2024 22:12:30 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 12
+    [user_email] => wilsomwong2004@gmail.com
+    [user_username] => Wilsomwong
+    [user_profile_pic] => ./assets/css/pic/profile_pics/67169cb11f0e5_profile.jpg
+    [user_payment_balance] => 0
+    [user_bank_name] => CIMB
+    [user_card_number] => 2147483647
+    [user_card_name] => Wilsomwong
+    [user_card_expiry_date] => 12/29
+    [user_cards] => Array
+        (
+            [0] => Array
+                (
+                    [payment_id] => 17
+                    [id] => 12
+                    [user_payment_bankname] => CIMB
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 12/29
+                    [user_payment_cvv] => 458
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 0
+                )
+
+        )
+
+    [active_card_index] => 0
+)
+
+[21-Oct-2024 22:12:33 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 12
+    [user_email] => wilsomwong2004@gmail.com
+    [user_username] => Wilsomwong
+    [user_profile_pic] => ./assets/css/pic/profile_pics/67169cb11f0e5_profile.jpg
+    [user_payment_balance] => 0
+    [user_bank_name] => CIMB
+    [user_card_number] => 2147483647
+    [user_card_name] => Wilsomwong
+    [user_card_expiry_date] => 12/29
+    [user_cards] => Array
+        (
+            [0] => Array
+                (
+                    [payment_id] => 17
+                    [id] => 12
+                    [user_payment_bankname] => CIMB
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 12/29
+                    [user_payment_cvv] => 458
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 0
+                )
+
+        )
+
+    [active_card_index] => 0
+)
+
+[21-Oct-2024 22:13:19 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 12
+    [user_email] => wilsomwong2004@gmail.com
+    [user_username] => Wilsomwong
+    [user_profile_pic] => ./assets/css/pic/profile_pics/67169cb11f0e5_profile.jpg
+    [user_payment_balance] => 0
+    [user_bank_name] => CIMB
+    [user_card_number] => 2147483647
+    [user_card_name] => Wilsomwong
+    [user_card_expiry_date] => 12/29
+    [user_cards] => Array
+        (
+            [0] => Array
+                (
+                    [payment_id] => 17
+                    [id] => 12
+                    [user_payment_bankname] => CIMB
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 12/29
+                    [user_payment_cvv] => 458
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 0
+                )
+
+        )
+
+    [active_card_index] => 0
+)
+
+[21-Oct-2024 22:14:42 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 12
+    [user_email] => wilsomwong2004@gmail.com
+    [user_username] => Wilsomwong
+    [user_profile_pic] => ./assets/css/pic/profile_pics/67169cb11f0e5_profile.jpg
+    [user_payment_balance] => 0
+    [user_bank_name] => CIMB
+    [user_card_number] => 2147483647
+    [user_card_name] => Wilsomwong
+    [user_card_expiry_date] => 12/29
+    [user_cards] => Array
+        (
+            [0] => Array
+                (
+                    [payment_id] => 17
+                    [id] => 12
+                    [user_payment_bankname] => CIMB
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 12/29
+                    [user_payment_cvv] => 458
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 0
+                )
+
+        )
+
+    [active_card_index] => 0
+)
+
+[21-Oct-2024 22:14:56 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 12
+    [user_email] => wilsomwong2004@gmail.com
+    [user_username] => Wilsomwong
+    [user_profile_pic] => ./assets/css/pic/profile_pics/67169cb11f0e5_profile.jpg
+    [user_payment_balance] => 0
+    [user_bank_name] => CIMB
+    [user_card_number] => 2147483647
+    [user_card_name] => Wilsomwong
+    [user_card_expiry_date] => 12/29
+    [user_cards] => Array
+        (
+            [0] => Array
+                (
+                    [payment_id] => 17
+                    [id] => 12
+                    [user_payment_bankname] => CIMB
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 12/29
+                    [user_payment_cvv] => 458
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 0
+                )
+
+        )
+
+    [active_card_index] => 0
+)
+
+[21-Oct-2024 22:14:57 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 12
+    [user_email] => wilsomwong2004@gmail.com
+    [user_username] => Wilsomwong
+    [user_profile_pic] => ./assets/css/pic/profile_pics/67169cb11f0e5_profile.jpg
+    [user_payment_balance] => 0
+    [user_bank_name] => CIMB
+    [user_card_number] => 2147483647
+    [user_card_name] => Wilsomwong
+    [user_card_expiry_date] => 12/29
+    [user_cards] => Array
+        (
+            [0] => Array
+                (
+                    [payment_id] => 17
+                    [id] => 12
+                    [user_payment_bankname] => CIMB
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 12/29
+                    [user_payment_cvv] => 458
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 0
+                )
+
+        )
+
+    [active_card_index] => 0
+)
+
+[21-Oct-2024 22:15:08 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 12
+    [user_email] => wilsomwong2004@gmail.com
+    [user_username] => Wilsomwong
+    [user_profile_pic] => ./assets/css/pic/profile_pics/67169cb11f0e5_profile.jpg
+    [user_payment_balance] => 0
+    [user_bank_name] => CIMB
+    [user_card_number] => 2147483647
+    [user_card_name] => Wilsomwong
+    [user_card_expiry_date] => 12/29
+    [user_cards] => Array
+        (
+            [0] => Array
+                (
+                    [payment_id] => 17
+                    [id] => 12
+                    [user_payment_bankname] => CIMB
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 12/29
+                    [user_payment_cvv] => 458
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 0
+                )
+
+        )
+
+    [active_card_index] => 0
+)
+
+[21-Oct-2024 22:15:54 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 12
+    [user_email] => wilsomwong2004@gmail.com
+    [user_username] => Wilsomwong
+    [user_profile_pic] => ./assets/css/pic/profile_pics/67169cb11f0e5_profile.jpg
+    [user_payment_balance] => 0
+    [user_bank_name] => CIMB
+    [user_card_number] => 2147483647
+    [user_card_name] => Wilsomwong
+    [user_card_expiry_date] => 12/29
+    [user_cards] => Array
+        (
+            [0] => Array
+                (
+                    [payment_id] => 17
+                    [id] => 12
+                    [user_payment_bankname] => CIMB
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 12/29
+                    [user_payment_cvv] => 458
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 0
+                )
+
+        )
+
+    [active_card_index] => 0
+)
+
+[21-Oct-2024 22:16:50 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 12
+    [user_email] => wilsomwong2004@gmail.com
+    [user_username] => Wilsomwong
+    [user_profile_pic] => ./assets/css/pic/profile_pics/67169cb11f0e5_profile.jpg
+    [user_payment_balance] => 0
+    [user_bank_name] => CIMB
+    [user_card_number] => 2147483647
+    [user_card_name] => Wilsomwong
+    [user_card_expiry_date] => 12/29
+    [user_cards] => Array
+        (
+            [0] => Array
+                (
+                    [payment_id] => 17
+                    [id] => 12
+                    [user_payment_bankname] => CIMB
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 12/29
+                    [user_payment_cvv] => 458
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 0
+                )
+
+        )
+
+    [active_card_index] => 0
+)
+
+[21-Oct-2024 22:17:05 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 12
+    [user_email] => wilsomwong2004@gmail.com
+    [user_username] => Wilsomwong
+    [user_profile_pic] => ./assets/css/pic/profile_pics/67169cb11f0e5_profile.jpg
+    [user_payment_balance] => 0
+    [user_bank_name] => CIMB
+    [user_card_number] => 2147483647
+    [user_card_name] => Wilsomwong
+    [user_card_expiry_date] => 12/29
+    [user_cards] => Array
+        (
+            [0] => Array
+                (
+                    [payment_id] => 17
+                    [id] => 12
+                    [user_payment_bankname] => CIMB
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 12/29
+                    [user_payment_cvv] => 458
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 0
+                )
+
+        )
+
+    [active_card_index] => 0
+)
+
+[21-Oct-2024 22:17:11 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 12
+    [user_email] => wilsomwong2004@gmail.com
+    [user_username] => Wilsomwong
+    [user_profile_pic] => ./assets/css/pic/profile_pics/67169cb11f0e5_profile.jpg
+    [user_payment_balance] => 0
+    [user_bank_name] => CIMB
+    [user_card_number] => 2147483647
+    [user_card_name] => Wilsomwong
+    [user_card_expiry_date] => 12/29
+    [user_cards] => Array
+        (
+            [0] => Array
+                (
+                    [payment_id] => 17
+                    [id] => 12
+                    [user_payment_bankname] => CIMB
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 12/29
+                    [user_payment_cvv] => 458
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 0
+                )
+
+        )
+
+    [active_card_index] => 0
+)
+
+[21-Oct-2024 22:17:19 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 12
+    [user_email] => wilsomwong2004@gmail.com
+    [user_username] => Wilsomwong
+    [user_profile_pic] => ./assets/css/pic/profile_pics/67169cb11f0e5_profile.jpg
+    [user_payment_balance] => 0
+    [user_bank_name] => CIMB
+    [user_card_number] => 2147483647
+    [user_card_name] => Wilsomwong
+    [user_card_expiry_date] => 12/29
+    [user_cards] => Array
+        (
+            [0] => Array
+                (
+                    [payment_id] => 17
+                    [id] => 12
+                    [user_payment_bankname] => CIMB
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 12/29
+                    [user_payment_cvv] => 458
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 0
+                )
+
+        )
+
+    [active_card_index] => 0
+)
+
+[21-Oct-2024 22:17:25 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 12
+    [user_email] => wilsomwong2004@gmail.com
+    [user_username] => Wilsomwong
+    [user_profile_pic] => ./assets/css/pic/profile_pics/67169cb11f0e5_profile.jpg
+    [user_payment_balance] => 0
+    [user_bank_name] => CIMB
+    [user_card_number] => 2147483647
+    [user_card_name] => Wilsomwong
+    [user_card_expiry_date] => 12/29
+    [user_cards] => Array
+        (
+            [0] => Array
+                (
+                    [payment_id] => 17
+                    [id] => 12
+                    [user_payment_bankname] => CIMB
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 12/29
+                    [user_payment_cvv] => 458
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 0
+                )
+
+        )
+
+    [active_card_index] => 0
+)
+
+[21-Oct-2024 22:17:40 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 12
+    [user_email] => wilsomwong2004@gmail.com
+    [user_username] => Wilsomwong
+    [user_profile_pic] => ./assets/css/pic/profile_pics/67169cb11f0e5_profile.jpg
+    [user_payment_balance] => 0
+    [user_bank_name] => CIMB
+    [user_card_number] => 2147483647
+    [user_card_name] => Wilsomwong
+    [user_card_expiry_date] => 12/29
+    [user_cards] => Array
+        (
+            [0] => Array
+                (
+                    [payment_id] => 17
+                    [id] => 12
+                    [user_payment_bankname] => CIMB
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 12/29
+                    [user_payment_cvv] => 458
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 0
+                )
+
+        )
+
+    [active_card_index] => 0
+)
+
+[21-Oct-2024 22:18:00 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 12
+    [user_email] => wilsomwong2004@gmail.com
+    [user_username] => Wilsomwong
+    [user_profile_pic] => ./assets/css/pic/profile_pics/67169cb11f0e5_profile.jpg
+    [user_payment_balance] => 0
+    [user_bank_name] => CIMB
+    [user_card_number] => 2147483647
+    [user_card_name] => Wilsomwong
+    [user_card_expiry_date] => 12/29
+    [user_cards] => Array
+        (
+            [0] => Array
+                (
+                    [payment_id] => 17
+                    [id] => 12
+                    [user_payment_bankname] => CIMB
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 12/29
+                    [user_payment_cvv] => 458
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 0
+                )
+
+        )
+
+    [active_card_index] => 0
+)
+
+[21-Oct-2024 22:18:14 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 12
+    [user_email] => wilsomwong2004@gmail.com
+    [user_username] => Wilsomwong
+    [user_profile_pic] => ./assets/css/pic/profile_pics/67169cb11f0e5_profile.jpg
+    [user_payment_balance] => 0
+    [user_bank_name] => CIMB
+    [user_card_number] => 2147483647
+    [user_card_name] => Wilsomwong
+    [user_card_expiry_date] => 12/29
+    [user_cards] => Array
+        (
+            [0] => Array
+                (
+                    [payment_id] => 17
+                    [id] => 12
+                    [user_payment_bankname] => CIMB
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 12/29
+                    [user_payment_cvv] => 458
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 0
+                )
+
+        )
+
+    [active_card_index] => 0
+)
+
+[21-Oct-2024 22:19:31 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 12
+    [user_email] => wilsomwong2004@gmail.com
+    [user_username] => Wilsomwong
+    [user_profile_pic] => ./assets/css/pic/profile_pics/67169cb11f0e5_profile.jpg
+    [user_payment_balance] => 0
+    [user_bank_name] => CIMB
+    [user_card_number] => 2147483647
+    [user_card_name] => Wilsomwong
+    [user_card_expiry_date] => 12/29
+    [user_cards] => Array
+        (
+            [0] => Array
+                (
+                    [payment_id] => 17
+                    [id] => 12
+                    [user_payment_bankname] => CIMB
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 12/29
+                    [user_payment_cvv] => 458
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 0
+                )
+
+        )
+
+    [active_card_index] => 0
+)
+
+[21-Oct-2024 22:20:07 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 12
+    [user_email] => wilsomwong2004@gmail.com
+    [user_username] => Wilsomwong
+    [user_profile_pic] => ./assets/css/pic/profile_pics/67169cb11f0e5_profile.jpg
+    [user_payment_balance] => 0
+    [user_bank_name] => CIMB
+    [user_card_number] => 2147483647
+    [user_card_name] => Wilsomwong
+    [user_card_expiry_date] => 12/29
+    [user_cards] => Array
+        (
+            [0] => Array
+                (
+                    [payment_id] => 17
+                    [id] => 12
+                    [user_payment_bankname] => CIMB
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 12/29
+                    [user_payment_cvv] => 458
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 0
+                )
+
+        )
+
+    [active_card_index] => 0
+)
+
+[21-Oct-2024 22:20:17 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 12
+    [user_email] => wilsomwong2004@gmail.com
+    [user_username] => Wilsomwong
+    [user_profile_pic] => ./assets/css/pic/profile_pics/67169cb11f0e5_profile.jpg
+    [user_payment_balance] => 0
+    [user_bank_name] => CIMB
+    [user_card_number] => 2147483647
+    [user_card_name] => Wilsomwong
+    [user_card_expiry_date] => 12/29
+    [user_cards] => Array
+        (
+            [0] => Array
+                (
+                    [payment_id] => 17
+                    [id] => 12
+                    [user_payment_bankname] => CIMB
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 12/29
+                    [user_payment_cvv] => 458
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 0
+                )
+
+        )
+
+    [active_card_index] => 0
+)
+
+[21-Oct-2024 22:20:24 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 12
+    [user_email] => wilsomwong2004@gmail.com
+    [user_username] => Wilsomwong
+    [user_profile_pic] => ./assets/css/pic/profile_pics/67169cb11f0e5_profile.jpg
+    [user_payment_balance] => 0
+    [user_bank_name] => CIMB
+    [user_card_number] => 2147483647
+    [user_card_name] => Wilsomwong
+    [user_card_expiry_date] => 12/29
+    [user_cards] => Array
+        (
+            [0] => Array
+                (
+                    [payment_id] => 17
+                    [id] => 12
+                    [user_payment_bankname] => CIMB
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 12/29
+                    [user_payment_cvv] => 458
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 0
+                )
+
+        )
+
+    [active_card_index] => 0
+)
+
+[21-Oct-2024 22:20:40 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 12
+    [user_email] => wilsomwong2004@gmail.com
+    [user_username] => Wilsomwong
+    [user_profile_pic] => ./assets/css/pic/profile_pics/67169cb11f0e5_profile.jpg
+    [user_payment_balance] => 0
+    [user_bank_name] => CIMB
+    [user_card_number] => 2147483647
+    [user_card_name] => Wilsomwong
+    [user_card_expiry_date] => 12/29
+    [user_cards] => Array
+        (
+            [0] => Array
+                (
+                    [payment_id] => 17
+                    [id] => 12
+                    [user_payment_bankname] => CIMB
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 12/29
+                    [user_payment_cvv] => 458
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 0
+                )
+
+        )
+
+    [active_card_index] => 0
+)
+
+[21-Oct-2024 22:20:52 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 12
+    [user_email] => wilsomwong2004@gmail.com
+    [user_username] => Wilsomwong
+    [user_profile_pic] => ./assets/css/pic/profile_pics/67169cb11f0e5_profile.jpg
+    [user_payment_balance] => 0
+    [user_bank_name] => CIMB
+    [user_card_number] => 2147483647
+    [user_card_name] => Wilsomwong
+    [user_card_expiry_date] => 12/29
+    [user_cards] => Array
+        (
+            [0] => Array
+                (
+                    [payment_id] => 17
+                    [id] => 12
+                    [user_payment_bankname] => CIMB
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 12/29
+                    [user_payment_cvv] => 458
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 0
+                )
+
+        )
+
+    [active_card_index] => 0
+)
+
+[21-Oct-2024 22:21:12 Europe/Berlin] Received POST data: Array
 (
     [userInput] => Wilsomwong
     [action] => checkUser
 )
 
-[21-Oct-2024 20:59:32 Europe/Berlin] Received POST data: Array
+[21-Oct-2024 22:21:13 Europe/Berlin] Received POST data: Array
 (
     [userInput] => Wilsomwong
     [action] => login
     [password] => 20040727
 )
 
-[21-Oct-2024 20:59:32 Europe/Berlin] User ID: 12
-[21-Oct-2024 20:59:32 Europe/Berlin] SQL Query: SELECT * FROM user_payment_data WHERE id = ?
-[21-Oct-2024 20:59:32 Europe/Berlin] Query result: Success
-[21-Oct-2024 20:59:32 Europe/Berlin] Number of rows: 1
-[21-Oct-2024 20:59:32 Europe/Berlin] User payment data: Array
+[21-Oct-2024 22:21:13 Europe/Berlin] User ID: 12
+[21-Oct-2024 22:21:13 Europe/Berlin] SQL Query: SELECT * FROM user_payment_data WHERE id = ?
+[21-Oct-2024 22:21:13 Europe/Berlin] Query result: Success
+[21-Oct-2024 22:21:13 Europe/Berlin] Number of rows: 2
+[21-Oct-2024 22:21:13 Europe/Berlin] PHP Warning:  Undefined variable $userPaymentData in C:\xampp\htdocs\MyCar_Website\index.php on line 97
+[21-Oct-2024 22:21:13 Europe/Berlin] User payment data: 
+[21-Oct-2024 22:21:13 Europe/Berlin] PHP Warning:  Undefined array key "username" in C:\xampp\htdocs\MyCar_Website\index.php on line 98
+[21-Oct-2024 22:21:13 Europe/Berlin] Login successful for user: 
+[21-Oct-2024 22:21:15 Europe/Berlin] Session data in wallet_page.php: Array
 (
-    [payment_id] => 6
-    [id] => 12
-    [user_payment_bankname] => Maybank
-    [user_payment_cardnumber] => 2147483647
-    [user_payment_cardname] => Wilsomwong
-    [user_payment_cardexpdate] => 12/29
-    [user_payment_cvv] => 458
-    [user_payment_password] => 20040727
-    [user_payment_balance] => 100
+    [user_id] => 12
+    [user_email] => wilsomwong2004@gmail.com
+    [user_username] => Wilsomwong
+    [user_profile_pic] => ./assets/css/pic/profile_pics/67169cb11f0e5_profile.jpg
 )
 
-[21-Oct-2024 20:59:32 Europe/Berlin] PHP Warning:  Undefined array key "username" in C:\xampp\htdocs\MyCar_Website\index.php on line 104
-[21-Oct-2024 20:59:32 Europe/Berlin] Login successful for user: 
+[21-Oct-2024 22:24:38 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => checkUser
+)
+
+[21-Oct-2024 22:24:38 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => login
+    [password] => 20040727
+)
+
+[21-Oct-2024 22:24:38 Europe/Berlin] User ID: 12
+[21-Oct-2024 22:24:38 Europe/Berlin] SQL Query: SELECT * FROM user_payment_data WHERE id = ?
+[21-Oct-2024 22:24:38 Europe/Berlin] Query result: Success
+[21-Oct-2024 22:24:38 Europe/Berlin] Number of rows: 2
+[21-Oct-2024 22:24:38 Europe/Berlin] PHP Warning:  Undefined variable $userPaymentData in C:\xampp\htdocs\MyCar_Website\index.php on line 97
+[21-Oct-2024 22:24:38 Europe/Berlin] User payment data: 
+[21-Oct-2024 22:24:38 Europe/Berlin] PHP Warning:  Undefined array key "username" in C:\xampp\htdocs\MyCar_Website\index.php on line 98
+[21-Oct-2024 22:24:38 Europe/Berlin] Login successful for user: 
+[21-Oct-2024 22:33:35 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => checkUser
+)
+
+[21-Oct-2024 22:33:35 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => login
+    [password] => 20040727
+)
+
+[21-Oct-2024 22:33:35 Europe/Berlin] User ID: 12
+[21-Oct-2024 22:33:35 Europe/Berlin] SQL Query: SELECT * FROM user_payment_data WHERE id = ?
+[21-Oct-2024 22:33:35 Europe/Berlin] Query result: Success
+[21-Oct-2024 22:33:35 Europe/Berlin] Number of rows: 2
+[21-Oct-2024 22:33:35 Europe/Berlin] PHP Warning:  Undefined variable $userPaymentData in C:\xampp\htdocs\MyCar_Website\index.php on line 97
+[21-Oct-2024 22:33:35 Europe/Berlin] User payment data: 
+[21-Oct-2024 22:33:35 Europe/Berlin] PHP Warning:  Undefined array key "username" in C:\xampp\htdocs\MyCar_Website\index.php on line 98
+[21-Oct-2024 22:33:35 Europe/Berlin] Login successful for user: 
+[21-Oct-2024 22:33:40 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => checkUser
+)
+
+[21-Oct-2024 22:33:41 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => login
+    [password] => 20040727
+)
+
+[21-Oct-2024 22:33:41 Europe/Berlin] User ID: 12
+[21-Oct-2024 22:33:41 Europe/Berlin] SQL Query: SELECT * FROM user_payment_data WHERE id = ?
+[21-Oct-2024 22:33:41 Europe/Berlin] Query result: Success
+[21-Oct-2024 22:33:41 Europe/Berlin] Number of rows: 2
+[21-Oct-2024 22:33:41 Europe/Berlin] PHP Warning:  Undefined variable $userPaymentData in C:\xampp\htdocs\MyCar_Website\index.php on line 97
+[21-Oct-2024 22:33:41 Europe/Berlin] User payment data: 
+[21-Oct-2024 22:33:41 Europe/Berlin] PHP Warning:  Undefined array key "username" in C:\xampp\htdocs\MyCar_Website\index.php on line 98
+[21-Oct-2024 22:33:41 Europe/Berlin] Login successful for user: 
+[21-Oct-2024 22:33:46 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => checkUser
+)
+
+[21-Oct-2024 22:33:46 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => login
+    [password] => 20040727
+)
+
+[21-Oct-2024 22:33:46 Europe/Berlin] User ID: 12
+[21-Oct-2024 22:33:46 Europe/Berlin] SQL Query: SELECT * FROM user_payment_data WHERE id = ?
+[21-Oct-2024 22:33:46 Europe/Berlin] Query result: Success
+[21-Oct-2024 22:33:46 Europe/Berlin] Number of rows: 2
+[21-Oct-2024 22:33:46 Europe/Berlin] PHP Warning:  Undefined variable $userPaymentData in C:\xampp\htdocs\MyCar_Website\index.php on line 97
+[21-Oct-2024 22:33:46 Europe/Berlin] User payment data: 
+[21-Oct-2024 22:33:46 Europe/Berlin] PHP Warning:  Undefined array key "username" in C:\xampp\htdocs\MyCar_Website\index.php on line 98
+[21-Oct-2024 22:33:46 Europe/Berlin] Login successful for user: 
+[21-Oct-2024 22:33:53 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => checkUser
+)
+
+[21-Oct-2024 22:33:54 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => login
+    [password] => 20040727
+)
+
+[21-Oct-2024 22:33:54 Europe/Berlin] User ID: 12
+[21-Oct-2024 22:33:54 Europe/Berlin] SQL Query: SELECT * FROM user_payment_data WHERE id = ?
+[21-Oct-2024 22:33:54 Europe/Berlin] Query result: Success
+[21-Oct-2024 22:33:54 Europe/Berlin] Number of rows: 2
+[21-Oct-2024 22:33:54 Europe/Berlin] PHP Warning:  Undefined variable $userPaymentData in C:\xampp\htdocs\MyCar_Website\index.php on line 97
+[21-Oct-2024 22:33:54 Europe/Berlin] User payment data: 
+[21-Oct-2024 22:33:54 Europe/Berlin] PHP Warning:  Undefined array key "username" in C:\xampp\htdocs\MyCar_Website\index.php on line 98
+[21-Oct-2024 22:33:54 Europe/Berlin] Login successful for user: 
+[21-Oct-2024 22:34:08 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => checkUser
+)
+
+[21-Oct-2024 22:34:09 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Wilsomwong
+    [action] => login
+    [password] => 20040727
+)
+
+[21-Oct-2024 22:34:09 Europe/Berlin] User ID: 12
+[21-Oct-2024 22:34:09 Europe/Berlin] SQL Query: SELECT * FROM user_payment_data WHERE id = ?
+[21-Oct-2024 22:34:09 Europe/Berlin] Query result: Success
+[21-Oct-2024 22:34:09 Europe/Berlin] Number of rows: 2
+[21-Oct-2024 22:34:09 Europe/Berlin] PHP Warning:  Undefined variable $userPaymentData in C:\xampp\htdocs\MyCar_Website\index.php on line 97
+[21-Oct-2024 22:34:09 Europe/Berlin] User payment data: 
+[21-Oct-2024 22:34:09 Europe/Berlin] PHP Warning:  Undefined array key "username" in C:\xampp\htdocs\MyCar_Website\index.php on line 98
+[21-Oct-2024 22:34:09 Europe/Berlin] Login successful for user: 
+[21-Oct-2024 22:34:13 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 12
+    [user_email] => wilsomwong2004@gmail.com
+    [user_username] => Wilsomwong
+    [user_profile_pic] => ./assets/css/pic/profile_pics/67169cb11f0e5_profile.jpg
+)
+
+[21-Oct-2024 22:36:21 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 12
+    [user_email] => wilsomwong2004@gmail.com
+    [user_username] => Wilsomwong
+    [user_profile_pic] => ./assets/css/pic/profile_pics/67169cb11f0e5_profile.jpg
+    [user_cards] => Array
+        (
+            [0] => Array
+                (
+                    [payment_id] => 17
+                    [id] => 12
+                    [user_payment_bankname] => CIMB
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 12/29
+                    [user_payment_cvv] => 458
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 0
+                )
+
+        )
+
+    [active_card_index] => 0
+)
+
+[21-Oct-2024 22:37:37 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 12
+    [user_email] => wilsomwong2004@gmail.com
+    [user_username] => Wilsomwong
+    [user_profile_pic] => ./assets/css/pic/profile_pics/67169cb11f0e5_profile.jpg
+    [user_cards] => Array
+        (
+            [0] => Array
+                (
+                    [payment_id] => 17
+                    [id] => 12
+                    [user_payment_bankname] => CIMB
+                    [user_payment_cardnumber] => 2147483647
+                    [user_payment_cardname] => Wilsomwong
+                    [user_payment_cardexpdate] => 12/29
+                    [user_payment_cvv] => 458
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 0
+                )
+
+        )
+
+    [active_card_index] => 0
+)
+

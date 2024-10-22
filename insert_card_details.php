@@ -31,6 +31,26 @@ try {
         throw new Exception("Database connection not established");
     }
 
+    // After successfully inserting the card
+    $newCard = [
+        'payment_id' => $lastInsertId, // Assuming you have this from the insertion
+        'id' => $_SESSION['user_id'],
+        'user_payment_bankname' => $_POST['bank_name'],
+        'user_payment_cardnumber' => $_POST['number_on_card'],
+        'user_payment_cardname' => $_POST['name_on_card'],
+        'user_payment_cardexpdate' => $_POST['card_expiration_date'],
+        'user_payment_cvv' => $_POST['card_cvv_number'],
+        'user_payment_password' => $_POST['card_password'],
+        'user_payment_balance' => 0 // Set initial balance
+    ];
+
+    if (!isset($_SESSION['user_cards'])) {
+        $_SESSION['user_cards'] = [];
+    }
+
+    $_SESSION['user_cards'][] = $newCard;
+    $_SESSION['active_card_index'] = count($_SESSION['user_cards']) - 1;
+
     // Insert the card details
     $sql = "INSERT INTO user_payment_data (id, user_payment_bankname, user_payment_cardnumber, user_payment_cardname, user_payment_cardexpdate, user_payment_cvv, user_payment_password)
             VALUES (?, ?, ?, ?, ?, ?, ?)";

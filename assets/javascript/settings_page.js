@@ -145,6 +145,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Function to show logout confirmation modal
     function showLogoutModal() {
+        // Check if the modal already exists
+        if (document.querySelector('.logout-modal')) {
+            return; // Prevent creating multiple modals
+        }
+
         const modal = document.createElement('div');
         modal.className = 'logout-modal';
         modal.innerHTML = `
@@ -154,11 +159,11 @@ document.addEventListener('DOMContentLoaded', function () {
             <button id="confirm-logout">Yes, Logout</button>
             <button id="cancel-logout">Cancel</button>
         </div>
-        `;
+    `;
         document.body.appendChild(modal);
 
         document.getElementById('confirm-logout').addEventListener('click', function () {
-            // Redirect to logout.php
+            // Redirect to login page or perform other logout actions
             window.location.href = 'logout.php';
         });
 
@@ -644,9 +649,6 @@ document.addEventListener('DOMContentLoaded', function () {
         showPopup('Language', `
             <select id="language-select-dropdown">
                 <option value="en" ${currentLanguage === 'English' ? 'selected' : ''}>English</option>
-                <option value="ms" ${currentLanguage === 'Bahasa Melayu' ? 'selected' : ''}>Bahasa Melayu</option>
-                <option value="zh_cn" ${currentLanguage === '简体中文' ? 'selected' : ''}>简体中文</option>
-                <option value="zh_tw" ${currentLanguage === '繁體中文' ? 'selected' : ''}>繁體中文</option>
             </select>
             <div class="button-group">
                 <button id="submit-language" class="save-btn">Save</button>

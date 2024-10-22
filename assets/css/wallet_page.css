@@ -451,7 +451,7 @@ html.dark-mode .wallet-container {
 }
 
 .top-up,
-.transfer {
+.switch-card {
     padding: 12px 35px;
     border-radius: 20px;
     cursor: pointer;
@@ -464,7 +464,7 @@ html.dark-mode .wallet-container {
     color: white;
 }
 
-.transfer {
+.switch-card {
     background-color: #f8dd9f;
     color: #dcaf48;
     padding: 13px 14px;
@@ -566,6 +566,11 @@ tr td:last-child {
     border-bottom-right-radius: 5px;
 }
 
+.transaction-message {
+    text-align: center;
+    margin-top: 50%;
+}
+
 .status {
     padding: 3px 8px;
     border-radius: 10px;
@@ -593,7 +598,7 @@ tr td:last-child {
     justify-content: space-between;
     align-items: center;
     color: var(--text-color);
-    margin-top: 54vh;
+    margin-top: 30vh;
 }
 
 .per-page-select,
@@ -1034,7 +1039,7 @@ body {
     }
 
     .top-up,
-    .transfer {
+    .switch-card {
         margin-bottom: 10px;
     }
 
@@ -1101,7 +1106,7 @@ main {
 @media screen and (max-width: 500px) {
 
     .top-up,
-    .transfer {
+    .switch-card {
         font-size: 12px;
     }
 
@@ -1140,7 +1145,7 @@ main {
     }
 
     .top-up,
-    .transfer {
+    .switch-card {
         font-size: 9px;
     }
 

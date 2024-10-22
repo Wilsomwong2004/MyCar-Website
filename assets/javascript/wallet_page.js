@@ -86,7 +86,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const popupTitle = document.getElementById('popup-title');
     const popupBody = document.getElementById('popup-body');
     const topUpButton = document.querySelector('.top-up');
-    const transferButton = document.querySelector('.transfer');
 
     console.log('profilePic:', profilePic);
     console.log('profileDropdown:', profileDropdown);
@@ -249,30 +248,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Transfer button functionality
-    if (transferButton) {
-        transferButton.addEventListener('click', function () {
-            showPopup('Transfer', `
-                <form id="transfer-form">
-                    <label for="recipient">Recipient</label>
-                    <input type="text" id="recipient" name="recipient" placeholder="Enter recipient here" required>
-                    <label for="transfer-amount">Amount</label>
-                    <input type="number" id="transfer-amount" name="transfer-amount" placeholder="Enter amount here" required>
-                    <button class='transfer-submit-btn' type="submit">Confirm Transfer</button>
-                </form>
-            `);
-
-            document.getElementById('transfer-form').addEventListener('submit', function (e) {
-                e.preventDefault();
-                const recipient = document.getElementById('recipient').value;
-                const amount = document.getElementById('transfer-amount').value;
-                // Here you would typically send this data to your server
-                console.log('Transfer to:', recipient, 'Amount:', amount);
-                closePopup();
-                showAnimatedPopup(`Successfully transferred $${amount} to ${recipient}`);
-            });
-        });
-    }
 
     // Close popup when clicking outside
     popupContainer.addEventListener('click', function (e) {
@@ -280,6 +255,60 @@ document.addEventListener('DOMContentLoaded', function () {
             closePopup();
         }
     });
+
+    // Transfer button functionality
+    const switchCardButton = document.querySelector('.switch-card');
+    if (switchCardButton) {
+        switchCardButton.addEventListener('click', function () {
+            fetch('switch_card.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        updateCardDisplay(data.card);
+                        showAnimatedPopup('Switched to card ending in ' + data.card.cardNumber.slice(-4));
+
+                        // Update switch button visibility
+                        if (data.cardCount <= 1) {
+                            switchCardButton.style.display = 'none';
+                        } else {
+                            switchCardButton.style.display = 'inline-block';
+                        }
+                    } else {
+                        showAnimatedPopup(data.message || 'Failed to switch card. Please try again.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    showAnimatedPopup('An error occurred. Please try again.');
+                });
+        });
+    }
+
+    function updateCardDisplay(card) {
+        const balanceElement = document.querySelector('.balance');
+        if (balanceElement && card.balance !== undefined) {
+            balanceElement.textContent = 'RM ' + card.balance;
+        }
+
+        const cardNumberElement = document.querySelector('.card-number');
+        if (cardNumberElement && card.cardNumber) {
+            cardNumberElement.textContent = '**** **** **** ' + card.cardNumber.slice(-4);
+        }
+
+        const cardDetailsValues = document.querySelectorAll('.card-detail-value');
+        if (cardDetailsValues.length >= 4) {
+            if (card.cardName) cardDetailsValues[0].textContent = card.cardName;
+            if (card.bankName) cardDetailsValues[1].textContent = card.bankName;
+            if (card.expiryDate) cardDetailsValues[2].textContent = card.expiryDate;
+            if (card.cardNumber) cardDetailsValues[3].textContent = '**** **** **** ' + card.cardNumber.slice(-4);
+        }
+    }
+
 });
 
 /*
