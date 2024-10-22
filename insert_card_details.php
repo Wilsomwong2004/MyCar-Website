@@ -5,9 +5,24 @@ ini_set('display_errors', 0);
 ini_set('log_errors', 1);
 ini_set('error_log', 'php_errors.log');
 
+// Start the session at the beginning
+session_start();
+
 header('Content-Type: application/json');
 
 try {
+    // First verify that the user is logged in
+    if (!isset($_SESSION['user_id'])) {
+        throw new Exception("User not logged in");
+    }
+
+    // Get the actual user ID from the session, not from POST
+    $user_id = $_SESSION['user_id'];
+    
+    // Log the session data for debugging
+    error_log("Session user_id: " . $_SESSION['user_id']);
+    error_log("Session user_email: " . $_SESSION['user_email']);
+
     // Get the form data
     $bank_name = $_POST['bank_name'] ?? '';
     $card_number = $_POST['number_on_card'] ?? '';
@@ -15,10 +30,13 @@ try {
     $card_expdate = $_POST['card_expiration_date'] ?? '';
     $card_cvv = $_POST['card_cvv_number'] ?? '';
     $card_password = $_POST['card_password'] ?? '';
-    $user_id = $_POST['user_id'] ?? '';
+
+    // Log received data (remove in production)
+    error_log("Received data - User ID: $user_id, Bank: $bank_name, Card Number: $card_number");
 
     // Validate input data
-    if (empty($bank_name) || empty($card_number) || empty($card_name) || empty($card_expdate) || empty($card_cvv) || empty($card_password) || empty($user_id)) {
+    if (empty($bank_name) || empty($card_number) || empty($card_name) || 
+        empty($card_expdate) || empty($card_cvv) || empty($card_password)) {
         throw new Exception("All fields are required");
     }
 
@@ -53,7 +71,25 @@ try {
 
     mysqli_stmt_close($check_stmt);
 
-    // If no duplicate found, proceed with insertion
+    // Double-check that the user exists before inserting
+    $user_check_sql = "SELECT id FROM user_account_data WHERE id = ?";
+    $user_check_stmt = mysqli_prepare($conn, $user_check_sql);
+    
+    if (!$user_check_stmt) {
+        throw new Exception("User check prepare failed: " . mysqli_error($conn));
+    }
+
+    mysqli_stmt_bind_param($user_check_stmt, "s", $user_id);
+    mysqli_stmt_execute($user_check_stmt);
+    $user_result = mysqli_stmt_get_result($user_check_stmt);
+    
+    if (mysqli_num_rows($user_result) === 0) {
+        throw new Exception("Invalid user ID");
+    }
+    
+    mysqli_stmt_close($user_check_stmt);
+
+    // If no duplicate found and user exists, proceed with insertion
     $sql = "INSERT INTO user_payment_data (id, user_payment_bankname, user_payment_cardnumber, user_payment_cardname, user_payment_cardexpdate, user_payment_cvv, user_payment_password)
             VALUES (?, ?, ?, ?, ?, ?, ?)";
 
@@ -85,7 +121,14 @@ try {
         $_SESSION['user_cards'][] = $newCard;
         $_SESSION['active_card_index'] = count($_SESSION['user_cards']) - 1;
 
-        echo json_encode(['status' => 'success', 'message' => 'Card details added successfully']);
+        // Log successful insertion
+        error_log("Card successfully added for user ID: $user_id");
+        
+        echo json_encode([
+            'status' => 'success', 
+            'message' => 'Card details added successfully',
+            'user_id' => $user_id  // Return the user ID for verification
+        ]);
     } else {
         throw new Exception("Execute failed: " . mysqli_stmt_error($stmt));
     }
@@ -97,7 +140,7 @@ try {
     error_log("Error in insert_card_details.php: " . $e->getMessage());
     echo json_encode([
         'status' => 'error',
-        'message' => 'An error occurred while processing your request.'
+        'message' => 'An error occurred while processing your request: ' . $e->getMessage()
     ]);
 }
 ?>

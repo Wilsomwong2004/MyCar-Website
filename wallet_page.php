@@ -41,10 +41,17 @@
       $_SESSION['user_cards'][] = $row;
   }
 
-  // Set active card index if not set or if cards exist
+  // Initialize active_card_index if not set
+  if (!isset($_SESSION['active_card_index'])) {
+      $_SESSION['active_card_index'] = 0;
+      error_log("Initializing active_card_index to 0 for user: " . $_SESSION['user_email']);
+  }
+
+  // Validate active_card_index against available cards
   if (!empty($_SESSION['user_cards'])) {
-      if (!isset($_SESSION['active_card_index']) || $_SESSION['active_card_index'] >= count($_SESSION['user_cards'])) {
+      if ($_SESSION['active_card_index'] >= count($_SESSION['user_cards'])) {
           $_SESSION['active_card_index'] = 0;
+          error_log("Resetting active_card_index to 0 as it was out of bounds");
       }
       $active_card = $_SESSION['user_cards'][$_SESSION['active_card_index']];
   } else {

@@ -1,3 +1,116 @@
+<?php
+session_start();
+require_once 'conn.php';
+
+// Get the source and user ID from URL parameters
+$source = $_GET['source'] ?? 'settings';
+$newUserId = $_GET['userId'] ?? null;
+$currentUserId = $_SESSION['user_id'] ?? null;
+
+// Function to verify new user
+function verifyNewUser($userId, $conn) {
+    try {
+        // Prepare statement to check if user exists and was recently created
+        $sql = "SELECT id, created_at FROM user_data 
+                WHERE id = ? 
+                AND created_at >= NOW() - INTERVAL 30 MINUTE"; // Only allow users created within last 30 minutes
+        
+        $stmt = mysqli_prepare($conn, $sql);
+        if (!$stmt) {
+            throw new Exception("Failed to prepare statement: " . mysqli_error($conn));
+        }
+        
+        mysqli_stmt_bind_param($stmt, "s", $userId);
+        
+        if (!mysqli_stmt_execute($stmt)) {
+            throw new Exception("Failed to execute statement: " . mysqli_stmt_error($stmt));
+        }
+        
+        $result = mysqli_stmt_get_result($stmt);
+        $user = mysqli_fetch_assoc($result);
+        
+        mysqli_stmt_close($stmt);
+        
+        return $user !== null;
+    } catch (Exception $e) {
+        error_log("Error verifying new user: " . $e->getMessage());
+        return false;
+    }
+}
+
+// Function to check if user already has payment methods
+function hasExistingPaymentMethods($userId, $conn) {
+    try {
+        $sql = "SELECT COUNT(*) as count FROM user_payment_data WHERE id = ?";
+        $stmt = mysqli_prepare($conn, $sql);
+        
+        if (!$stmt) {
+            throw new Exception("Failed to prepare statement: " . mysqli_error($conn));
+        }
+        
+        mysqli_stmt_bind_param($stmt, "s", $userId);
+        
+        if (!mysqli_stmt_execute($stmt)) {
+            throw new Exception("Failed to execute statement: " . mysqli_stmt_error($stmt));
+        }
+        
+        $result = mysqli_stmt_get_result($stmt);
+        $row = mysqli_fetch_assoc($result);
+        
+        mysqli_stmt_close($stmt);
+        
+        return $row['count'] > 0;
+    } catch (Exception $e) {
+        error_log("Error checking payment methods: " . $e->getMessage());
+        return false;
+    }
+}
+
+try {
+    // If coming from signup with a new user ID
+    if ($source === 'signup' && $newUserId) {
+        if (!verifyNewUser($newUserId, $conn)) {
+            // Log suspicious activity
+            error_log("Suspicious activity: Invalid new user access attempt for ID: " . $newUserId);
+            header('Location: index.php');
+            exit;
+        }
+        
+        // Store the verified user ID in session
+        $_SESSION['temp_user_id'] = $newUserId;
+        $activeUserId = $newUserId;
+        
+    } else if ($source === 'settings') {
+        // Ensure user is logged in for settings access
+        if (!$currentUserId) {
+            header('Location: index.php');
+            exit;
+        }
+        $activeUserId = $currentUserId;
+        
+    } else {
+        // Invalid source
+        header('Location: index.php');
+        exit;
+    }
+    
+    // Check for existing payment methods
+    $hasPaymentMethods = hasExistingPaymentMethods($activeUserId, $conn);
+    
+    // Store the active user ID and source in session for the form submission
+    $_SESSION['active_user_id'] = $activeUserId;
+    $_SESSION['payment_setup_source'] = $source;
+    
+} catch (Exception $e) {
+    error_log("Error in add_card_page.php: " . $e->getMessage());
+    header('Location: error_page.php');
+    exit;
+}
+
+// Close the database connection
+mysqli_close($conn);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -107,6 +220,67 @@
 
     <script src="./assets/javascript/add_card_page.js"></script>
     <script src="./assets/javascript/darkmode.js"></script>
+    <script src="./assets/javascript/payment_setup_handler.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add hidden fields to the form
+            const form = document.querySelector('form');
+            
+            const userIdInput = document.createElement('input');
+            userIdInput.type = 'hidden';
+            userIdInput.name = 'user_id';
+            userIdInput.value = '<?php echo htmlspecialchars($activeUserId); ?>';
+            form.appendChild(userIdInput);
+            
+            const sourceInput = document.createElement('input');
+            sourceInput.type = 'hidden';
+            sourceInput.name = 'setup_source';
+            sourceInput.value = '<?php echo htmlspecialchars($source); ?>';
+            form.appendChild(sourceInput);
+
+            // Handle form submission
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                const formData = new FormData(this);
+                
+                // Show loading overlay
+                document.getElementById('loadingOverlay').classList.remove('hidden');
+                
+                fetch('insert_card_details.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Hide loading overlay
+                    document.getElementById('loadingOverlay').classList.add('hidden');
+                    
+                    if (data.status === 'success') {
+                        alert('Card added successfully!');
+                        // Clear setup source from session storage
+                        window.paymentSetupHandler.clearSource();
+                        // Redirect based on source
+                        window.location.href = '<?php echo $source === "signup" ? "main_page.php" : "settings.php"; ?>';
+                    } else {
+                        alert('Error: ' + data.message);
+                    }
+                })
+                .catch(error => {
+                    // Hide loading overlay
+                    document.getElementById('loadingOverlay').classList.add('hidden');
+                    
+                    console.error('Error:', error);
+                    alert('An error occurred while adding the card.');
+                });
+            });
+
+            // Handle "Set Up Later" button
+            document.getElementById('setupLater').addEventListener('click', function() {
+                window.paymentSetupHandler.clearSource();
+                window.location.href = '<?php echo $source === "signup" ? "main_page.php" : "settings.php"; ?>';
+            });
+        });
+    </script>
 </body>
 </html>
 

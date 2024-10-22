@@ -3054,3 +3054,541 @@
     [agree_w_tnc] => agree_w_tnc
 )
 
+[22-Oct-2024 13:23:56 Europe/Berlin] Received data: Array
+(
+    [first_user_name] => Janson
+    [last_user_name] => liew
+    [username] => Janson
+    [password] => 12341234
+    [email] => Janson@gmail.com
+    [address] => No.18 , Lorong 9
+    [birthday] => 1111-11-11
+    [gender] => Male
+    [agree_w_tnc] => agree_w_tnc
+)
+
+[22-Oct-2024 13:24:14 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Janson
+    [action] => checkUser
+)
+
+[22-Oct-2024 13:24:15 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Janson
+    [action] => checkUser
+)
+
+[22-Oct-2024 13:24:39 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Janson
+    [action] => checkUser
+)
+
+[22-Oct-2024 13:24:44 Europe/Berlin] Received POST data: Array
+(
+    [userInput] => Janson
+    [action] => login
+    [password] => 1111
+)
+
+[22-Oct-2024 13:24:44 Europe/Berlin] User ID: 15
+[22-Oct-2024 13:24:44 Europe/Berlin] SQL Query: SELECT * FROM user_payment_data WHERE id = ?
+[22-Oct-2024 13:24:44 Europe/Berlin] Query result: Success
+[22-Oct-2024 13:24:44 Europe/Berlin] Number of rows: 0
+[22-Oct-2024 13:24:44 Europe/Berlin] PHP Warning:  Undefined variable $userPaymentData in C:\xampp\htdocs\MyCar_Website\index.php on line 104
+[22-Oct-2024 13:24:44 Europe/Berlin] User payment data: 
+[22-Oct-2024 13:24:44 Europe/Berlin] PHP Warning:  Undefined array key "username" in C:\xampp\htdocs\MyCar_Website\index.php on line 105
+[22-Oct-2024 13:24:44 Europe/Berlin] Login successful for user: 
+[22-Oct-2024 13:24:47 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 15
+    [user_email] => Janson@gmail.com
+    [user_username] => Janson
+    [user_profile_pic] => ./assets/css/pic/Unknown_acc-removebg.png
+)
+
+[22-Oct-2024 13:24:47 Europe/Berlin] No payment data found for user ID: 15
+[22-Oct-2024 13:24:47 Europe/Berlin] Number of cards found: 0
+[22-Oct-2024 13:24:47 Europe/Berlin] PHP Warning:  Undefined array key "active_card_index" in C:\xampp\htdocs\MyCar_Website\wallet_page.php on line 59
+[22-Oct-2024 13:24:47 Europe/Berlin] Active card index: 
+[22-Oct-2024 13:24:47 Europe/Berlin] Cards data: Array
+(
+)
+
+[22-Oct-2024 13:26:57 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 15
+    [user_email] => Janson@gmail.com
+    [user_username] => Janson
+    [user_profile_pic] => ./assets/css/pic/Unknown_acc-removebg.png
+    [user_cards] => Array
+        (
+        )
+
+)
+
+[22-Oct-2024 13:26:57 Europe/Berlin] Initializing active_card_index to 0 for user: Janson@gmail.com
+[22-Oct-2024 13:26:57 Europe/Berlin] No payment data found for user ID: 15
+[22-Oct-2024 13:26:57 Europe/Berlin] Number of cards found: 0
+[22-Oct-2024 13:26:57 Europe/Berlin] Active card index: 0
+[22-Oct-2024 13:26:57 Europe/Berlin] Cards data: Array
+(
+)
+
+[22-Oct-2024 13:26:58 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 15
+    [user_email] => Janson@gmail.com
+    [user_username] => Janson
+    [user_profile_pic] => ./assets/css/pic/Unknown_acc-removebg.png
+    [user_cards] => Array
+        (
+        )
+
+    [active_card_index] => 0
+)
+
+[22-Oct-2024 13:26:58 Europe/Berlin] No payment data found for user ID: 15
+[22-Oct-2024 13:26:58 Europe/Berlin] Number of cards found: 0
+[22-Oct-2024 13:26:58 Europe/Berlin] Active card index: 0
+[22-Oct-2024 13:26:58 Europe/Berlin] Cards data: Array
+(
+)
+
+[22-Oct-2024 13:27:04 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 15
+    [user_email] => Janson@gmail.com
+    [user_username] => Janson
+    [user_profile_pic] => ./assets/css/pic/Unknown_acc-removebg.png
+    [user_cards] => Array
+        (
+        )
+
+    [active_card_index] => 0
+)
+
+[22-Oct-2024 13:27:04 Europe/Berlin] No payment data found for user ID: 15
+[22-Oct-2024 13:27:04 Europe/Berlin] Number of cards found: 0
+[22-Oct-2024 13:27:04 Europe/Berlin] Active card index: 0
+[22-Oct-2024 13:27:04 Europe/Berlin] Cards data: Array
+(
+)
+
+[22-Oct-2024 13:27:06 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 15
+    [user_email] => Janson@gmail.com
+    [user_username] => Janson
+    [user_profile_pic] => ./assets/css/pic/Unknown_acc-removebg.png
+    [user_cards] => Array
+        (
+        )
+
+    [active_card_index] => 0
+)
+
+[22-Oct-2024 13:27:06 Europe/Berlin] No payment data found for user ID: 15
+[22-Oct-2024 13:27:06 Europe/Berlin] Number of cards found: 0
+[22-Oct-2024 13:27:06 Europe/Berlin] Active card index: 0
+[22-Oct-2024 13:27:06 Europe/Berlin] Cards data: Array
+(
+)
+
+[22-Oct-2024 13:27:08 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 15
+    [user_email] => Janson@gmail.com
+    [user_username] => Janson
+    [user_profile_pic] => ./assets/css/pic/Unknown_acc-removebg.png
+    [user_cards] => Array
+        (
+        )
+
+    [active_card_index] => 0
+)
+
+[22-Oct-2024 13:27:08 Europe/Berlin] No payment data found for user ID: 15
+[22-Oct-2024 13:27:08 Europe/Berlin] Number of cards found: 0
+[22-Oct-2024 13:27:08 Europe/Berlin] Active card index: 0
+[22-Oct-2024 13:27:08 Europe/Berlin] Cards data: Array
+(
+)
+
+[22-Oct-2024 13:27:09 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 15
+    [user_email] => Janson@gmail.com
+    [user_username] => Janson
+    [user_profile_pic] => ./assets/css/pic/Unknown_acc-removebg.png
+    [user_cards] => Array
+        (
+        )
+
+    [active_card_index] => 0
+)
+
+[22-Oct-2024 13:27:09 Europe/Berlin] No payment data found for user ID: 15
+[22-Oct-2024 13:27:09 Europe/Berlin] Number of cards found: 0
+[22-Oct-2024 13:27:09 Europe/Berlin] Active card index: 0
+[22-Oct-2024 13:27:09 Europe/Berlin] Cards data: Array
+(
+)
+
+[22-Oct-2024 13:27:48 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 15
+    [user_email] => Janson@gmail.com
+    [user_username] => Janson
+    [user_profile_pic] => ./assets/css/pic/Unknown_acc-removebg.png
+    [user_cards] => Array
+        (
+        )
+
+    [active_card_index] => 0
+    [active_user_id] => 15
+    [payment_setup_source] => settings
+)
+
+[22-Oct-2024 13:27:48 Europe/Berlin] No payment data found for user ID: 15
+[22-Oct-2024 13:27:48 Europe/Berlin] Number of cards found: 0
+[22-Oct-2024 13:27:48 Europe/Berlin] Active card index: 0
+[22-Oct-2024 13:27:48 Europe/Berlin] Cards data: Array
+(
+)
+
+[22-Oct-2024 13:28:53 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 15
+    [user_email] => Janson@gmail.com
+    [user_username] => Janson
+    [user_profile_pic] => ./assets/css/pic/Unknown_acc-removebg.png
+    [user_cards] => Array
+        (
+        )
+
+    [active_card_index] => 0
+    [active_user_id] => 15
+    [payment_setup_source] => settings
+)
+
+[22-Oct-2024 13:28:53 Europe/Berlin] No payment data found for user ID: 15
+[22-Oct-2024 13:28:53 Europe/Berlin] Number of cards found: 0
+[22-Oct-2024 13:28:53 Europe/Berlin] Active card index: 0
+[22-Oct-2024 13:28:53 Europe/Berlin] Cards data: Array
+(
+)
+
+[22-Oct-2024 13:33:47 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 15
+    [user_email] => Janson@gmail.com
+    [user_username] => Janson
+    [user_profile_pic] => ./assets/css/pic/Unknown_acc-removebg.png
+    [user_cards] => Array
+        (
+        )
+
+    [active_card_index] => 0
+    [active_user_id] => 15
+    [payment_setup_source] => settings
+)
+
+[22-Oct-2024 13:33:47 Europe/Berlin] No payment data found for user ID: 15
+[22-Oct-2024 13:33:47 Europe/Berlin] Number of cards found: 0
+[22-Oct-2024 13:33:47 Europe/Berlin] Active card index: 0
+[22-Oct-2024 13:33:47 Europe/Berlin] Cards data: Array
+(
+)
+
+[22-Oct-2024 13:34:13 Europe/Berlin] Session user_id: 15
+[22-Oct-2024 13:34:13 Europe/Berlin] Session user_email: Janson@gmail.com
+[22-Oct-2024 13:34:13 Europe/Berlin] Received data - User ID: 15, Bank: Public Bank, Card Number: 7656666665555444
+[22-Oct-2024 13:34:13 Europe/Berlin] Error in insert_card_details.php: Table 'userdata.users' doesn't exist
+[22-Oct-2024 13:40:52 Europe/Berlin] Session user_id: 15
+[22-Oct-2024 13:40:52 Europe/Berlin] Session user_email: Janson@gmail.com
+[22-Oct-2024 13:40:52 Europe/Berlin] Received data - User ID: 15, Bank: Public Bank, Card Number: 7656666665555444
+[22-Oct-2024 13:40:52 Europe/Berlin] Card successfully added for user ID: 15
+[22-Oct-2024 13:41:13 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 15
+    [user_email] => Janson@gmail.com
+    [user_username] => Janson
+    [user_profile_pic] => ./assets/css/pic/Unknown_acc-removebg.png
+    [user_cards] => Array
+        (
+            [0] => Array
+                (
+                    [payment_id] => 30
+                    [id] => 15
+                    [user_payment_bankname] => Public Bank
+                    [user_payment_cardnumber] => 7656666665555444
+                    [user_payment_cardname] => Janson
+                    [user_payment_cardexpdate] => 12/34
+                    [user_payment_cvv] => 989
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 0
+                )
+
+        )
+
+    [active_card_index] => 0
+    [active_user_id] => 15
+    [payment_setup_source] => settings
+)
+
+[22-Oct-2024 13:41:13 Europe/Berlin] Number of cards found: 1
+[22-Oct-2024 13:41:13 Europe/Berlin] Active card index: 0
+[22-Oct-2024 13:41:13 Europe/Berlin] Cards data: Array
+(
+    [0] => Array
+        (
+            [payment_id] => 30
+            [id] => 15
+            [user_payment_bankname] => Public Bank
+            [user_payment_cardnumber] => 7656666665555444
+            [user_payment_cardname] => Janson
+            [user_payment_cardexpdate] => 12/34
+            [user_payment_cvv] => 989
+            [user_payment_password] => 20040727
+            [user_payment_balance] => 0
+        )
+
+)
+
+[22-Oct-2024 13:41:22 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 15
+    [user_email] => Janson@gmail.com
+    [user_username] => Janson
+    [user_profile_pic] => ./assets/css/pic/Unknown_acc-removebg.png
+    [user_cards] => Array
+        (
+            [0] => Array
+                (
+                    [payment_id] => 30
+                    [id] => 15
+                    [user_payment_bankname] => Public Bank
+                    [user_payment_cardnumber] => 7656666665555444
+                    [user_payment_cardname] => Janson
+                    [user_payment_cardexpdate] => 12/34
+                    [user_payment_cvv] => 989
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 0
+                )
+
+        )
+
+    [active_card_index] => 0
+    [active_user_id] => 15
+    [payment_setup_source] => settings
+)
+
+[22-Oct-2024 13:41:22 Europe/Berlin] Number of cards found: 1
+[22-Oct-2024 13:41:22 Europe/Berlin] Active card index: 0
+[22-Oct-2024 13:41:22 Europe/Berlin] Cards data: Array
+(
+    [0] => Array
+        (
+            [payment_id] => 30
+            [id] => 15
+            [user_payment_bankname] => Public Bank
+            [user_payment_cardnumber] => 7656666665555444
+            [user_payment_cardname] => Janson
+            [user_payment_cardexpdate] => 12/34
+            [user_payment_cvv] => 989
+            [user_payment_password] => 20040727
+            [user_payment_balance] => 0
+        )
+
+)
+
+[22-Oct-2024 13:41:24 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 15
+    [user_email] => Janson@gmail.com
+    [user_username] => Janson
+    [user_profile_pic] => ./assets/css/pic/Unknown_acc-removebg.png
+    [user_cards] => Array
+        (
+            [0] => Array
+                (
+                    [payment_id] => 30
+                    [id] => 15
+                    [user_payment_bankname] => Public Bank
+                    [user_payment_cardnumber] => 7656666665555444
+                    [user_payment_cardname] => Janson
+                    [user_payment_cardexpdate] => 12/34
+                    [user_payment_cvv] => 989
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 0
+                )
+
+        )
+
+    [active_card_index] => 0
+    [active_user_id] => 15
+    [payment_setup_source] => settings
+)
+
+[22-Oct-2024 13:41:24 Europe/Berlin] Number of cards found: 1
+[22-Oct-2024 13:41:24 Europe/Berlin] Active card index: 0
+[22-Oct-2024 13:41:24 Europe/Berlin] Cards data: Array
+(
+    [0] => Array
+        (
+            [payment_id] => 30
+            [id] => 15
+            [user_payment_bankname] => Public Bank
+            [user_payment_cardnumber] => 7656666665555444
+            [user_payment_cardname] => Janson
+            [user_payment_cardexpdate] => 12/34
+            [user_payment_cvv] => 989
+            [user_payment_password] => 20040727
+            [user_payment_balance] => 0
+        )
+
+)
+
+[22-Oct-2024 13:41:44 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 15
+    [user_email] => Janson@gmail.com
+    [user_username] => Janson
+    [user_profile_pic] => ./assets/css/pic/Unknown_acc-removebg.png
+    [user_cards] => Array
+        (
+            [0] => Array
+                (
+                    [payment_id] => 30
+                    [id] => 15
+                    [user_payment_bankname] => Public Bank
+                    [user_payment_cardnumber] => 7656666665555444
+                    [user_payment_cardname] => Janson
+                    [user_payment_cardexpdate] => 12/34
+                    [user_payment_cvv] => 989
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 0
+                )
+
+        )
+
+    [active_card_index] => 0
+    [active_user_id] => 15
+    [payment_setup_source] => settings
+)
+
+[22-Oct-2024 13:41:44 Europe/Berlin] Number of cards found: 1
+[22-Oct-2024 13:41:44 Europe/Berlin] Active card index: 0
+[22-Oct-2024 13:41:44 Europe/Berlin] Cards data: Array
+(
+    [0] => Array
+        (
+            [payment_id] => 30
+            [id] => 15
+            [user_payment_bankname] => Public Bank
+            [user_payment_cardnumber] => 7656666665555444
+            [user_payment_cardname] => Janson
+            [user_payment_cardexpdate] => 12/34
+            [user_payment_cvv] => 989
+            [user_payment_password] => 20040727
+            [user_payment_balance] => 0
+        )
+
+)
+
+[22-Oct-2024 13:42:14 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 15
+    [user_email] => Janson@gmail.com
+    [user_username] => Janson
+    [user_profile_pic] => ./assets/css/pic/Unknown_acc-removebg.png
+    [user_cards] => Array
+        (
+            [0] => Array
+                (
+                    [payment_id] => 30
+                    [id] => 15
+                    [user_payment_bankname] => Public Bank
+                    [user_payment_cardnumber] => 7656666665555444
+                    [user_payment_cardname] => Janson
+                    [user_payment_cardexpdate] => 12/34
+                    [user_payment_cvv] => 989
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 0
+                )
+
+        )
+
+    [active_card_index] => 0
+    [active_user_id] => 15
+    [payment_setup_source] => settings
+)
+
+[22-Oct-2024 13:42:14 Europe/Berlin] Number of cards found: 1
+[22-Oct-2024 13:42:14 Europe/Berlin] Active card index: 0
+[22-Oct-2024 13:42:14 Europe/Berlin] Cards data: Array
+(
+    [0] => Array
+        (
+            [payment_id] => 30
+            [id] => 15
+            [user_payment_bankname] => Public Bank
+            [user_payment_cardnumber] => 7656666665555444
+            [user_payment_cardname] => Janson
+            [user_payment_cardexpdate] => 12/34
+            [user_payment_cvv] => 989
+            [user_payment_password] => 20040727
+            [user_payment_balance] => 0
+        )
+
+)
+
+[22-Oct-2024 13:42:15 Europe/Berlin] Session data in wallet_page.php: Array
+(
+    [user_id] => 15
+    [user_email] => Janson@gmail.com
+    [user_username] => Janson
+    [user_profile_pic] => ./assets/css/pic/Unknown_acc-removebg.png
+    [user_cards] => Array
+        (
+            [0] => Array
+                (
+                    [payment_id] => 30
+                    [id] => 15
+                    [user_payment_bankname] => Public Bank
+                    [user_payment_cardnumber] => 7656666665555444
+                    [user_payment_cardname] => Janson
+                    [user_payment_cardexpdate] => 12/34
+                    [user_payment_cvv] => 989
+                    [user_payment_password] => 20040727
+                    [user_payment_balance] => 0
+                )
+
+        )
+
+    [active_card_index] => 0
+    [active_user_id] => 15
+    [payment_setup_source] => settings
+)
+
+[22-Oct-2024 13:42:15 Europe/Berlin] Number of cards found: 1
+[22-Oct-2024 13:42:15 Europe/Berlin] Active card index: 0
+[22-Oct-2024 13:42:15 Europe/Berlin] Cards data: Array
+(
+    [0] => Array
+        (
+            [payment_id] => 30
+            [id] => 15
+            [user_payment_bankname] => Public Bank
+            [user_payment_cardnumber] => 7656666665555444
+            [user_payment_cardname] => Janson
+            [user_payment_cardexpdate] => 12/34
+            [user_payment_cvv] => 989
+            [user_payment_password] => 20040727
+            [user_payment_balance] => 0
+        )
+
+)
+

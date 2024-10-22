@@ -47,6 +47,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 })
                 .then(data => {
                     if (data.status === 'success') {
+                        // Set the source and new user ID
+                        window.paymentSetupHandler.setSource('signup', data.userId);
                         alert('Account created successfully!');
                         confirmPopup.classList.remove('hidden');
                     } else {
@@ -59,6 +61,18 @@ document.addEventListener('DOMContentLoaded', function () {
                     alert('An error occurred. Please check the server logs for more details.');
                 });
         }
+    });
+
+    // Modify the setup buttons
+    document.getElementById('setupLater').addEventListener('click', function () {
+        confirmPopup.classList.add('hidden');
+        window.paymentSetupHandler.clearSource();
+        window.location.href = 'main_page.php';
+    });
+
+    document.getElementById('setupNow').addEventListener('click', function () {
+        confirmPopup.classList.add('hidden');
+        window.paymentSetupHandler.handleSetupNavigation();
     });
 
     yesButton.addEventListener('click', function () {
