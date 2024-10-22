@@ -386,7 +386,7 @@ function editUser(id) {
     }
 
     currentEditingId = id;
-    const user = users.find(u => u.id === id);
+    const user = users.find(u => String(u.id) === String(id));
     if (!user) {
         console.error('User not found for ID:', id);
         return;
@@ -397,7 +397,7 @@ function editUser(id) {
     editForm.innerHTML = `
         <td colspan="5">
             <form id="editUserForm-${id}">
-                <input type="hidden" name="user_id" value="${user.user_id}">
+                <input type="hidden" name="user_id" value="${id}">
                 <div class="form-group">
                     <label for="user_firstname">First Name:</label>
                     <input type="text" id="user_firstname" name="user_firstname" value="${user.user_firstname || ''}" required>
@@ -408,7 +408,7 @@ function editUser(id) {
                 </div>
                 <div class="form-group">
                     <label for="user_phone">Username:</label>
-                    <input type="tel" id="user_phone" name="user_phone" value="${user.user_username || ''}" required>
+                    <input type="text" id="user_phone" name="user_phone" value="${user.user_username || ''}" required>
                 </div>
                 <div class="form-group">
                     <label for="user_email">Email:</label>
@@ -434,7 +434,7 @@ function editUser(id) {
                         <option value="other" ${user.user_gender === 'other' ? 'selected' : ''}>Other</option>
                     </select>
                 </div>
-                <button type="submit" class="btn btn-submit">Submit</button>
+                <button type="submit" class="btn btn-submit">Save Changes</button>
                 <button type="button" class="btn btn-cancel" onclick="cancelEdit('${id}')">Cancel</button>
             </form>
         </td>
@@ -444,26 +444,40 @@ function editUser(id) {
     userRow.style.display = 'none';
     userRow.insertAdjacentElement('afterend', editForm);
 
-    document.getElementById(`editUserForm-${id}`).addEventListener('submit', function (e) {
+    // Add form submission handler
+    document.getElementById(`editUserForm-${id}`).addEventListener('submit', function(e) {
         e.preventDefault();
         const formData = new FormData(e.target);
+        
+        // Debug: Log form data before sending
+        console.log('Form data being sent:', Object.fromEntries(formData));
 
         fetch('update-user.php', {
             method: 'POST',
             body: formData
         })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    fetchUsers();
-                } else {
-                    alert('Error updating user: ' + (data.error || 'Unknown error'));
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('An error occurred while updating the user.');
-            });
+        .then(response => response.text())
+        .then(text => {
+            console.log('Raw server response:', text); // Debug: Log raw response
+            try {
+                return JSON.parse(text);
+            } catch (e) {
+                console.error('Failed to parse server response:', text);
+                throw new Error('Server returned invalid JSON');
+            }
+        })
+        .then(data => {
+            if (data.success) {
+                fetchUsers();
+                cancelEdit(id);
+            } else {
+                alert('Error updating user: ' + (data.error || 'Unknown error'));
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred while updating the user: ' + error.message);
+        });
     });
 }
 

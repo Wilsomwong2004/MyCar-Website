@@ -52,6 +52,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const userValue = userInput.value.trim();
         const passwordValue = passwordInput.value.trim();
 
+        userError.style.display = 'block';
+        passwordError.style.display = 'block';
         userError.textContent = '';
         passwordError.textContent = '';
 
@@ -84,21 +86,23 @@ document.addEventListener('DOMContentLoaded', function () {
             .then(response => response.json())
             .then(data => {
                 if (data.status === 'success') {
+                    // Show alert for user found
+                    // alert(data.message);
+
                     if (!isPasswordVisible) {
                         passwordInput.style.display = 'block';
                         isPasswordVisible = true;
                         signInButton.textContent = 'Sign in';
                     } else {
                         if (data.redirect) {
-                            // Redirect to admin page
                             window.location.href = data.redirect;
                         } else {
-                            // Regular user login successful
                             window.location.href = 'main_page.php';
                         }
                     }
                 } else {
                     const errorMessage = data.message || 'An error occurred. Please try again.';
+                    alert(errorMessage);
                     if (!isPasswordVisible) {
                         userError.textContent = errorMessage;
                     } else {
@@ -109,6 +113,7 @@ document.addEventListener('DOMContentLoaded', function () {
             .catch(error => {
                 console.error('Fetch error:', error);
                 const errorMessage = 'An error occurred. Please try again later.';
+                alert(errorMessage);
                 if (!isPasswordVisible) {
                     userError.textContent = errorMessage;
                 } else {
@@ -116,6 +121,38 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
     });
+
+    forgotPasswordForm.onsubmit = function (e) {
+        e.preventDefault();
+        const email = resetEmailInput.value.trim();
+        if (!email || !isValidEmail(email)) {
+            alert('Please enter a valid email address.');
+            return;
+        }
+
+        const formData = new FormData();
+        formData.append('forgot-email', email);
+
+        fetch('index.php', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    // Show the verification code in an alert
+                    console.log(`Your verification code is: ${data.verification_code}`);
+                    verificationContainer.style.display = 'block';
+                    startCountdown();
+                } else {
+                    alert(data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Fetch error:', error);
+                alert('An error occurred. Please try again later.');
+            });
+    }
 
     // Hide error messages when user starts typing
     userInput.addEventListener('input', () => {

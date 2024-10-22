@@ -75,3 +75,32 @@
 [22-Oct-2024 13:41:55 Europe/Berlin] Processing top-up for user_id: 15
 [22-Oct-2024 13:41:55 Europe/Berlin] Active card details: {"index":0,"id":15,"payment_id":30}
 [22-Oct-2024 13:41:55 Europe/Berlin] Sending response: {"status":"error","message":"Invalid password","debug":"Password verification failed"}
+[22-Oct-2024 14:16:49 Europe/Berlin] Top-up request received. POST data: {"amount":"20","password":"[REDACTED]"}
+[22-Oct-2024 14:16:49 Europe/Berlin] Session state: {"user_id_set":true,"cards_set":true,"active_card_index_set":true}
+[22-Oct-2024 14:16:49 Europe/Berlin] Processing top-up for user_id: 15
+[22-Oct-2024 14:16:49 Europe/Berlin] Top-up exception: Table 'userdata.user_data' doesn't exist
+[22-Oct-2024 14:16:49 Europe/Berlin] Sending response: {"status":"error","message":"An unexpected error occurred","debug":"Table 'userdata.user_data' doesn't exist"}
+[22-Oct-2024 14:18:42 Europe/Berlin] Top-up request received. POST data: {"amount":"20","password":"[REDACTED]"}
+[22-Oct-2024 14:18:42 Europe/Berlin] Session state: {"user_id_set":true,"cards_set":true,"active_card_index_set":true}
+[22-Oct-2024 14:18:42 Europe/Berlin] Processing top-up for user_id: 15
+[22-Oct-2024 14:18:42 Europe/Berlin] Sending response: {"status":"error","message":"Invalid password","debug":"Password verification failed"}
+[22-Oct-2024 14:18:43 Europe/Berlin] Top-up request received. POST data: {"amount":"20","password":"[REDACTED]"}
+[22-Oct-2024 14:18:43 Europe/Berlin] Session state: {"user_id_set":true,"cards_set":true,"active_card_index_set":true}
+[22-Oct-2024 14:18:43 Europe/Berlin] Processing top-up for user_id: 15
+[22-Oct-2024 14:18:43 Europe/Berlin] Sending response: {"status":"error","message":"Invalid password","debug":"Password verification failed"}
+[22-Oct-2024 14:19:12 Europe/Berlin] Top-up request received. POST data: {"amount":"20","password":"[REDACTED]"}
+[22-Oct-2024 14:19:12 Europe/Berlin] Session state: {"user_id_set":true,"cards_set":true,"active_card_index_set":true}
+[22-Oct-2024 14:19:12 Europe/Berlin] Processing top-up for user_id: 15
+[22-Oct-2024 14:19:12 Europe/Berlin] Sending response: {"status":"error","message":"Invalid password","debug":"Password verification failed"}
+[22-Oct-2024 14:53:24 Europe/Berlin] Top-up request received. POST data: {"amount":"20","password":"[REDACTED]"}
+[22-Oct-2024 14:53:24 Europe/Berlin] Session state: {"user_id_set":true,"cards_set":true,"active_card_index_set":true}
+[22-Oct-2024 14:53:24 Europe/Berlin] Processing top-up for user_id: 24
+[22-Oct-2024 14:53:24 Europe/Berlin] Sending response: {"status":"error","message":"Invalid password","debug":"Password verification failed"}
+[22-Oct-2024 14:53:35 Europe/Berlin] Top-up request received. POST data: {"amount":"20","password":"[REDACTED]"}
+[22-Oct-2024 14:53:35 Europe/Berlin] Session state: {"user_id_set":true,"cards_set":true,"active_card_index_set":true}
+[22-Oct-2024 14:53:35 Europe/Berlin] Processing top-up for user_id: 24
+[22-Oct-2024 14:53:35 Europe/Berlin] Sending response: {"status":"error","message":"Invalid password","debug":"Password verification failed"}
+[22-Oct-2024 14:53:36 Europe/Berlin] Top-up request received. POST data: {"amount":"20","password":"[REDACTED]"}
+[22-Oct-2024 14:53:36 Europe/Berlin] Session state: {"user_id_set":true,"cards_set":true,"active_card_index_set":true}
+[22-Oct-2024 14:53:36 Europe/Berlin] Processing top-up for user_id: 24
+[22-Oct-2024 14:53:36 Europe/Berlin] Sending response: {"status":"error","message":"Invalid password","debug":"Password verification failed"}

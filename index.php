@@ -34,7 +34,7 @@ try {
             if ($action == 'checkUser') {
                 // Check if user is admin
                 if ($userInput === 'admin') {
-                    outputJSON(['status' => 'success', 'message' => 'User found']);
+                    outputJSON(['status' => 'success', 'message' => 'Admin user found']);
                 } else {
                     // Check if user exists in database
                     $sql = "SELECT * FROM user_account_data WHERE user_email = ? OR user_username = ?";
@@ -45,11 +45,18 @@ try {
                     mysqli_stmt_bind_param($stmt, "ss", $userInput, $userInput);
                     mysqli_stmt_execute($stmt);
                     $result = mysqli_stmt_get_result($stmt);
-
+            
                     if (mysqli_num_rows($result) == 1) {
-                        outputJSON(['status' => 'success', 'message' => 'User found']);
+                        $user = mysqli_fetch_assoc($result);
+                        outputJSON([
+                            'status' => 'success', 
+                            'message' => 'User found: ' . htmlspecialchars($user['user_username'])
+                        ]);
                     } else {
-                        outputJSON(['status' => 'error', 'message' => 'User not found']);
+                        outputJSON([
+                            'status' => 'error', 
+                            'message' => 'No user found with username/email: ' . htmlspecialchars($userInput)
+                        ]);
                     }
                 }
             } elseif ($action == 'login') {
@@ -58,9 +65,9 @@ try {
                 // Check for admin login
                 if ($userInput === 'admin' && $password === '0000') {
                     $_SESSION['admin'] = true;
-                    $_SESSION['user_id'] = 'admin';  // Add this
-                    $_SESSION['user_role'] = 'admin'; // Add this - this is what your admin page checks for
-                    $_SESSION['user_username'] = 'admin'; // Optional but good to have
+                    $_SESSION['user_id'] = 'admin';
+                    $_SESSION['user_role'] = 'admin';
+                    $_SESSION['user_username'] = 'admin';
 
                     error_log('Admin login successful - Session data:');
                     error_log(print_r($_SESSION, true));
@@ -124,33 +131,39 @@ try {
         
         error_log("Attempting to reset password for email: $forgot_email");
         
-        // Check if the email is valid
         if (filter_var($forgot_email, FILTER_VALIDATE_EMAIL)) {
-            // Check if the email exists in the database
-            $sql = "SELECT * FROM user_account_data WHERE user_email = '$forgot_email'";
-            $result = mysqli_query($conn, $sql);
+            $sql = "SELECT * FROM user_account_data WHERE user_email = ?";
+            $stmt = mysqli_prepare($conn, $sql);
+            mysqli_stmt_bind_param($stmt, "s", $forgot_email);
+            mysqli_stmt_execute($stmt);
+            $result = mysqli_stmt_get_result($stmt);
             
             if ($result && mysqli_num_rows($result) == 1) {
                 $user = mysqli_fetch_assoc($result);
-                // Generate 6-digit verification code
                 $verification_code = rand(100000, 999999);
                 
-                // Insert the verification code into the database
-                $sql = "UPDATE user_account_data SET user_verification_code = '$verification_code' WHERE user_email = '$forgot_email'";
-                mysqli_query($conn, $sql);
+                $sql = "UPDATE user_account_data SET user_verification_code = ? WHERE user_email = ?";
+                $stmt = mysqli_prepare($conn, $sql);
+                mysqli_stmt_bind_param($stmt, "ss", $verification_code, $forgot_email);
+                mysqli_stmt_execute($stmt);
                 
-                $reset_message = "An email has been sent to $forgot_email with a verification code. Please enter the code below to reset your password.";
-                outputJSON(['status' => 'success', 'message' => $reset_message]);
-
-                $verification_message = "Your verification code is: ";
-                outputJSON(['status' => 'success', 'message' => $verification_message]);
+                outputJSON([
+                    'status' => 'success',
+                    'message' => 'Verification code has been generated.',
+                    'verification_code' => $verification_code,
+                    'user_email' => $forgot_email
+                ]);
             } else {
-                $reset_message = "Invalid email. Please enter a valid email to reset your password.";
-                outputJSON(['status' => 'error', 'message' => $reset_message]);
+                outputJSON([
+                    'status' => 'error',
+                    'message' => 'No account found with email: ' . htmlspecialchars($forgot_email)
+                ]);
             }
         } else {
-            $reset_message = "Invalid email. Please enter a valid email to reset your password.";
-            outputJSON(['status' => 'error', 'message' => $reset_message]);
+            outputJSON([
+                'status' => 'error',
+                'message' => 'Invalid email format. Please enter a valid email address.'
+            ]);
         }
         exit();
     }
