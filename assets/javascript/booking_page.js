@@ -495,7 +495,6 @@ function updateRoute() {
         });
 
         // Geocode both locations
-        // Geocode both locations
         Promise.all([
             fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(fromInput.value)}`),
             fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(toInput.value)}`)
