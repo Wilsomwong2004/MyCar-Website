@@ -45,10 +45,8 @@ The MyCar website recreates core functionalities of the MyCar app, providing a s
   <be>
   <img src="appendix/History Page_darkmode.png" alt="History Page Dark Mode" width="45%">
 </p>
-<p align="center">
-  <p>Figure: The MyCar activity history page is displayed in Light Mode (left) and Dark Mode (right). </p>
-  <p>Active now page still development due not enough time for assignment, so I decided not post pic here. </p>
-</p>
+<p align="center"> Figure: The MyCar activity history page is displayed in Light Mode (left) and Dark Mode (right). </p>
+<p align="center"> ** Active now page still development due not enough time for assignment, so I decided not post pic here. </p>
     
 #### Wallet Page
 <p align="center">
