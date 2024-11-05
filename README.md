@@ -1,11 +1,10 @@
 ## MyCar Website (Educational Project)
+<br>
 <p align="center">
   <img src="appendix/Login page.png" alt="Login Page Light Mode" width="60%">
 </p>
     
 Welcome to the MyCar website! This project is a web-based adaptation of the MyCar e-hailing app, a popular Malaysian ride-hailing service. This website version enables users to conveniently book rides from their computers, expanding accessibility beyond the existing mobile-only platform.
-
-<br>
 
 > **Note:** This project is created solely for educational purposes and is not affiliated with or officially endorsed by [MyCar](https://www.mycarasia.com/site/).
 
@@ -18,7 +17,7 @@ Welcome to the MyCar website! This project is a web-based adaptation of the MyCa
 - [Setup](#setup)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- 
+  
 <br>
 
 ## Project Overview
@@ -101,7 +100,7 @@ The MyCar website recreates core functionalities of the MyCar app, providing a s
 - **Payment Integration**: Secure payments with options for cash, card, and e-wallets.
 - **Trip History**: View past rides and receipts for easy reference.
 - **Dark Mode**: Toggle between light and dark mode for improved user comfort.
-- 
+  
 <br>
 
 ## Technologies Used
@@ -109,7 +108,7 @@ The MyCar website recreates core functionalities of the MyCar app, providing a s
 - **Backend**: PHP
 - **Database**: MySQL
 - **Server**: XAMPP (Apache server)
-- 
+  
 <br>
 
 ## Setup
@@ -141,7 +140,9 @@ To set up the project locally:
 - **Book a ride** by entering a pickup and drop-off location.
 - **Track your driver** and monitor ETA in real-time.
 - **Access ride history** to view past trips and download receipts.
+  
 <br>
+
 ## Contributing
 If you use this repository, please show your support by pressing the star button at the top-right of the page. Your support motivates continued development and improvements!
 Yea.. this project is just my education project, and I doesn't plan to continue this project due already submit the assignment.
