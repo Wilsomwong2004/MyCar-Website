@@ -1,6 +1,6 @@
 ## MyCar Website (Educational Project)
 <p align="center">
-  <img src="appendix/Login page.png" alt="Homepage Light Mode" width="90%">
+  <img src="appendix/Login page.png" alt="Homepage Light Mode" width="60%">
 </p>
     
 Welcome to the MyCar website! This project is a web-based adaptation of the MyCar e-hailing app, a popular Malaysian ride-hailing service. This website version enables users to conveniently book rides from their computers, expanding accessibility beyond the existing mobile-only platform.
