@@ -18,45 +18,55 @@ Welcome to the MyCar website! This project is a web-based adaptation of the MyCa
 ## Project Overview
 The MyCar website recreates core functionalities of the MyCar app, providing a smooth, user-friendly interface for users to hail rides, track their drivers, and manage bookings. This web-based version aims to improve accessibility and user experience, meeting the unique needs of desktop and mobile users alike in Malaysia’s diverse e-hailing market.
 
-### Home Page
+### Appendix
+#### Home Page
 <p align="center">
   <img src="appendix/Homepage.png" alt="Homepage Light Mode" width="45%">
   <be>
   <img src="appendix/Homepage_darkmode.png" alt="Homepage Dark Mode" width="45%">
 </p>
+*Figure: The MyCar home page is displayed in Light Mode (left) and Dark Mode (right).*
     
-### Message Page
+#### Message Page
 <p align="center">
   <img src="appendix/Message Page.png" alt="Message Page Light Mode" width="45%">
   <be>
   <img src="appendix/Message Page_darkmode.png" alt="Message Page Dark Mode" width="45%">
 </p>
+*Figure: The MyCar message page is displayed in Light Mode (left) and Dark Mode (right).*
     
-### Activity Page (History Page)
+#### Activity Page (History Page)
 <p align="center">
   <img src="appendix/History Page.png" alt="History Page Light Mode" width="45%">
   <be>
   <img src="appendix/History Page_darkmode.png" alt="History Page Dark Mode" width="45%">
 </p>
+*Figure: The MyCar activity history page is displayed in Light Mode (left) and Dark Mode (right).*
+*Active now page still development due not enough time for assignment, so I decided not post pic here.*
     
-### Wallet Page
+#### Wallet Page
 <p align="center">
   <img src="appendix/Wallet Page.png" alt="Wallet Page Light Mode" width="45%">
   <be>
   <img src="appendix/Wallet Page_darkmode.png" alt="Wallet Page Dark Mode" width="45%">
 </p>
+*Figure: The MyCar wallet page is displayed in Light Mode (left) and Dark Mode (right).*
 
-### Settings Page
+#### Settings Page
 <p align="center">
   <img src="appendix/Settings Page.png" alt="Settings Light Mode" width="60%">
 </p>
+*Figure: The MyCar settings page is displayed in Light Mode, btw settings page also have dark mode.*
     
-### Booking Page
+#### Booking Page
 <p align="center">
   <img src="appendix/Booking Page.png" alt="Booking Page Light Mode" width="45%">
   <be>
   <img src="appendix/Booking Page_darkmode.png" alt="Booking Page Dark Mode" width="45%">
 </p>
+*Figure: The MyCar booking page is displayed in Light Mode (left) and Dark Mode (right).*
+
+*These pic is just the main function/pages, there still have more functions/pages that you need to explore!*
 
 ## Features
 - **Ride Booking**: Quickly book a ride by entering pickup and destination details.
