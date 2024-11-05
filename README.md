@@ -25,7 +25,6 @@ The MyCar website recreates core functionalities of the MyCar app, providing a s
 <p align="center">
   <img src="appendix/Homepage.png" alt="Homepage Light Mode" width="45%">
   <be>
-  <be>
   <img src="appendix/Homepage_darkmode.png" alt="Homepage Dark Mode" width="45%">
 </p>
     
@@ -37,7 +36,9 @@ The MyCar website recreates core functionalities of the MyCar app, providing a s
 </p>
     
 ### Activity Page
-![Homepage Screenshot](appendix/History Page.png)
+<p align="center">
+  <img src="appendix/History Page.png" alt="Homepage Dark Mode" width="50%">
+</p>
     
 ### Wallet Page
 <p align="center">
