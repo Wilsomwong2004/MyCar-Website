@@ -1,5 +1,5 @@
 # MyCar Website (Educational Project)
-### Homepage Screenshots
+## Homepage Screenshots
 <p align="center">
   <img src="appendix/Homepage.png" alt="Homepage Light Mode" width="45%">
   <be>
