@@ -78,7 +78,11 @@ The MyCar website recreates core functionalities of the MyCar app, providing a s
 
 <br>
 <br>
-*These pic is just the main function/pages, there still have more functions/pages that you need to explore!*
+<p align="center">
+  *These pic is just the main function/pages, there still have more functions/pages that you need to explore!*
+</p>
+<br>
+<br>
 
 ## Features
 - **Ride Booking**: Quickly book a ride by entering pickup and destination details.
