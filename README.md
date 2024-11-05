@@ -25,7 +25,7 @@ The MyCar website recreates core functionalities of the MyCar app, providing a s
 
 ### Home Page
 <br>
-<p align="center">
+<p align="space-between">
   <img src="appendix/Homepage.png" alt="Homepage Light Mode" width="45%">
   <be>
   <img src="appendix/Homepage_darkmode.png" alt="Homepage Dark Mode" width="45%">
@@ -153,3 +153,5 @@ But We welcome educational collaboration! This project includes APIs to power ma
 
 Thank you for your support and contributions!
 Also Thanks my partners help a lots on this project!
+
+<br>
