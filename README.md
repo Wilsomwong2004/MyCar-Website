@@ -56,15 +56,20 @@ The MyCar website recreates core functionalities of the MyCar app, providing a s
 <p align="center">
   <img src="appendix/Settings Page.png" alt="Settings Light Mode" width="60%">
 </p>
-*Figure: The MyCar settings page is displayed in Light Mode, btw settings page also have dark mode.*
-    
+<p align="center">
+  Figure: The MyCar settings page is displayed in Light Mode, btw settings page also have dark mode.
+</p>
+
 #### Booking Page
 <p align="center">
   <img src="appendix/Booking Page.png" alt="Booking Page Light Mode" width="45%">
   <be>
   <img src="appendix/Booking Page_darkmode.png" alt="Booking Page Dark Mode" width="45%">
 </p>
-*Figure: The MyCar booking page is displayed in Light Mode (left) and Dark Mode (right).*
+<p align="center">
+  Figure: The MyCar booking page is displayed in Light Mode (left) and Dark Mode (right).
+</p>
+
 
 *These pic is just the main function/pages, there still have more functions/pages that you need to explore!*
 
