@@ -1,12 +1,13 @@
 # MyCar Website (Educational Project)
-
+### Homepage Screenshots
 <p align="center">
   <img src="appendix/Homepage.png" alt="Homepage Light Mode" width="45%">
   <be>
   <be>
   <img src="appendix/Homepage_darkmode.png" alt="Homepage Dark Mode" width="45%">
 </p>
-
+*Figure: The MyCar homepage displayed in Light Mode (left) and Dark Mode (right). These modes provide flexibility and comfort for users, allowing them to switch based on preference or lighting conditions.*
+    
 Welcome to the MyCar website! This project is a web-based adaptation of the MyCar e-hailing app, a popular Malaysian ride-hailing service. This website version enables users to conveniently book rides from their computers, expanding accessibility beyond the existing mobile-only platform.
 
 > **Note:** This project is created solely for educational purposes and is not affiliated with or officially endorsed by [MyCar](https://www.mycarasia.com/site/).
@@ -18,7 +19,6 @@ Welcome to the MyCar website! This project is a web-based adaptation of the MyCa
 - [Setup](#setup)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Project Overview
 The MyCar website recreates core functionalities of the MyCar app, providing a smooth, user-friendly interface for users to hail rides, track their drivers, and manage bookings. This web-based version aims to improve accessibility and user experience, meeting the unique needs of desktop and mobile users alike in Malaysia’s diverse e-hailing market.
@@ -58,7 +58,7 @@ To set up the project locally:
 5. **Run the application:**
    - Open your browser and navigate to `http://localhost/mycar-website`.
 
-*Tips: Admin Username:admin , Password:0000*
+*Tips: Admin - Username:admin , Password:0000*
 
 ## Usage
 - **Book a ride** by entering a pickup and drop-off location.
