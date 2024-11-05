@@ -19,7 +19,7 @@ Welcome to the MyCar website! This project is a web-based adaptation of the MyCa
 The MyCar website recreates core functionalities of the MyCar app, providing a smooth, user-friendly interface for users to hail rides, track their drivers, and manage bookings. This web-based version aims to improve accessibility and user experience, meeting the unique needs of desktop and mobile users alike in Malaysia’s diverse e-hailing market. Moreover, we also provide resonsive design for the mobile user, so the user have more options to use the website in anywhere & anytimes.
 
 ### Appendix (MyCar Website)
-#### Home Page
+### Home Page
 <p align="center">
   <img src="appendix/Homepage.png" alt="Homepage Light Mode" width="45%">
   <be>
@@ -29,7 +29,7 @@ The MyCar website recreates core functionalities of the MyCar app, providing a s
   Figure: The MyCar home page is displayed in Light Mode (left) and Dark Mode (right).
 </p>
     
-#### Message Page
+### Message Page
 <p align="center">
   <img src="appendix/Message Page.png" alt="Message Page Light Mode" width="45%">
   <be>
@@ -39,7 +39,7 @@ The MyCar website recreates core functionalities of the MyCar app, providing a s
   Figure: The MyCar message page is displayed in Light Mode (left) and Dark Mode (right).
 </p>
     
-#### Activity Page (History Page)
+### Activity Page (History Page)
 <p align="center">
   <img src="appendix/History Page.png" alt="History Page Light Mode" width="45%">
   <be>
@@ -48,7 +48,7 @@ The MyCar website recreates core functionalities of the MyCar app, providing a s
 <p align="center"> Figure: The MyCar activity history page is displayed in Light Mode (left) and Dark Mode (right). </p>
 <p align="center"> ** Active now page still development due not enough time for assignment, so I decided not post pic here. </p>
     
-#### Wallet Page
+### Wallet Page
 <p align="center">
   <img src="appendix/Wallet Page.png" alt="Wallet Page Light Mode" width="45%">
   <be>
@@ -58,7 +58,7 @@ The MyCar website recreates core functionalities of the MyCar app, providing a s
   Figure: The MyCar wallet page is displayed in Light Mode (left) and Dark Mode (right).
 </p>
     
-#### Settings Page
+### Settings Page
 <p align="center">
   <img src="appendix/Settings Page.png" alt="Settings Light Mode" width="60%">
 </p>
@@ -66,7 +66,7 @@ The MyCar website recreates core functionalities of the MyCar app, providing a s
   Figure: The MyCar settings page is displayed in Light Mode, btw settings page also have dark mode.
 </p>
 
-#### Booking Page
+### Booking Page
 <p align="center">
   <img src="appendix/Booking Page.png" alt="Booking Page Light Mode" width="45%">
   <be>
