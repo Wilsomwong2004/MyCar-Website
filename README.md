@@ -4,9 +4,9 @@
 </p>
     
 Welcome to the MyCar website! This project is a web-based adaptation of the MyCar e-hailing app, a popular Malaysian ride-hailing service. This website version enables users to conveniently book rides from their computers, expanding accessibility beyond the existing mobile-only platform.
-
+<br>
 > **Note:** This project is created solely for educational purposes and is not affiliated with or officially endorsed by [MyCar](https://www.mycarasia.com/site/).
-
+<br>
 ## Table of Contents
 - [Project Overview](#project-overview)
 - [Features](#features)
@@ -14,12 +14,13 @@ Welcome to the MyCar website! This project is a web-based adaptation of the MyCa
 - [Setup](#setup)
 - [Usage](#usage)
 - [Contributing](#contributing)
-
+<br>
 ## Project Overview
 The MyCar website recreates core functionalities of the MyCar app, providing a smooth, user-friendly interface for users to hail rides, track their drivers, and manage bookings. This web-based version aims to improve accessibility and user experience, meeting the unique needs of desktop and mobile users alike in Malaysia’s diverse e-hailing market. Moreover, we also provide resonsive design for the mobile user, so the user have more options to use the website in anywhere & anytimes.
 
 ### Appendix (MyCar Website)
 ### Home Page
+<br>
 <p align="center">
   <img src="appendix/Homepage.png" alt="Homepage Light Mode" width="45%">
   <be>
@@ -30,6 +31,7 @@ The MyCar website recreates core functionalities of the MyCar app, providing a s
 </p>
     
 ### Message Page
+<br>
 <p align="center">
   <img src="appendix/Message Page.png" alt="Message Page Light Mode" width="45%">
   <be>
@@ -39,7 +41,8 @@ The MyCar website recreates core functionalities of the MyCar app, providing a s
   Figure: The MyCar message page is displayed in Light Mode (left) and Dark Mode (right).
 </p>
     
-### Activity Page (History Page)
+### Activity Page
+<br>
 <p align="center">
   <img src="appendix/History Page.png" alt="History Page Light Mode" width="45%">
   <be>
@@ -49,6 +52,7 @@ The MyCar website recreates core functionalities of the MyCar app, providing a s
 <p align="center"> ** Active now page still development due not enough time for assignment, so I decided not post pic here. </p>
     
 ### Wallet Page
+<br>
 <p align="center">
   <img src="appendix/Wallet Page.png" alt="Wallet Page Light Mode" width="45%">
   <be>
@@ -59,6 +63,7 @@ The MyCar website recreates core functionalities of the MyCar app, providing a s
 </p>
     
 ### Settings Page
+<br>
 <p align="center">
   <img src="appendix/Settings Page.png" alt="Settings Light Mode" width="60%">
 </p>
@@ -67,6 +72,7 @@ The MyCar website recreates core functionalities of the MyCar app, providing a s
 </p>
 
 ### Booking Page
+<br>
 <p align="center">
   <img src="appendix/Booking Page.png" alt="Booking Page Light Mode" width="45%">
   <be>
@@ -77,11 +83,9 @@ The MyCar website recreates core functionalities of the MyCar app, providing a s
 </p>
 
 <br>
-<br>
 <p align="center">
   *These pic is just the main function/pages, there still have more functions/pages that you need to explore!*
 </p>
-<br>
 <br>
 
 ## Features
@@ -91,13 +95,13 @@ The MyCar website recreates core functionalities of the MyCar app, providing a s
 - **Payment Integration**: Secure payments with options for cash, card, and e-wallets.
 - **Trip History**: View past rides and receipts for easy reference.
 - **Dark Mode**: Toggle between light and dark mode for improved user comfort.
-
+<br>
 ## Technologies Used
 - **Frontend**: HTML, CSS, JavaScript
 - **Backend**: PHP
 - **Database**: MySQL
 - **Server**: XAMPP (Apache server)
-
+<br>
 ## Setup
 To set up the project locally:
 
@@ -120,12 +124,12 @@ To set up the project locally:
    - Open your browser and navigate to `http://localhost/mycar-website`.
 
 *Tips: Admin - Username:admin , Password:0000*
-
+<br>
 ## Usage
 - **Book a ride** by entering a pickup and drop-off location.
 - **Track your driver** and monitor ETA in real-time.
 - **Access ride history** to view past trips and download receipts.
-
+<br>
 ## Contributing
 If you use this repository, please show your support by pressing the star button at the top-right of the page. Your support motivates continued development and improvements!
 Yea.. this project is just my education project, and I doesn't plan to continue this project due already submit the assignment.
