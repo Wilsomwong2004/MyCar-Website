@@ -6,7 +6,9 @@
   <img src="appendix/Homepage_darkmode.png" alt="Homepage Dark Mode" width="45%">
 </p>
 
-<p style="font-style: italic;">Figure: The MyCar homepage displayed in Light Mode (left) and Dark Mode (right). These modes provide flexibility and comfort for users, allowing them to switch based on preference or lighting conditions.</p>
+<p style="font-style: italic; font-weight: 300; font-size: 14px; text-align: center;">
+  Figure: The MyCar homepage displayed in Light Mode (left) and Dark Mode (right). These modes provide flexibility and comfort for users, allowing them to switch based on preference or lighting conditions.
+</p>
 
 Welcome to the MyCar website! This project is a web-based adaptation of the MyCar e-hailing app, a popular Malaysian ride-hailing service. This website version enables users to conveniently book rides from their computers, expanding accessibility beyond the existing mobile-only platform.
 
