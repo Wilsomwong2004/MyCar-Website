@@ -21,6 +21,49 @@ Welcome to the MyCar website! This project is a web-based adaptation of the MyCa
 ## Project Overview
 The MyCar website recreates core functionalities of the MyCar app, providing a smooth, user-friendly interface for users to hail rides, track their drivers, and manage bookings. This web-based version aims to improve accessibility and user experience, meeting the unique needs of desktop and mobile users alike in Malaysia’s diverse e-hailing market.
 
+### Homepage
+<p align="center">
+  <img src="appendix/Homepage.png" alt="Homepage Light Mode" width="45%">
+  <be>
+  <be>
+  <img src="appendix/Homepage_darkmode.png" alt="Homepage Dark Mode" width="45%">
+</p>
+    
+### Message Page
+<p align="center">
+  <img src="appendix/Message Page.png" alt="Homepage Light Mode" width="45%">
+  <be>
+  <img src="appendix/Message Page_darkmode.png" alt="Homepage Dark Mode" width="45%">
+</p>
+    
+### Activity Page
+![Homepage Screenshot](appendix/History Page.png)
+    
+### Wallet Page
+<p align="center">
+  <img src="appendix/Wallet Page.png" alt="Homepage Light Mode" width="45%">
+  <be>
+  <img src="appendix/Wallet Page_darkmode.png" alt="Homepage Dark Mode" width="45%">
+</p>
+    
+### Booking Page
+<p align="center">
+  <img src="appendix/Booking Page.png" alt="Homepage Light Mode" width="45%">
+  <be>
+  <img src="appendix/Booking Page_darkmode.png" alt="Homepage Dark Mode" width="45%">
+</p>
+
+### Login Page
+![Homepage Screenshot](appendix/Login Page.png)
+
+### Admin Page
+#### Admin Page (Manage User)
+![Homepage Screenshot](appendix/Admin Page(Manage User).png)
+
+#### Admin Page (Manage Payment)
+![Homepage Screenshot](appendix/Admin Page(Manage Payment).png)
+
+
 ## Features
 - **Ride Booking**: Quickly book a ride by entering pickup and destination details.
 - **Real-Time Tracking**: Monitor driver location in real-time with an integrated map.
