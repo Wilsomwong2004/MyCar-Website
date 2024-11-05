@@ -1,4 +1,4 @@
-# MyCar Website (Educational Project)
+## MyCar Website (Educational Project)
 <p align="center">
   <img src="appendix/Homepage.png" alt="Homepage Light Mode" width="45%">
   <be>
