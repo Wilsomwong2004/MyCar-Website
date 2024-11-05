@@ -1,9 +1,6 @@
 ## MyCar Website (Educational Project)
 <p align="center">
-  <img src="appendix/Homepage.png" alt="Homepage Light Mode" width="45%">
-  <be>
-  <be>
-  <img src="appendix/Homepage_darkmode.png" alt="Homepage Dark Mode" width="45%">
+  <img src="appendix/Login Page.png" alt="Homepage Light Mode" width="100%">
 </p>
     
 Welcome to the MyCar website! This project is a web-based adaptation of the MyCar e-hailing app, a popular Malaysian ride-hailing service. This website version enables users to conveniently book rides from their computers, expanding accessibility beyond the existing mobile-only platform.
@@ -21,7 +18,7 @@ Welcome to the MyCar website! This project is a web-based adaptation of the MyCa
 ## Project Overview
 The MyCar website recreates core functionalities of the MyCar app, providing a smooth, user-friendly interface for users to hail rides, track their drivers, and manage bookings. This web-based version aims to improve accessibility and user experience, meeting the unique needs of desktop and mobile users alike in Malaysia’s diverse e-hailing market.
 
-### Homepage
+### Home Page
 <p align="center">
   <img src="appendix/Homepage.png" alt="Homepage Light Mode" width="45%">
   <be>
@@ -30,28 +27,35 @@ The MyCar website recreates core functionalities of the MyCar app, providing a s
     
 ### Message Page
 <p align="center">
-  <img src="appendix/Message Page.png" alt="Homepage Light Mode" width="45%">
+  <img src="appendix/Message Page.png" alt="Message Page Light Mode" width="45%">
   <be>
-  <img src="appendix/Message Page_darkmode.png" alt="Homepage Dark Mode" width="45%">
+  <img src="appendix/Message Page_darkmode.png" alt="Message Page Dark Mode" width="45%">
 </p>
     
-### Activity Page
+### Activity Page (History Page)
 <p align="center">
-  <img src="appendix/History Page.png" alt="Homepage Dark Mode" width="50%">
+  <img src="appendix/History Page.png" alt="History Page Light Mode" width="45%">
+  <be>
+  <img src="appendix/History Page_darkmode.png" alt="History Page Dark Mode" width="45%">
 </p>
     
 ### Wallet Page
 <p align="center">
-  <img src="appendix/Wallet Page.png" alt="Homepage Light Mode" width="45%">
+  <img src="appendix/Wallet Page.png" alt="Wallet Page Light Mode" width="45%">
   <be>
-  <img src="appendix/Wallet Page_darkmode.png" alt="Homepage Dark Mode" width="45%">
+  <img src="appendix/Wallet Page_darkmode.png" alt="Wallet Page Dark Mode" width="45%">
+</p>
+
+### Settings Page
+<p align="center">
+  <img src="appendix/Settings Page.png" alt="Settings Light Mode" width="100%">
 </p>
     
 ### Booking Page
 <p align="center">
-  <img src="appendix/Booking Page.png" alt="Homepage Light Mode" width="45%">
+  <img src="appendix/Booking Page.png" alt="Booking Page Light Mode" width="45%">
   <be>
-  <img src="appendix/Booking Page_darkmode.png" alt="Homepage Dark Mode" width="45%">
+  <img src="appendix/Booking Page_darkmode.png" alt="Booking Page Dark Mode" width="45%">
 </p>
 
 ## Features
