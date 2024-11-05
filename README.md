@@ -1,4 +1,4 @@
-<h2> MyCar Website (Educational Project)</h2> 
+<h2 align="center"> MyCar Website (Educational Project)</h2> 
 <br>
 <p align="center">
   <img src="appendix/Login page.png" alt="Login Page Light Mode" width="60%">
