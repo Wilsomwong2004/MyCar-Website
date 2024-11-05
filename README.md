@@ -25,7 +25,9 @@ The MyCar website recreates core functionalities of the MyCar app, providing a s
   <be>
   <img src="appendix/Homepage_darkmode.png" alt="Homepage Dark Mode" width="45%">
 </p>
-*Figure: The MyCar home page is displayed in Light Mode (left) and Dark Mode (right).*
+<p align="center">
+  Figure: The MyCar home page is displayed in Light Mode (left) and Dark Mode (right).
+</p>
     
 #### Message Page
 <p align="center">
@@ -33,7 +35,9 @@ The MyCar website recreates core functionalities of the MyCar app, providing a s
   <be>
   <img src="appendix/Message Page_darkmode.png" alt="Message Page Dark Mode" width="45%">
 </p>
-*Figure: The MyCar message page is displayed in Light Mode (left) and Dark Mode (right).*
+<p align="center">
+  Figure: The MyCar message page is displayed in Light Mode (left) and Dark Mode (right).
+</p>
     
 #### Activity Page (History Page)
 <p align="center">
@@ -41,8 +45,10 @@ The MyCar website recreates core functionalities of the MyCar app, providing a s
   <be>
   <img src="appendix/History Page_darkmode.png" alt="History Page Dark Mode" width="45%">
 </p>
-*Figure: The MyCar activity history page is displayed in Light Mode (left) and Dark Mode (right).*
-*Active now page still development due not enough time for assignment, so I decided not post pic here.*
+<p align="center">
+  <p>Figure: The MyCar activity history page is displayed in Light Mode (left) and Dark Mode (right). </p>
+  <p>Active now page still development due not enough time for assignment, so I decided not post pic here. </p>
+</p>
     
 #### Wallet Page
 <p align="center">
@@ -50,8 +56,10 @@ The MyCar website recreates core functionalities of the MyCar app, providing a s
   <be>
   <img src="appendix/Wallet Page_darkmode.png" alt="Wallet Page Dark Mode" width="45%">
 </p>
-*Figure: The MyCar wallet page is displayed in Light Mode (left) and Dark Mode (right).*
-
+<p align="center">
+  Figure: The MyCar wallet page is displayed in Light Mode (left) and Dark Mode (right).
+</p>
+    
 #### Settings Page
 <p align="center">
   <img src="appendix/Settings Page.png" alt="Settings Light Mode" width="60%">
@@ -70,7 +78,8 @@ The MyCar website recreates core functionalities of the MyCar app, providing a s
   Figure: The MyCar booking page is displayed in Light Mode (left) and Dark Mode (right).
 </p>
 
-
+<br>
+<br>
 *These pic is just the main function/pages, there still have more functions/pages that you need to explore!*
 
 ## Features
