@@ -154,6 +154,6 @@ But We welcome educational collaboration! This project includes APIs to power ma
 3. Push your branch and open a pull request.
 
 Thank you for your support and contributions!
-Also Thanks my partners help a lots on this project!
+Also thanks my partners help a lots on this project!
 
 <br>
