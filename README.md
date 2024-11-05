@@ -21,9 +21,14 @@ Welcome to the MyCar website! This project is a web-based adaptation of the MyCa
 <br>
 
 ## Project Overview
-The MyCar website recreates core functionalities of the MyCar app, providing a smooth, user-friendly interface for users to hail rides, track their drivers, and manage bookings. This web-based version aims to improve accessibility and user experience, meeting the unique needs of desktop and mobile users alike in Malaysia’s diverse e-hailing market. Moreover, we also provide resonsive design for the mobile user, so the user have more options to use the website in anywhere & anytimes.
+The MyCar website recreates core functionalities of the MyCar app, providing a smooth, user-friendly interface for users to hail rides, track their drivers, and manage bookings. This web-based version aims to improve accessibility and user experience, meeting the unique needs of desktop and mobile users alike in Malaysia’s diverse e-hailing market. Moreover, we also provide resonsive design for the mobile user, so the user have more options to use the website in anywhere & anytime.
+
+<br>
 
 <h3 align="center"> Appendix (MyCar Website) </h3> 
+
+<br>
+
 ### Home Page
 <br>
 <p align="center">
