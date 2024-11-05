@@ -25,9 +25,7 @@ The MyCar website recreates core functionalities of the MyCar app, providing a s
 
 <br>
 
-<h3 align="center"> Appendix (MyCar Website) </h3> 
-
-<br>
+### Appendix (MyCar Website)
 
 ### Home Page
 <br>
