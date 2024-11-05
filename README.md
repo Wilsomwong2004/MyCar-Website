@@ -131,6 +131,8 @@ To set up the project locally:
 5. **Run the application:**
    - Open your browser and navigate to `http://localhost/mycar-website`.
 
+<br>
+
 *Tips: Admin - Username:admin , Password:0000*
 
 <br>
