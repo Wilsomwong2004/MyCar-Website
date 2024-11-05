@@ -40,7 +40,7 @@ To set up the project locally:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/mycar-website.git
+   git clone https://github.com/Wilsomwong2004/MyCar-Website.git
    
 2. **Move project files to XAMPP’s htdocs directory:**
    Copy or move the `mycar-website` folder to `C:\xampp\htdocs\` (or the equivalent directory for your XAMPP installation).
@@ -73,3 +73,4 @@ But We welcome educational collaboration! This project includes APIs to power ma
 3. Push your branch and open a pull request.
 
 Thank you for your support and contributions!
+Also Thanks my partners help a lots on this project!
