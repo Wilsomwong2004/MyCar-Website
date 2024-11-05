@@ -54,17 +54,6 @@ The MyCar website recreates core functionalities of the MyCar app, providing a s
   <img src="appendix/Booking Page_darkmode.png" alt="Homepage Dark Mode" width="45%">
 </p>
 
-### Login Page
-![Homepage Screenshot](appendix/Login Page.png)
-
-### Admin Page
-#### Admin Page (Manage User)
-![Homepage Screenshot](appendix/Admin Page(Manage User).png)
-
-#### Admin Page (Manage Payment)
-![Homepage Screenshot](appendix/Admin Page(Manage Payment).png)
-
-
 ## Features
 - **Ride Booking**: Quickly book a ride by entering pickup and destination details.
 - **Real-Time Tracking**: Monitor driver location in real-time with an integrated map.
